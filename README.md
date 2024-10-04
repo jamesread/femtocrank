@@ -1,1 +1,3 @@
 # BrightAndSimpleTheme
+
+![Screenshot][screenshot.png]
