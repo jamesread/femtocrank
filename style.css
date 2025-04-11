@@ -329,9 +329,12 @@ footer {
 
 .a11yhidden {
 	position: absolute;
-	left: -100px;
+	left: -500px;
 }
 
 .a11yhidden:focus {
 	left: 1em;
+	background-color: black;
+	border-radius: 1em;
+	padding: .5em;
 }
