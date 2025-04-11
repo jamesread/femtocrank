@@ -202,6 +202,10 @@ fieldset {
   justify-content: center;
 }
 
+.grid-display {
+  display: grid;
+}
+
 .grid-boxed {
   display: grid;
   gap: 0;
@@ -340,4 +344,3 @@ footer {
 	padding: .5em;
 	color: white;
 }
-
