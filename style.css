@@ -234,3 +234,39 @@ ul.noListStyle {
   padding: 0;
   margin: 0;
 }
+
+.menu div {
+  position: absolute;
+  display: none;
+  box-shadow: 0 0 6px 0 #444;
+}
+
+.menu:hover {
+  background-color: beige;
+}
+
+.menu span {
+  cursor: pointer;
+}
+
+.menu:hover div {
+  display: block;
+  background-color: #fff;
+  min-width: 12em;
+}
+
+.menu div ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu div ul a {
+  text-decoration: none;
+  display: block;
+  padding: .2em;
+}
+
+.menu div ul a:hover {
+  background-color: beige;
+}
