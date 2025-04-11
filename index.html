@@ -13,10 +13,19 @@
 			<h1 class = "show">Bright &amp; Simple Theme</h1>
 
 			<nav>
-				<ul>
+				<ul role = "menubar">
 					<li><a href = "#">Home</a></li>
 					<li><a href = "#">About</a></li>
 					<li><a href = "#">Contact</a></li>
+					<li>
+						<span>Links</span>
+						<div>
+							<ul>
+								<li><a href = "#">foo</a></li>
+								<li><a href = "#">bar</a></li>
+							</ul>
+						</div>
+					</li>
 				</ul>
 			</nav>
 		</header>
@@ -138,16 +147,29 @@ function foo() {
 
 				<p>This section shows menus.</p>
 
-				<div class = "menu">
-					<span>Menu 1</span>
-					<div>
-						<ul>
-							<li><a href = "#">One</a></li>
-							<li><a href = "#">Two</a></li>
-							<li><a href = "#">Three</a></li>
-						</ul>
-					</div>
-				</div>
+				<ul role = "menubar">
+					<li>
+						<span>Menu 1</span>
+						<div>
+							<ul>
+								<li><a href = "#">One</a></li>
+								<li><a href = "#">Two</a></li>
+								<li><a href = "#">Three</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<span>Menu 2</span>
+						<div>
+							<ul>
+								<li><a href = "#">One</a></li>
+								<li><a href = "#">Two</a></li>
+								<li><a href = "#">Three</a></li>
+							</ul>
+						</div>
+
+					</li>
+				</ul>
 			</section>
 
 			<section>

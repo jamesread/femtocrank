@@ -249,40 +249,78 @@ ul.noListStyle {
   margin: 0;
 }
 
-.menu div {
-  position: absolute;
-  display: none;
-  box-shadow: 0 0 6px 0 #444;
-}
-
-.menu:hover {
-  background-color: beige;
-}
-
-.menu span {
-  cursor: pointer;
-}
-
-.menu:hover div {
-  display: block;
-  background-color: #fff;
-  min-width: 12em;
-}
-
-.menu div ul {
+ul[role=menubar] {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.menu div ul a {
+[role=menubar] li {
+  display: inline-block;
+}
+
+ul[role=menubar] li div {
+  position: absolute;
+  display: none;
+  box-shadow: 0 0 6px 0 #444;
+}
+
+ul[role=menubar] li:hover {
+  background-color: beige;
+}
+
+header ul[role=menubar] li:hover {
+  background-color: #555;
+}
+
+
+ul[role=menubar] li span {
+  cursor: pointer;
+}
+
+ul[role=menubar] li:hover div {
+  display: block;
+  background-color: #fff;
+  min-width: 12em;
+}
+
+header ul[role=menubar] li:hover ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul[role=menubar] div ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul[role=menubar] div ul li {
+  display: block;
+  margin-right: 0;
+}
+
+ul[role=menubar] div ul a {
   text-decoration: none;
   display: block;
   padding: .2em;
 }
 
-.menu div ul a:hover {
+header ul[role=menubar] div li a {
+  border-radius: 0;
+}
+
+ul[role=menubar] div ul a:hover {
   background-color: beige;
+}
+
+header ul[role=menubar] div ul a:hover {
+  background-color: #555;
+}
+
+header ul[role=menubar] a, header ul[role=menubar] a:visited {
+  color: white;
+  background-color: #444;
 }
 
 footer {
