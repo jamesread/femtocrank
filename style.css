@@ -90,7 +90,7 @@ pre {
   margin: .4em;
 }
 
-.critical, .error {
+.critical, .error, .bad {
   background-color: salmon;
 }
 
@@ -114,8 +114,12 @@ pre {
   background-color: #efefef;
 }
 
-.success {
+.success, .good {
   background-color: lightgreen;
+}
+
+.old {
+  background-color: wheat !important;
 }
 
 .inline-notification {
@@ -279,4 +283,8 @@ ul.noListStyle {
 
 .menu div ul a:hover {
   background-color: beige;
+}
+
+footer {
+	text-align: center;
 }
