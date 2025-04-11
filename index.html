@@ -21,7 +21,7 @@
 			</nav>
 		</header>
 
-		<main>
+		<main class = "grid gc-xl">
 			<section>
 				<h2>Introduction</h2>
 				<p>This is a very simple theme of James Read's personal preferences, which tries to be bright and simple.</p>
@@ -31,9 +31,11 @@
 			<section>
 				<h2>Content</h2>
 				<p>
-				This is content.
+				This is content. <a href = "foo.html">This is an internal link</a>. <a href = "https://google.com">This is an external link</a>.
 				</p>
+			</section>
 
+			<section>
 				<h2>Code</h2>
 				<pre class = "show">
 This is code.
@@ -43,11 +45,9 @@ function foo() {
 	console.log("bar");
 }
 </pre>
+			</section>
 
-				<p>
-				This is more content.
-				</p>
-
+			<section>
 				<h2>Inline Notifications</h2>
 				<p class = "info show inline-notification">
 					<strong>INFO:</strong> This is an info message.
@@ -82,6 +82,9 @@ function foo() {
 					<strong>CRITICAL: </strong> This is a critical message.
 				</p>
 
+			</section>
+
+			<section>
 				<h2>Forms</h2>
 
 				<p>This is a form.</p>
@@ -104,7 +107,9 @@ function foo() {
 				</form>
 
 				</form>
+			</section>
 
+			<section>
 				<h2>Stats</h2>
 				
 				<p>Stats updated in the last decade.</p>
@@ -129,7 +134,26 @@ function foo() {
 			</section>
 
 			<section>
+				<h2>Menus</h2>
+
+				<p>This section shows menus.</p>
+
+				<div class = "menu">
+					<span>Menu 1</span>
+					<div>
+						<ul>
+							<li><a href = "#">One</a></li>
+							<li><a href = "#">Two</a></li>
+							<li><a href = "#">Three</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<section>
 				<h2>Table</h2>
+				
+				<p>This section shows tables.</p>
 
 				<table>
 					<thead>
@@ -146,20 +170,6 @@ function foo() {
 					</tbody>
 				</table>
 			</section>
-
-			<section>
-				<h2>Menus</h2>
-
-				<div class = "menu">
-					<span class = "menu-label">Menu 1</span>
-					<div class = "menu-content">
-						<ul>
-							<li><a href = "#">One</a></li>
-							<li><a href = "#">Two</a></li>
-							<li><a href = "#">Three</a></li>
-						</ul>
-					</div>
-				</div>
 		</main>
 	<script src = "annotate.js"></script>
 	</body>
