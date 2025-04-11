@@ -288,3 +288,12 @@ ul.noListStyle {
 footer {
 	text-align: center;
 }
+
+.a11yhidden {
+	position: absolute;
+	left: -100px;
+}
+
+.a11yhidden:focus {
+	left: 1em;
+}
