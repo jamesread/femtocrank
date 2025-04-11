@@ -210,3 +210,27 @@ fieldset {
 .stat-display span.subtle {
   display: block;
 }
+
+table, th, td {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+td,th  {
+  padding: .5em;
+}
+
+th {
+  background-color: #efefef;
+}
+
+td.uneditable {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+ul.noListStyle {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
