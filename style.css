@@ -192,6 +192,12 @@ fieldset {
   gap: 1em;
 }
 
+.grid {
+  display: grid;
+  gap: 1em;
+  justify-content: center;
+}
+
 .grid-boxed {
   display: grid;
   gap: 0;
@@ -199,6 +205,10 @@ fieldset {
   padding: 1em;
   border-radius: .4em;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gc-xl {
+  grid-template-columns: repeat(auto-fit, 500px);
 }
 
 .grid-boxed div {
