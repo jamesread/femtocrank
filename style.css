@@ -1,4 +1,10 @@
 /** https://github.com/jamesread/BrightAndSimpleTheme **/
+html, body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 body {
   font-family: sans-serif;
   margin: 0;
@@ -10,6 +16,7 @@ body {
 main {
   margin: 0;
   padding: 1em;
+  flex-grow: 1;
 }
 
 section {
@@ -21,15 +28,32 @@ section {
 }
 
 header {
-  padding: 1em;
   background-color: #444;
   color: white;
   display: flex;
-  box-shadow: 0 0 1em #9a9a9a;
+  box-shadow: 0px 0px 6px 5px #aaa;
+  border-bottom: 1px solid #3f3f3f;
+  align-items: center;
+  gap: 1em;
 }
 
 header a, header a:visited {
   color: white;
+  text-decoration: none;
+}
+
+header img.logo {
+  width: 2em;
+  height: 2em;
+  padding: .5em;
+}
+
+.icon {
+  font-size: 2em;
+}
+
+header p {
+  margin: 0;
 }
 
 h1 {
@@ -96,6 +120,7 @@ pre {
 }
 
 .critical, .error, .bad {
+  color: white !important;
   background-color: salmon;
 }
 
@@ -356,4 +381,58 @@ footer {
 	border-radius: .5em;
 	padding: .5em;
 	color: white;
+}
+
+.fg0 {
+	flex-grow: 0;
+}
+
+.fg1 {
+	flex-grow: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  header {
+    background-color: black;
+    box-shadow: 0px 0px 6px 5px #121212;
+	border-bottom: 1px solid #222;
+  }
+
+  body {
+	background-color: #333;
+	color: #ddd;
+  }
+
+  section {
+    background-color: #111;
+    box-shadow: 0 0 .5em #121212;
+  }
+
+  footer a, footer a:visited {
+    color: #ddd;
+    color: lightblue;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    gap: .5em;
+  }
+
+  header h1 {
+	font-size: 1.2em;
+  }
+
+  header p {
+	font-size: .8em;
+  }
+
+  header nav ul li {
+	display: block;
+	margin-right: 0;
+  }
+
+  main {
+    padding: .5em;
+  }
 }
