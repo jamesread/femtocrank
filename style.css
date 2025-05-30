@@ -16,7 +16,6 @@ body {
 main {
   margin: 0;
   padding: 1em;
-  flex-grow: 1;
 }
 
 section {
@@ -35,6 +34,8 @@ header {
   border-bottom: 1px solid #3f3f3f;
   align-items: center;
   gap: 1em;
+  z-index: 1; /* So the header box-shadow shows over the top of the sidebar */
+  min-height: 3em; /* .logo 2em + .5em padding */
 }
 
 header a, header a:visited {
@@ -64,6 +65,7 @@ h1 {
 
 h2 {
   font-weight: 800;
+  font-size: 1.1em;
   letter-spacing: -.025em;
   margin-bottom: -.25em;
 }
@@ -367,88 +369,147 @@ header ul[role=menubar] a:hover {
 }
 
 aside {
-  background-color: #f0f0f0;
-  padding: 1em;
+  position: fixed;
+  background-color: #fff;
   box-shadow: 0 0 .5em #9a9a9a;
-  transition: left .2s ease-in-out;
-  width: 12em;
-  z-index: -1; /* So the header box-shadow shows over the top */
+  transition: left .5s, visibility .5s, z-index .5s step-start;
+  min-width: 14em;
+  width: 14em;
+  z-index: -1;
+  visibility: hidden;
+  left: -14em;
+  height: 100vh;
+}
+
+aside.stuck { 
+  position: static;
+  height: auto; /* flex element */
+}
+
+aside.shown {
+  visibility: visible;
+  left: 0;
+  z-index: 0;
 }
 
 aside ul {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
-/**
 aside ul li a {
-	text-decoration: none;
-	color: black;
-	display: block;
-	padding: .4em;
-	border-radius: .4em;
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: .4em;
+  padding: .4em 1em;
 }
 
 aside ul li a:hover {
-	background-color: #ddd;
+  background-color: #c6d0d7;
 }
-*/
 
 footer {
-	text-align: center;
+  text-align: center;
 }
 
 #layout {
-	display: flex;
-	flex-direction: row;
-	flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
 }
 
 #content {
-	flex-grow: 1;
-	display: flex;
-	flex-direction: column;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 footer span {
-	padding: .5em 1em .5em 1em;
-	border-radius: .5em;
-	background-color: #c6d0d7;
-	display: inline-block;
+  padding: .5em 1em .5em 1em;
+  border-radius: .5em;
+  background-color: #c6d0d7;
+  display: inline-block;
 }
 
 .a11yhidden {
-	position: absolute;
-	left: -500px;
+  position: absolute;
+  left: -500px;
 }
 
 .a11yhidden:focus {
-	left: 1em;
-	background-color: black;
-	border: 2px solid #555;
-	border-radius: .5em;
-	padding: .5em;
-	color: white;
+  left: 1em;
+  background-color: black;
+  border: 2px solid #555;
+  border-radius: .5em;
+  padding: .5em;
+  color: white;
+}
+
+#sidebar-button {
+  width: 14em;
+  cursor: pointer;
+  border-right: 1px solid #333;
+  background-color: #444;
+}
+
+#sidebar-button:hover {
+  background-color: #666;
+}
+
+#sidebar-button .menu-icon {
+  padding: .5em;
+}
+
+.vh {
+  visibility: hidden;
+}
+
+.script-button {
+  padding: .5em;
+  cursor: pointer;
+}
+
+.fs2 {
+  font-size: 2em;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .fg0 {
-	flex-grow: 0;
+  flex-grow: 0;
 }
 
 .fg1 {
-	flex-grow: 1;
+  flex-grow: 1;
+}
+
+.g1 {
+  gap: 1em;
+}
+
+.g2 {
+  gap: 2em;
+}
+
+.flex-spacer {
+  flex-grow: 1;
 }
 
 @media (prefers-color-scheme: dark) {
   header {
     background-color: black;
     box-shadow: 0px 0px 6px 5px #121212;
-	border-bottom: 1px solid #222;
+  border-bottom: 1px solid #222;
   }
 
   body {
-	background-color: #333;
-	color: #ddd;
+  background-color: #333;
+  color: #ddd;
   }
 
   section {
@@ -468,16 +529,16 @@ footer span {
   }
 
   header h1 {
-	font-size: 1.2em;
+  font-size: 1.2em;
   }
 
   header p {
-	font-size: .8em;
+  font-size: .8em;
   }
 
   header nav ul li {
-	display: block;
-	margin-right: 0;
+  display: block;
+  margin-right: 0;
   }
 
   main {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+	<title>SimpleApp</title>
+
+	<link rel="stylesheet" type="text/css" href="../style.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<header>
+		<img src = "./logo.png" alt = "SimpleApp Logo" class = "logo">
+		<h1 class = "fg1">SimpleApp</h1>
+		<div>
+			<p class = "subtle">Next page refresh:</p>
+			<p><progress id = "next-update" value = "0" max = "30" title = "Time until next update"></progress></p>
+		</div>
+		<div id = "last-updated-container">
+			<p class = "subtle">Last result:</p>
+			<p id = "last-updated" class = "critical">
+				Never updated
+			</p>
+		</div>
+		<a href = "https://github.com/jamesread/uncomplicated-alert-receiver" target = "_blank" class = "aside icon">
+			&#9829;
+		</a>
+	</header>
+
+	<main>
+		<section id = "alert-container">
+			This is a test.
+		</section>
+	</main>
+
+	<footer>
+		<p>
+			<a href = "https://github.com/jamesread/uncomplicated-alert-receiver">UAR on GitHub</a>
+			<span id = "current-version">???</span>
+		</p>
+	</footer>
+</body>
