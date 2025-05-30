@@ -166,6 +166,7 @@ button {
   border-radius: .2em;
   background-color: #fff;
   font-weight: bold;
+  font-family: sans-serif;
   color: black;
   border: 1px solid #ccc;
   cursor: pointer;
@@ -365,8 +366,48 @@ header ul[role=menubar] a:hover {
   background-color: #555;
 }
 
+aside {
+  background-color: #f0f0f0;
+  padding: 1em;
+  box-shadow: 0 0 .5em #9a9a9a;
+  transition: left .2s ease-in-out;
+  width: 12em;
+  z-index: -1; /* So the header box-shadow shows over the top */
+}
+
+aside ul {
+	list-style: none;
+	padding: 0;
+}
+
+/**
+aside ul li a {
+	text-decoration: none;
+	color: black;
+	display: block;
+	padding: .4em;
+	border-radius: .4em;
+}
+
+aside ul li a:hover {
+	background-color: #ddd;
+}
+*/
+
 footer {
 	text-align: center;
+}
+
+#layout {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+}
+
+#content {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
 }
 
 .a11yhidden {
