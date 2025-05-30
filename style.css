@@ -410,6 +410,13 @@ footer {
 	flex-direction: column;
 }
 
+footer span {
+	padding: .5em 1em .5em 1em;
+	border-radius: .5em;
+	background-color: #c6d0d7;
+	display: inline-block;
+}
+
 .a11yhidden {
 	position: absolute;
 	left: -500px;
