@@ -148,6 +148,7 @@ pre {
 
 .success, .good {
   background-color: lightgreen;
+  color: black;
 }
 
 .old {
@@ -181,13 +182,13 @@ button:hover {
 }
 
 button[type="submit"] {
-  background-color: #569d56;
+  backgorund-color: #488448
   color: white;
   border: 0;
 }
 
 button[type="submit"]:hover {
-  background-color: #396a39;
+  background-color: #569d56;
 }
 
 .subtle {
@@ -281,7 +282,7 @@ td,th  {
 }
 
 th {
-  background-color: #efefef;
+  background-color: #EFF1F3;
 }
 
 td.uneditable {
@@ -525,6 +526,18 @@ footer span {
   footer a, footer a:visited {
     color: #ddd;
     color: lightblue;
+  }
+
+  th {
+	background-color: #EFF1F3;
+  }
+
+  table, th, td {
+	border: 1px solid #707079;
+  }
+  
+  footer span {
+	background-color: #444;	
   }
 }
 
