@@ -182,7 +182,7 @@ button:hover {
 }
 
 button[type="submit"] {
-  backgorund-color: #488448
+  background-color: #488448;
   color: white;
   border: 0;
 }
@@ -529,7 +529,7 @@ footer span {
   }
 
   th {
-	background-color: #EFF1F3;
+	background-color: #333;
   }
 
   table, th, td {
