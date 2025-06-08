@@ -133,22 +133,27 @@ pre {
 }
 
 .warning {
+  color: black;
   background-color: moccasin;
 }
 
 .severe {
+  color: black;
   background-color: lightsalmon;
 }
 
 .important {
+  color: black;
   background-color: lightgoldenrodyellow;
 }
 
 .note {
+  color: black;
   background-color: lightblue;
 }
 
 .info {
+  color: black;
   background-color: #efefef;
 }
 
@@ -551,23 +556,32 @@ footer span {
 @media (prefers-color-scheme: dark) {
   header {
     background-color: black;
-    box-shadow: 0px 0px 6px 5px #121212;
-  border-bottom: 1px solid #222;
+    box-shadow: 0px 0px 1em #1c1c1c;
+    border-bottom: 1px solid #222;
   }
 
   body {
-  background-color: #333;
-  color: #ddd;
+    background-color: #262626;
+    color: #ddd;
   }
 
   section {
-    background-color: #111;
+    background-color: #343434;
+	color: #ddd;
     box-shadow: 0 0 .5em #121212;
   }
 
   footer a, footer a:visited {
     color: #ddd;
     color: lightblue;
+  }
+  
+  a:hover {
+	color: #fff;
+  }
+
+  a, a:visited {
+    color: #ccc;
   }
 
   th {
