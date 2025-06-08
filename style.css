@@ -16,6 +16,7 @@ body {
 main {
   margin: 0;
   padding: 1em;
+  flex-grow: 1;
 }
 
 section {
@@ -457,6 +458,7 @@ aside ul li a:hover {
 
 footer {
   text-align: center;
+  padding: .5em;
 }
 
 #layout {
