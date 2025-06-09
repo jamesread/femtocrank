@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 	<head>
 		<title>Bright and Simple theme</title>
+
+		<meta charset = "UTF-8">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 		<link rel = "stylesheet" type = "text/css" href = "style.css" />
+		<link rel = "stylesheet" type = "text/css" href = "dark.css" media = "none" id = "dark-theme" />
 	</head>
 
 	<body>
 		<header class = "show">
-			<h1 class = "show">Bright &amp; Simple Theme</h1>
+			<div class = "logo-and-title">
+				<img src = "tests/logo.png" alt = "SimpleApp Logo" class = "logo">
+				<h1 class = "show">Bright &amp; Simple Theme</h1>
+			</div>
 
-			<nav>
+			<nav class = "fg1">
 				<ul role = "menubar">
-					<li><a href = "#">Home</a></li>
-					<li><a href = "#">About</a></li>
-					<li><a href = "#">Contact</a></li>
+					<li><a href = "index.html" class = "active">Demo page</a></li>
+					<li><a href = "tests/simple.html">Simple app</a></li>
+					<li><a href = "tests/sidebar-app.html">Sidebar app</a></li>
 					<li>
-						<span>Links</span>
+						<span>Dropdown</span>
 						<div>
 							<ul>
 								<li><a href = "#">foo</a></li>
@@ -102,20 +109,48 @@ function foo() {
 					<label for = "name">Name</label>
 					<input type = "text" id = "name" name = "name" />
 
-					<label for = "email">Email</label>
-					<input type = "email" id = "email" name = "email" />
+					<span class = "fake-label">Role</span>
+					<div class = "radio-group">
+						<label>
+							<input type = "radio" name = "role" value = "sales" />
+							<span>Sales</span>
+						</label>
+						<label>
+							<input type = "radio" name = "role" value = "engineerig" />
+							<span>Engineering</span>
+						</label>
+
+						<label>
+							<input type = "radio" name = "role" value = "hr" />
+							<span>HR</span>
+						</label>
+					</div>
+
+					<label for = "salary">Salary</label>
+					<select id = "salary" name = "salary">
+						<option value = "0">Select a salary</option>
+						<option value = "10000">£10,000</option>
+						<option value = "20000">£20,000</option>
+						<option value = "30000">£30,000</option>
+						<option value = "40000">£40,000</option>
+						<option value = "50000">£50,000</option>
+					</select>
 
 					<fieldset>
 						<button type = "submit">Submit</button>
 
-						<button>Save</button>
-
 						<button type = "cancel">Cancel</button>
+						
+						<button type = "reset">Reset</button>
+						<button type = "submit" disabled>Disabled</button>
 					</fieldset>
 
 				</form>
 
-				</form>
+				<p>
+				<strong>Note:</strong> A more complete example can be found in the <a href = "tests/simple.html">SimpleApp</a> demo.
+				</p>
+
 			</section>
 
 			<section>
@@ -149,7 +184,7 @@ function foo() {
 
 				<ul role = "menubar">
 					<li>
-						<span>Menu 1</span>
+						<span class = "submenu">Menu 1</span>
 						<div>
 							<ul>
 								<li><a href = "#">One</a></li>
@@ -159,7 +194,7 @@ function foo() {
 						</div>
 					</li>
 					<li>
-						<span>Menu 2</span>
+						<span class = "submenu">Menu 2</span>
 						<div>
 							<ul>
 								<li><a href = "#">One</a></li>
@@ -198,6 +233,8 @@ function foo() {
 			<p>This is the footer.</p>
 		</footer>
 	<script src = "annotate.js"></script>
+	<script src = "theme-switcher.js"></script>
 	</body>
 </html>
+
 

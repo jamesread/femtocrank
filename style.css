@@ -13,6 +13,10 @@ body {
   color: rgb(51, 65, 85);
 }
 
+a, a:visited { 
+  color: blue;
+}
+
 main {
   margin: 0;
   padding: 1em;
@@ -55,12 +59,18 @@ header img.logo {
   padding: .5em;
 }
 
+header p {
+  margin: 0;
+}
+
 .icon {
   font-size: 2em;
 }
 
-header p {
-  margin: 0;
+.logo-and-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 h1 {
@@ -103,10 +113,14 @@ nav li a:hover {
 }
 
 pre {
-  background-color: beige;
-  padding: .5em;
+  background-color: #f0f0f0;
+  padding: 1em;
   border-radius: .4em;
+  overflow-x: auto;
+  font-family: monospace;
+  white-space: pre-wrap; /* Allows wrapping of long lines */
   text-align: left;
+  margin-bottom: 0;
 }
 
 .br {
@@ -199,7 +213,37 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #569d56;
+  background-color: #3a6f3a;
+}
+
+button:disabled {
+  background-color: #6e6e6e;
+  color: #999;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background-color: #6e6e6e;
+}
+
+button[type="reset"] {
+  background-color: #d9534f;
+  color: white;
+  border: 0;
+}
+
+button[type="reset"]:hover {
+  background-color: #c9302c;
+}
+
+button[type="cancel"] {
+  background-color: #c7872c;
+  color: white;
+  border: 0;
+}
+
+button[type="cancel"]:hover {
+  background-color: #b77a2c;
 }
 
 .subtle {
@@ -215,15 +259,16 @@ button[type="submit"]:hover {
 form {
   display: grid;
   gap: 1em;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: minmax(0, max-content) minmax(0, 600px);
   grid-template-rows: auto;
   flex-direction: column;
   border-radius: .4em;
-  align-items: center;
+  align-items: baseline;
 }
 
-label {
+label, span.fake-label {
   font-weight: bold;
+  cursor: pointer;
 }
 
 select {
@@ -266,6 +311,68 @@ fieldset {
   align-items: start;
 }
 
+label:has(input[type="checkbox"]) {
+  border-radius: .4em;
+  margin-right: .5em;
+}
+
+label:has(input[type="checkbox"]), label:has(input[type="radio"]) {
+  align-items: center;
+  gap: .5em;
+  cursor: pointer;
+  padding: .5em;
+  user-select: none;
+}
+
+label:has(input[type="checkbox"]):hover, label:has(input[type="radio"]):hover {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+label:has(input:checked) {
+  background-color: #488448;
+  color: white;
+}
+
+label:has(input:checked):hover {
+  background-color: #3a6f3a;
+  color: white;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: .4em;
+}
+
+.radio-group input[type="radio"] {
+  border-radius: .4em;
+}
+
+.radio-group label {
+  background-color: white;
+  padding: .5em;
+  cursor: pointer;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.radio-group label:hover {
+  background-color: #f0f0f0;
+  color: white;
+}
+
+.radio-group label:first-child {
+  border-radius: .4em 0 0 .4em;
+}
+
+.radio-group label:last-child {
+  border-radius: 0 .4em .4em 0;
+}
+
 .grid {
   display: grid;
   gap: 1em;
@@ -283,6 +390,10 @@ fieldset {
   padding: 1em;
   border-radius: .4em;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid section {
+  margin-bottom: 0;
 }
 
 .gc-xl {
@@ -342,14 +453,18 @@ ul.noListStyle {
   margin: 0;
 }
 
-ul[role=menubar] {
+ul[role="menubar"] {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-[role=menubar] li {
+ul[role="menubar"] li {
   display: inline-block;
+}
+
+ul[role="menubar"] li span.submenu  {
+  text-decoration: dotted underline;
 }
 
 ul[role=menubar] li div {
@@ -444,6 +559,11 @@ aside.shown {
   z-index: 0;
 }
 
+aside a, aside a:visited {
+  text-decoration: none;
+  color: #0a0a89;
+}
+
 aside ul {
   list-style: none;
   padding: 0;
@@ -451,7 +571,6 @@ aside ul {
 
 aside ul li a {
   text-decoration: none;
-  color: black;
   display: block;
   padding: .4em;
   padding: .4em 1em;
@@ -504,6 +623,8 @@ footer span {
   cursor: pointer;
   border-right: 1px solid #333;
   background-color: #444;
+  display: flex;
+  flex-direction: row;
 }
 
 #sidebar-button:hover {
@@ -512,6 +633,10 @@ footer span {
 
 #sidebar-button .menu-icon {
   padding: .5em;
+}
+
+#sidebar-button .logo-and-title {
+  flex-grow: 1;
 }
 
 .vh {
@@ -551,50 +676,6 @@ footer span {
 
 .flex-spacer {
   flex-grow: 1;
-}
-
-@media (prefers-color-scheme: dark) {
-  header {
-    background-color: black;
-    box-shadow: 0px 0px 1em #1c1c1c;
-    border-bottom: 1px solid #222;
-  }
-
-  body {
-    background-color: #262626;
-    color: #ddd;
-  }
-
-  section {
-    background-color: #343434;
-	color: #ddd;
-    box-shadow: 0 0 .5em #121212;
-  }
-
-  footer a, footer a:visited {
-    color: #ddd;
-    color: lightblue;
-  }
-  
-  a:hover {
-	color: #fff;
-  }
-
-  a, a:visited {
-    color: #ccc;
-  }
-
-  th {
-	background-color: #333;
-  }
-
-  table, th, td {
-	border: 1px solid #707079;
-  }
-  
-  footer span {
-	background-color: #444;	
-  }
 }
 
 @media (max-width: 600px) {

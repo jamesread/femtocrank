@@ -1,60 +1,134 @@
 <!DOCTYPE html>
 
-<head>
-	<title>SimpleApp</title>
+<html lang="en">
+	<head>
+		<title>SimpleApp</title>
 
-	<link rel="stylesheet" type="text/css" href="../style.css">
+		<meta charset = "UTF-8">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<link rel = "stylesheet" type = "text/css" href = "../dark.css" media = "none" id = "dark-theme" />
 
-<body>
-	<header>
-		<img src = "./logo.png" alt = "SimpleApp Logo" class = "logo">
-		<h1 class = "fg1">SimpleApp</h1>
-		<div>
-			<p class = "subtle">Next page refresh:</p>
-			<p><progress id = "next-update" value = "0" max = "30" title = "Time until next update"></progress></p>
-		</div>
-		<div id = "last-updated-container">
-			<p class = "subtle">Last result:</p>
-			<p id = "last-updated" class = "critical">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+		<header>
+			<div class = "logo-and-title">
+				<img src = "./logo.png" alt = "SimpleApp Logo" class = "logo">
+				<h1>SimpleApp</h1>
+			</div>
+			<nav class = "fg1">
+				<ul role = "menubar">
+					<li><a href = "../index.html" class = "active">Demo home</a></li>
+					<li>
+						<span>Dropdown</span>
+						<div>
+							<ul>
+								<li><a href = "#">foo</a></li>
+								<li><a href = "#">bar</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div>
+				<p class = "subtle">Next page refresh:</p>
+				<p><progress id = "next-update" value = "0" max = "30" title = "Time until next update"></progress></p>
+			</div>
+			<div id = "last-updated-container">
+				<p class = "subtle">Last result:</p>
+				<p id = "last-updated" class = "critical">
 				Never updated
-			</p>
-		</div>
-		<a href = "https://github.com/jamesread/uncomplicated-alert-receiver" target = "_blank" class = "aside icon">
-			&#9829;
-		</a>
-	</header>
+				</p>
+			</div>
+			<a href = "https://github.com/jamesread/uncomplicated-alert-receiver" target = "_blank" class = "aside icon">
+				&#9829;
+			</a>
+		</header>
 
-	<main>
-		<section id = "alert-container">
-			This is a test.
-		</section>
+		<main>
+			<section id = "alert-container">
+				This is a test.
+			</section>
 
-		<section class = "small">
-			<h2>Form</h2>
+			<section class = "small">
+				<h2>Forms</h2>
+
+				<p>This is a form.</p>
+
+				<form>
+					<label for = "name">Name</label>
+					<input type = "text" id = "name" name = "name" />
+
+					<span class = "fake-label">Role</span>
+					<div class = "radio-group">
+						<label>
+							<input type = "radio" name = "role" value = "sales" />
+							<span>Sales</span>
+						</label>
+						<label>
+							<input type = "radio" name = "role" value = "engineerig" />
+							<span>Engineering</span>
+						</label>
+
+						<label>
+							<input type = "radio" name = "role" value = "hr" />
+							<span>HR</span>
+						</label>
+					</div>
+
+					<label for = "salary">Salary</label>
+					<select id = "salary" name = "salary">
+						<option value = "0">Select a salary</option>
+						<option value = "10000">£10,000</option>
+						<option value = "20000">£20,000</option>
+						<option value = "30000">£30,000</option>
+						<option value = "40000">£40,000</option>
+						<option value = "50000">£50,000</option>
+					</select>
+
+					<label for = "email">Email</label>
+					<input type = "email" id = "email" name = "email" />
+
+					<span class = "fake-label">
+						Newsletters
+					</span>
+
+					<div>
+						<label>
+							<input type = "checkbox" id = "newsletter1" name = "newsletter1" />
+							<span>Newsletter 1</span>
+						</label>
+
+						<label>
+							<input type = "checkbox" id = "newsletter2" name = "newsletter2" />
+							<span>Newsletter 2</span>
+						</label>
+					</div>
+
+					<label for = "comments">Comments</label>
+					<textarea id = "comments" name = "comments"></textarea>
+
+					<fieldset>
+						<button type = "submit">Submit</button>
+
+						<button type = "cancel">Cancel</button>
+
+						<button type = "reset">Reset</button>
+						<button type = "submit" disabled>Disabled</button>
+					</fieldset>
+
+				</form>
+			</section>
+		</main>
+
+		<footer>
 			<p>
-				This is a simple form that you can use to test the functionality of the app.
-				Fill in your name and click "Save" to see how the app handles form submissions.
+			<span><a href = "https://github.com/jamesread">jamesread on GitHub</a></span>
+			<span id = "current-version">Version 1337</span>
 			</p>
-			<form>
-
-					<label for = "name">Name:</label>
-					<input type = "text" id = "name" name = "name" placeholder = "Enter your name" required>
-				
-					<label for = "email">Email:</label>
-					<input type = "email" id = "email" name = "email" placeholder = "Enter your email" required>
-
-				<button type = "submit">Save</button>
-			</form>
-		</section>
-	</main>
-
-	<footer>
-		<p>
-			<a href = "https://github.com/jamesread/uncomplicated-alert-receiver">UAR on GitHub</a>
-			<span id = "current-version">???</span>
-		</p>
-	</footer>
-</body>
+		</footer>
+		<script src = "../theme-switcher.js" defer></script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "brightandsimpletheme",
+  "version": "1.0.0",
+  "description": "Blog post: [Why do I use the same colors for everything?](https://blog.jread.com/posts/why-do-i-use-dee3e7/)",
+  "main": "annotate.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesread/BrightAndSimpleTheme.git"
+  },
+  "author": "",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jamesread/BrightAndSimpleTheme/issues"
+  },
+  "homepage": "https://github.com/jamesread/BrightAndSimpleTheme#readme",
+  "dependencies": {
+    "vite": "^6.3.5"
+  }
+}

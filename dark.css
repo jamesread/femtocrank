@@ -1,0 +1,136 @@
+header {
+  background-color: black;
+  box-shadow: 0px 0px 1em #1c1c1c;
+  border-bottom: 1px solid #222;
+}
+
+body {
+  background-color: #262626;
+  color: #ddd;
+}
+
+section {
+  background-color: #343434;
+  color: #ddd;
+  box-shadow: 0 0 .5em #121212;
+}
+
+footer a, footer a:visited {
+  color: lightblue;
+}
+
+header ul[role="menubar"] a, header ul[role="menubar"] a:visited {
+  background-color: black;
+}
+
+header ul[role="menubar"] a:hover {
+  background-color: #555;
+}
+
+div > ul > li > a {
+  background-color: black;
+  color: white;
+}
+
+ul[role="menubar"] div ul a:hover {
+  background-color: #555;
+  color: white;
+}
+
+ul[role="menubar"] li:hover {
+  background-color: #555;
+}
+
+label:has(input[type="checkbox"]):hover, label:has(input[type="radio"]):hover {
+  background-color: #555;
+  color: white;
+}
+
+label:has(input:checked) {
+  background-color: #488448;
+  color: white;
+}
+
+label:has(input:checked):hover {
+  background-color: #3a6f3a;
+  color: white;
+}
+
+
+a:hover {
+  color: lightblue;
+}
+
+a, a:visited {
+  color: lightblue;
+}
+
+th {
+  background-color: #444;
+}
+
+table, th, td {
+  border-color: #707079 !important;
+}
+
+footer span {
+  background-color: #444;  
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  background-color: #4e4e4e;
+  color: #ddd;
+  border-color: #6e6e6e;
+}
+
+select {
+  background-color: #4e4e4e;
+  color: #ddd;
+  border-color: #6e6e6e;
+}
+
+textarea {
+  background-color: #4e4e4e;
+  color: #ddd;
+  border-color: #6e6e6e;
+}
+
+.grid-boxed {
+  background-color: #444;
+}
+
+.grid-boxed .stat-display { 
+  background-color: #333;
+  border-color: #707079 !important;
+}
+
+.inline-notification {
+  box-shadow: 0 0 .4em #121212;
+}
+
+pre {
+  background-color: #3a3a3a;
+  color: #ddd;
+  border: 1px solid #707079;
+}
+
+.radio-group {
+  border-color: #707079;
+}
+
+.radio-group label {
+  background-color: #555;
+}
+
+aside {
+  background-color: #444;
+  box-shadow: 0 0 .5em #121212;
+}
+
+aside ul li a:hover {
+  background-color: #555;
+}
+
+#sidebar-button {
+  background-color: black;
+}
