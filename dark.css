@@ -56,12 +56,7 @@ label:has(input:checked):hover {
   color: white;
 }
 
-
-a:hover {
-  color: lightblue;
-}
-
-a, a:visited {
+a, a:hover, a:visited, aside a, aside a:visited {
   color: lightblue;
 }
 
