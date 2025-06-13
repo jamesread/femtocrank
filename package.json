@@ -1,5 +1,5 @@
 {
-  "name": "brightandsimpletheme",
+  "name": "FemtoCrank",
   "version": "1.0.0",
   "description": "Blog post: [Why do I use the same colors for everything?](https://blog.jread.com/posts/why-do-i-use-dee3e7/)",
   "main": "annotate.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamesread/BrightAndSimpleTheme.git"
+    "url": "git+https://github.com/jamesread/FemtoCrank.git"
   },
   "author": "",
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/jamesread/BrightAndSimpleTheme/issues"
+    "url": "https://github.com/jamesread/FemtoCrank/issues"
   },
-  "homepage": "https://github.com/jamesread/BrightAndSimpleTheme#readme",
+  "homepage": "https://github.com/jamesread/FemtoCrank#readme",
   "dependencies": {
     "vite": "^6.3.5"
   }
