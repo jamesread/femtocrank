@@ -1,6 +1,6 @@
 {
   "name": "femtocrank",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Blog post: [Why do I use the same colors for everything?](https://blog.jread.com/posts/why-do-i-use-dee3e7/)",
   "main": "annotate.js",
   "directories": {
