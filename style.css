@@ -236,13 +236,13 @@ button[type="reset"]:hover, button.bad:hover {
   background-color: #c9302c;
 }
 
-button[type="cancel"] {
+button[type="cancel"], button.warning {
   background-color: #c7872c;
   color: white;
   border: 0;
 }
 
-button[type="cancel"]:hover {
+button[type="cancel"]:hover, button.warning:hover {
   background-color: #b77a2c;
 }
 
