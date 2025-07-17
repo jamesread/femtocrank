@@ -539,10 +539,9 @@ aside {
   position: fixed;
   background-color: #fff;
   box-shadow: 0 0 .5em #9a9a9a;
-  transition: left .5s, visibility .5s, z-index .5s step-start;
+  transition: left .5s, visibility .5s;
   min-width: 14em;
   width: 14em;
-  z-index: -1;
   visibility: hidden;
   left: -14em;
   height: 100vh;
@@ -556,7 +555,6 @@ aside.stuck {
 aside.shown {
   visibility: visible;
   left: 0;
-  z-index: 0;
 }
 
 aside a, aside a:visited {
