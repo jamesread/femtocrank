@@ -31,6 +31,19 @@ section {
   box-shadow: 0 0 .5em #9a9a9a;
 }
 
+section.small {
+  max-width: 320px;
+  border-radius: .8em;
+}
+
+section.small form {
+	grid-template-columns: 1fr;
+}
+
+section.small fieldset {
+  grid-column: span 1;
+}
+
 header {
   background-color: #444;
   color: white;
@@ -180,69 +193,84 @@ pre {
   background-color: wheat !important;
 }
 
+.notification {
+  padding: 0.5em;
+  border-radius: .4em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.notification a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .inline-notification {
   border-radius: .4em;
   padding: .4em;
   box-shadow: 0 0 .4em #cacaca;
 }
 
-button {
+button, .button {
   padding-top: .4em;
   padding-bottom: .4em;
   padding-left: 1em;
   padding-right: 1em;
   border-radius: .4em;
-  background-color: #fff;
+  background-color: transparent;
   font-weight: bold;
   font-family: sans-serif;
   color: black;
   border: 1px solid #ccc;
   cursor: pointer;
+  text-align: center;
   font-size: 1em;
   font-family: sans-serif;
+  text-decoration: none;
 }
 
-button:hover {
+button:hover, .button:hover {
   background-color: #e9e9e9;
 }
 
-button[type="submit"], button.good {
+button[type="submit"], button.good, .button.good {
   background-color: #488448;
   color: white;
   border: 0;
 }
 
-button[type="submit"]:hover, button.good:hover {
+button[type="submit"]:hover, button.good:hover, .button.good:hover {
   background-color: #3a6f3a;
 }
 
-button:disabled {
+button:disabled, .button:disabled {
   background-color: #6e6e6e;
   color: #999;
   cursor: not-allowed;
 }
 
-button:disabled:hover {
+button:disabled:hover, .button:disabled:hover {
   background-color: #6e6e6e;
 }
 
-button[type="reset"], button.bad {
+button[type="reset"], button.bad, .button.bad {
   background-color: #d9534f;
   color: white;
   border: 0;
 }
 
-button[type="reset"]:hover, button.bad:hover {
+button[type="reset"]:hover, button.bad:hover, .button.bad:hover {
   background-color: #c9302c;
 }
 
-button[type="cancel"], button.warning {
+button[type="cancel"], button.warning, .button.warning {
   background-color: #c7872c;
   color: white;
   border: 0;
 }
 
-button[type="cancel"]:hover, button.warning:hover {
+button[type="cancel"]:hover, button.warning:hover, .button.warning:hover {
   background-color: #b77a2c;
 }
 
@@ -293,11 +321,24 @@ textarea[readonly] {
   font-style: italic;
 }
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="datetime-local"] {
   padding: 1em;
   border-radius: .4em;
   border: 1px solid #ccc;
   font-family: sans-serif;
+}
+
+/**
+input:invalid {
+	border: 1px solid red;
+	box-shadow: 0 0 5px red;
+}
+**/
+
+input:disabled {
+  cursor: not-allowed !important;
+  background-color: #6e6e6e;
+  color: #999;
 }
 
 fieldset {
@@ -431,6 +472,11 @@ table, th, td {
   border: 0;
   border-bottom: 1px solid #ccc;
   border-collapse: collapse;
+}
+
+table.row-hover tr:hover td {
+  background-color: beige;
+  color: black;
 }
 
 td,th  {
@@ -637,6 +683,17 @@ footer span {
   flex-grow: 1;
 }
 
+dialog {
+  border-radius: .4em;
+  padding: 1em;
+  max-width: 600px;
+  margin: auto;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .vh {
   visibility: hidden;
 }
@@ -703,5 +760,17 @@ footer span {
 	margin-top: 1em;
 	border-radius: 0;
 	padding: .75em;
+  }
+
+  .hide-small {
+	display: none;
+  }
+
+  form {
+	grid-template-columns: 1fr;
+  }
+
+  fieldset {
+    grid-column: span 1;
   }
 }
