@@ -17,6 +17,16 @@ a, a:visited {
   color: blue;
 }
 
+a.active {
+	text-decoration: underline;
+}
+
+ul {
+	list-style: '\25b9    ';
+	list-style-position: outside;
+	padding-left: 1.4em;
+}
+
 main {
   margin: 0;
   padding: 1em;
@@ -31,6 +41,11 @@ section {
   box-shadow: 0 0 .5em #9a9a9a;
 }
 
+section.transparent {
+	background-color: transparent;
+	box-shadow: none;
+}
+
 section.small {
   max-width: 320px;
   border-radius: .8em;
@@ -42,6 +57,34 @@ section.small form {
 
 section.small fieldset {
   grid-column: span 1;
+}
+
+section.with-header-and-content {
+  padding: 0;
+}
+
+section .section-header {
+	background-color: #f8f9fa;
+	border-radius: .4em;
+	padding-left: 1em;
+	padding-right: .4em;
+	padding-top: .4em;
+	padding-bottom: .4em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1em;
+}
+
+section .section-header h2 {
+	margin: 0;
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+section .section-content {
+	padding: 1em;
 }
 
 header {
@@ -145,13 +188,24 @@ pre {
 }
 
 .annotation {
-  font-size: 9pt;
-  color: white;
-  background-color: black;
   border-radius: .4em;
-  display: inline-block;
   padding: .4em;
   margin: .4em;
+  margin-top: .2em;
+  margin-right: .2em;
+  display: inline-block;
+  color: #666;
+  background-color: #f8f9fa;
+}
+
+.annotation-key {
+	border-radius: .4em 0 0 .4em;
+	padding: .4em;
+}
+
+.annotation-val {
+	border-radius: 0 .4em .4em 0;
+	padding: .4em;
 }
 
 .critical, .error, .bad {
@@ -488,6 +542,10 @@ th {
   text-align: left;
 }
 
+th.small {
+  width: 10%;
+}
+
 td.uneditable {
   background-color: #f0f0f0;
   font-weight: bold;
@@ -646,6 +704,7 @@ footer span {
   border-radius: .5em;
   background-color: #c6d0d7;
   display: inline-block;
+  margin-right: 1em;
 }
 
 .a11yhidden {
@@ -731,6 +790,32 @@ dialog::backdrop {
 
 .flex-spacer {
   flex-grow: 1;
+}
+
+dl {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	gap: 0;
+}
+
+dt:after {
+	content: ':';
+}
+
+dt {
+	font-weight: bold;
+	border-right: 1px solid #666;
+	text-align: right;
+	padding: 0.6em;
+}
+
+dd {
+	margin-left: 0;
+	padding: 0.6em;
+}
+
+a svg, button svg, h2 svg {
+	vertical-align: bottom;
 }
 
 @media (max-width: 600px) {
