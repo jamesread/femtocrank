@@ -1,4 +1,4 @@
-# femtocrank
+# femtocrank v2
 
 A simple CSS theme with high accessibility and zero dependencies.
 
