@@ -48,8 +48,20 @@
 		</header>
 
 		<main>
-			<section id = "alert-container">
-				This is a test.
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Welcome to SimpleApp</h2>
+
+					<div role = "toolbar">
+						<a class = "button neutral" href = "#">Test</a>
+					</div>
+				</div>
+				<div class = "section-content">
+					<p>
+						SimpleApp is a demonstration of a simple web application that uses HTML, CSS, and JavaScript.
+						It includes various UI components such as forms, buttons, and navigation.
+					</p>
+				</div>
 			</section>
 
 			<section>
@@ -90,6 +102,18 @@
 
 					<label for = "email">Email</label>
 					<input type = "email" id = "email" name = "email" />
+
+					<label>Is Administrator?</label>
+					<input type = "checkbox" id = "is-admin" name = "is-admin" />
+
+					<label>Website</label>
+					<input type = "url" id = "website" name = "website" placeholder = "https://example.com" />
+
+					<label>Favourite Colour</label>
+					<input type = "color" id = "favourite-colour" name = "favourite-colour" value = "#dee3e7" />
+
+					<label>Favourite Number</label>
+					<input type = "number" id = "favourite-number" name = "favourite-number" min = "0" max = "100" step = "1" value = "50" />
 
 					<span class = "fake-label">
 						Newsletters

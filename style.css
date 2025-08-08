@@ -66,6 +66,9 @@ section.with-header-and-content {
 section .section-header {
 	background-color: #f8f9fa;
 	border-radius: .4em;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom: 1px solid #d6d6d6;
 	padding-left: 1em;
 	padding-right: .4em;
 	padding-top: .4em;
@@ -83,8 +86,24 @@ section .section-header h2 {
 	padding-bottom: .5em;
 }
 
+section .section-header div[role="toolbar"] {
+  margin-bottom: 0;
+}
+
+section .section-header .button {
+  margin-bottom: 0;
+}
+
 section .section-content {
 	padding: 1em;
+}
+
+section .section-content *:first-child {
+	margin-top: 0;
+}
+
+section .section-content *:last-child {
+	margin-bottom: 0;
 }
 
 header {
@@ -169,7 +188,8 @@ nav li a:hover {
 }
 
 pre {
-  background-color: #f0f0f0;
+  background-color: #f8f9fa;
+  border: 1px solid #d6d6d6;
   padding: 1em;
   border-radius: .4em;
   overflow-x: auto;
@@ -266,7 +286,7 @@ pre {
   box-shadow: 0 0 .4em #cacaca;
 }
 
-button, .button {
+button, .button, .button:visited {
   padding-top: .4em;
   padding-bottom: .4em;
   padding-left: 1em;
@@ -375,11 +395,22 @@ textarea[readonly] {
   font-style: italic;
 }
 
-input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="datetime-local"] {
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="number"], 
+input[type="url"],
+input[type="datetime-local"] {
   padding: 1em;
   border-radius: .4em;
   border: 1px solid #ccc;
   font-family: sans-serif;
+}
+
+form input[type="checkbox"] {
+  justify-self: start;
+  padding: 0;
+  margin: 0;
 }
 
 /**

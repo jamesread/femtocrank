@@ -15,12 +15,17 @@ section {
   box-shadow: 0 0 .5em #121212;
 }
 
+section .section-header {
+  background-color: #3a3a3a;
+  border-bottom-color: #707079;
+}
+
 button, .button {
   color: #ddd;
   border: 1px solid #707079;
 }
 
-.button:hover, .button:hover {
+.button:hover, .button:hover, .button:visited {
   background-color: #555;
   color: white;
 }
@@ -88,7 +93,13 @@ footer span {
   background-color: #444;  
 }
 
-input[type="text"], input[type="email"], input[type="password"], input[type="datetime-local"] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="number"],
+input[type="color"],
+input[type="datetime-local"] {
   background-color: #4e4e4e;
   color: #ddd;
   border-color: #6e6e6e;
