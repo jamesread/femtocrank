@@ -40,8 +40,8 @@ a:hover {
 
         links.value = [];
         matched.forEach((record) => {
-            if (record.meta && record.meta.breadcrumb) {
-                record.meta.breadcrumb.forEach((item) => {
+            if (record.meta && record.meta.breadcrumbs) {
+                record.meta.breadcrumbs(route).forEach((item) => {
                     links.value.push({
                         name: item.name,
                         href: item.href || record.path || '/'
