@@ -52,29 +52,9 @@ import { PinIcon } from '@hugeicons/core-free-icons'
 
 const isOpen = ref(false)
 const isStuck = ref(false)
-const navigationLinks = ref([
-  {
-	id: 'actions',
-	title: 'Actions',
-	path: '/',
-	icon: DashboardSquare01Icon,
-  }
-])
+const navigationLinks = ref([])
 
-const supplementalLinks = ref([
-  {
-	id: 'logs',
-	title: 'Logs',
-	path: '/logs',
-	icon: LeftToRightListDashIcon,
-  },
-  {
-	id: 'diagnostics',
-	title: 'Diagnostics',
-	path: '/diagnostics',
-	icon: Wrench01Icon,
-  }
-])
+const supplementalLinks = ref([])
 
 const route = useRoute()
 
