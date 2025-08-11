@@ -62,6 +62,14 @@ function toggleStick() {
   isStuck.value = !isStuck.value
 }
 
+function stick() {
+  isStuck.value = true
+}
+
+function unstick() {
+  isStuck.value = false
+}
+
 function toggle() {
   isOpen.value = !isOpen.value
   isStuck.value = false
@@ -129,6 +137,9 @@ onMounted(() => {
 	get isOpen() { return isOpen.value },
 	set isOpen(val) { isOpen.value = val },
 	toggle,
+	toggleStick,
+	stick,
+	unstick,
 	open,
 	close,
 	addNavigationLink,
