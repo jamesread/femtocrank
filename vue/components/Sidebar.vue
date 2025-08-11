@@ -3,15 +3,10 @@
 		<div class = "flex-row">
 			<h2>Navigation</h2>
 			<div class = "fg1" />
-				<button
-						class="stick-toggle"
-						:aria-pressed="isStuck"
-						:title="isStuck ? 'Unstick sidebar' : 'Stick sidebar'"
-						@click="toggleStick"
-						>
-						<span v-if="isStuck">
-							<HugeiconsIcon :icon="Pin02Icon" width = "1em" height = "1em" />
-						</span>
+				<button class="stick-toggle" :aria-pressed="isStuck" :title="isStuck ? 'Unstick sidebar' : 'Stick sidebar'"	@click="toggleStick">
+					<span v-if="isStuck">
+						<HugeiconsIcon :icon="Pin02Icon" width = "1em" height = "1em" />
+					</span>
 					<span v-else>
 						<HugeiconsIcon :icon="PinIcon" width = "1em" height = "1em" />
 					</span>
@@ -132,31 +127,13 @@ function getSupplementalLinks() {
   return [...supplementalLinks.value]
 }
 
-onMounted(() => {
-  window.sidebar = {
-	get isOpen() { return isOpen.value },
-	set isOpen(val) { isOpen.value = val },
-	toggle,
-	toggleStick,
-	stick,
-	unstick,
-	open,
-	close,
-	addNavigationLink,
-	addSupplementalLink,
-	removeNavigationLink,
-	removeSupplementalLink,
-	clearNavigationLinks,
-	clearSupplementalLinks,
-	getNavigationLinks,
-	getSupplementalLinks
-  }
-})
-
 defineExpose({
   isOpen,
   navigationLinks,
   supplementalLinks,
+  stick,
+  unstick,
+  toggleStick,
   toggle,
   open,
   close,
@@ -210,14 +187,14 @@ li {
 	margin-top: 1rem;
 }
 
-	  @media (max-width: 768px) {
-		  .sidebar {
-			  width: 100%;
-			  left: -100%;
-		  }
+			  @media (max-width: 768px) {
+				  .sidebar {
+					  width: 100%;
+					  left: -100%;
+				  }
 
-		  .sidebar.shown {
-			  left: 0;
-		  }
-	  }
+				  .sidebar.shown {
+					  left: 0;
+				  }
+			  }
 </style> 
