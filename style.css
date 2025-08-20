@@ -214,18 +214,22 @@ pre {
   margin-top: .2em;
   margin-right: .2em;
   display: inline-block;
-  color: #666;
   background-color: #f8f9fa;
+  color: black;
 }
 
 .annotation-key {
 	border-radius: .4em 0 0 .4em;
 	padding: .4em;
+	display: inline-block;
+	color: #666;
 }
 
 .annotation-val {
 	border-radius: 0 .4em .4em 0;
 	padding: .4em;
+	display: inline-block;
+	color: black;
 }
 
 .critical, .error, .bad {

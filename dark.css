@@ -156,3 +156,13 @@ aside ul li a:hover {
 #sidebar-button {
   background-color: black;
 }
+
+.annotation {
+  background-color: #3a3a3a;
+  color: #ddd;
+  border-color: #707079;
+}
+
+.annotation-val {
+  color: #ddd;
+}
