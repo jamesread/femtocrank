@@ -94,16 +94,16 @@ section .section-header .button {
   margin-bottom: 0;
 }
 
-section .section-content {
-	padding: 1em;
-}
-
 section .section-content *:first-child {
 	margin-top: 0;
 }
 
 section .section-content *:last-child {
 	margin-bottom: 0;
+}
+
+.padding {
+  padding: 1em;
 }
 
 header {
