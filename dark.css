@@ -16,8 +16,8 @@ section {
 }
 
 section .section-header {
-  background-color: #3a3a3a;
-  border-bottom-color: #707079;
+  background-color: #343434;
+  border-bottom-color: #595959;
 }
 
 button, .button {
@@ -145,7 +145,7 @@ pre {
 }
 
 aside {
-  background-color: #444;
+  background-color: #000;
   box-shadow: 0 0 .5em #121212;
 }
 
