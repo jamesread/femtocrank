@@ -917,4 +917,24 @@ a svg, button svg, h2 svg {
     position: absolute;
 	width: 100%;
   }
+
+  dl {
+    display: grid;
+	grid-template-columns: 1fr;
+  }
+
+  dt {
+	text-align: left;
+	padding: 0;
+	border-right: none;
+  }
+
+  dd {
+	padding-left: 0;
+	margin-bottom: .8em;
+  }
+
+  dt:after {
+  }
+
 }
