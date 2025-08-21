@@ -689,6 +689,7 @@ aside {
   visibility: hidden;
   left: -14em;
   height: 100vh;
+  z-index: 2; /* So the sidebar box-shadow is above the main content */
 }
 
 aside.stuck { 
@@ -897,5 +898,10 @@ a svg, button svg, h2 svg {
 
   fieldset {
     grid-column: span 1;
+  }
+
+  aside.stuck {
+    position: absolute;
+	width: 100%;
   }
 }
