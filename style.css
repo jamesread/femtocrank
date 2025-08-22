@@ -866,6 +866,7 @@ dt {
 dd {
 	margin-left: 0;
 	padding: 0.6em;
+	word-break: break-word;
 }
 
 a svg, button svg, h2 svg {
