@@ -133,7 +133,7 @@ header {
   border-bottom: 1px solid #3f3f3f;
   align-items: center;
   gap: 1em;
-  z-index: 1; /* So the header box-shadow shows over the top of the sidebar */
+  z-index: 3; /* So the header box-shadow shows over the top of the sidebar */
   min-height: 3em; /* .logo 2em + .5em padding */
 }
 
