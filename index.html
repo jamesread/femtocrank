@@ -11,7 +11,7 @@
 		<link rel = "shortcut icon" href = "tests/logo.png" type = "image/png" />
 	
 		<link rel = "stylesheet" type = "text/css" href = "style.css" />
-		<link rel = "stylesheet" type = "text/css" href = "dark.css" media = "none" id = "dark-theme" />
+		<link rel = "stylesheet" type = "text/css" href = "dark.css" />
 	</head>
 
 	<body>
@@ -28,7 +28,7 @@
 					<li><a href = "tests/sidebar-app.html">Sidebar app</a></li>
 					<li><a href = "tests/login.html">Login</a></li>
 					<li>
-						<span>Dropdown</span>
+						<span><a href="#">Dropdown</a></span>
 						<div>
 							<ul>
 								<li><a href = "#">foo</a></li>
@@ -232,7 +232,7 @@ function foo() {
 
 				<ul role = "menubar">
 					<li>
-						<span class = "submenu">Menu 1</span>
+						<span class = "submenu"><a href="#">Menu 1</a></span>
 						<div>
 							<ul>
 								<li><a href = "#">One</a></li>
@@ -242,7 +242,7 @@ function foo() {
 						</div>
 					</li>
 					<li>
-						<span class = "submenu">Menu 2</span>
+						<span class = "submenu"><a href="#">Menu 2</a></span>
 						<div>
 							<ul>
 								<li><a href = "#">One</a></li>
@@ -260,7 +260,7 @@ function foo() {
 				
 				<p>This section shows tables.</p>
 
-				<table>
+				<table class = "row-hover">
 					<thead>
 						<th>ID</th>
 						<th>Forename</th>
@@ -281,7 +281,6 @@ function foo() {
 			<span>This is the footer.</span>
 		</footer>
 	<script src = "annotate.js"></script>
-	<script src = "theme-switcher.js"></script>
 	</body>
 </html>
 

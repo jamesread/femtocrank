@@ -2,6 +2,8 @@
 
 :root {
   --karma-good: lightgreen;
+  --border-color: #d7d7d7;
+  --standout-bg-color: #f8f9fa;
 }
 
 html, body {
@@ -73,7 +75,7 @@ section .section-header {
 	border-radius: .4em;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
-	border-bottom: 1px solid #d6d6d6;
+	border-bottom: 1px solid var(--border-color);
 	padding-left: 1em;
 	padding-right: .4em;
 	padding-top: .4em;
@@ -103,7 +105,7 @@ section .section-subheader {
     padding-left: 1em;
 	padding-top: .4em;
 	padding-bottom: .4em;
-	border-bottom: 1px solid #d6d6d6;
+	border-bottom: 1px solid var(--border-color);
 }
 
 section .section-subheader h3 {
@@ -201,8 +203,8 @@ header nav a {
 }
 
 pre {
-  background-color: #f8f9fa;
-  border: 1px solid #d6d6d6;
+  background-color: var(--standout-bg-color);
+  border: 1px solid var(--border-color);
   padding: 1em;
   border-radius: .4em;
   overflow-x: auto;
@@ -222,6 +224,7 @@ pre {
 
 .annotation {
   border-radius: .4em;
+  border: 1px solid var(--border-color);
   padding: .4em;
   margin: .4em;
   margin-top: .2em;
@@ -313,7 +316,7 @@ button, .button, .button:visited {
   font-weight: bold;
   font-family: sans-serif;
   color: black;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   cursor: pointer;
   text-align: center;
   font-size: 1em;
@@ -398,7 +401,7 @@ label, span.fake-label {
 select {
   padding: 1em;
   border-radius: .4em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   font-family: sans-serif;
   background-color: white;
 }
@@ -406,7 +409,7 @@ select {
 textarea {
   padding: 1em;
   border-radius: .4em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   font-family: sans-serif;
   min-height: 6em;
 }
@@ -425,7 +428,7 @@ input[type="url"],
 input[type="datetime-local"] {
   padding: 1em;
   border-radius: .4em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   font-family: sans-serif;
 }
 
@@ -492,7 +495,7 @@ label:has(input:checked):hover {
   flex-direction: row;
   gap: 0;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: .4em;
 }
 
@@ -533,10 +536,7 @@ label:has(input:checked):hover {
 
 .grid-boxed {
   display: grid;
-  gap: 0;
-  background-color: #efefef;
-  padding: 1em;
-  border-radius: .4em;
+  gap: 1em;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -548,19 +548,24 @@ label:has(input:checked):hover {
   grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
 }
 
-.grid-boxed div {
-  border: 1px solid #ccc;
-  border-right: 0;
+.stat-display {
+  border: 1px solid var(--border-color);
+  background-color: var(--standout-bg-color);
   padding: 1em;
-  background-color: #fff;
-}
-
-.grid-boxed div:last-child {
-  border-right: 1px solid #ccc;
+  border-radius: .4em;
 }
 
 .stat-display span.subtle {
   display: block;
+}
+
+.tac {
+  text-align: center;
+}
+
+.blocktext {
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 div[role="toolbar"] {
@@ -577,7 +582,7 @@ table {
 
 table, th, td {
   border: 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border-color);
   border-collapse: collapse;
 }
 
@@ -634,11 +639,6 @@ ul[role=menubar] li:hover {
   background-color: beige;
 }
 
-header ul[role=menubar] li:hover {
-  background-color: #555;
-}
-
-
 ul[role=menubar] li span {
   cursor: pointer;
 }
@@ -647,6 +647,10 @@ ul[role=menubar] li:hover div {
   display: block;
   background-color: #fff;
   min-width: 12em;
+}
+
+ul[role=menubar] li {
+  border-radius: .5em;
 }
 
 header ul[role=menubar] li:hover ul {
@@ -858,7 +862,7 @@ dt:after {
 
 dt {
 	font-weight: bold;
-	border-right: 1px solid #666;
+	border-right: 1px solid var(--border-color);
 	text-align: right;
 	padding: 0.6em;
 }

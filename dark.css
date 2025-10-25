@@ -1,3 +1,11 @@
+@media (prefers-color-scheme: dark) {
+
+:root {
+  --border-color: #595959;
+  --hover-background-color: #1d345c;
+  --standout-bg-color: #1f1f1f;
+}
+
 header {
   background-color: black;
   box-shadow: 0px 0px 1em #1c1c1c;
@@ -17,16 +25,20 @@ section {
 
 section .section-header {
   background-color: #343434;
-  border-bottom-color: #595959;
+  border-bottom-color: var(--border-color);
+}
+
+section .section-subheader {
+  border-bottom-color: var(--border-color);
 }
 
 button, .button {
   color: #ddd;
-  border: 1px solid #707079;
+  border: 1px solid var(--border-color);
 }
 
 .button:hover, .button:hover, .button:visited {
-  background-color: #555;
+  background-color: var(--hover-background-color);
   color: white;
 }
 
@@ -39,7 +51,7 @@ header ul[role="menubar"] a, header ul[role="menubar"] a:visited {
 }
 
 header ul[role="menubar"] a:hover {
-  background-color: #555;
+  background-color: var(--hover-background-color);
 }
 
 div > ul > li > a {
@@ -48,16 +60,16 @@ div > ul > li > a {
 }
 
 ul[role="menubar"] div ul a:hover {
-  background-color: #555;
+  background-color: var(--hover-background-color);
   color: white;
 }
 
 ul[role="menubar"] li:hover {
-  background-color: #555;
+  background-color: var(--hover-background-color);
 }
 
 label:has(input[type="checkbox"]):hover, label:has(input[type="radio"]):hover {
-  background-color: #555;
+  background-color: var(--hover-background-color);
   color: white;
 }
 
@@ -80,11 +92,11 @@ th {
 }
 
 table, th, td {
-  border-color: #707079 !important;
+  border-color: var(--border-color) !important;
 }
 
 table.row-hover tr:hover td {
-  background-color: #1d345c;
+  background-color: var(--hover-background-color);
   color: white;
 }
 
@@ -102,28 +114,24 @@ input[type="color"],
 input[type="datetime-local"] {
   background-color: #4e4e4e;
   color: #ddd;
-  border-color: #6e6e6e;
+  border-color: var(--border-color);
 }
 
 select {
   background-color: #4e4e4e;
   color: #ddd;
-  border-color: #6e6e6e;
+  border-color: var(--border-color);
 }
 
 textarea {
   background-color: #4e4e4e;
   color: #ddd;
-  border-color: #6e6e6e;
-}
-
-.grid-boxed {
-  background-color: #444;
+  border-color: var(--border-color);
 }
 
 .grid-boxed .stat-display { 
-  background-color: #333;
-  border-color: #707079 !important;
+  background-color: var(--standout-bg-color);
+  border-color: var(--border-color) !important;
 }
 
 .inline-notification {
@@ -131,13 +139,13 @@ textarea {
 }
 
 pre {
-  background-color: #3a3a3a;
+  background-color: var(--standout-bg-color);
   color: #ddd;
-  border: 1px solid #707079;
+  border: 1px solid var(--border-color);
 }
 
 .radio-group {
-  border-color: #707079;
+  border-color: var(--border-color);
 }
 
 .radio-group label {
@@ -150,7 +158,11 @@ aside {
 }
 
 aside ul li a:hover {
-  background-color: #555;
+  background-color: var(--hover-background-color);
+}
+
+dt {
+  border-color: var(--border-color);
 }
 
 #sidebar-button {
@@ -158,11 +170,12 @@ aside ul li a:hover {
 }
 
 .annotation {
-  background-color: #3a3a3a;
+  background-color: var(--standout-bg-color);
   color: #ddd;
-  border-color: #707079;
+  border-color: var(--border-color);
 }
 
 .annotation-val {
   color: #ddd;
+}
 }
