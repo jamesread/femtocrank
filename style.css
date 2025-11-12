@@ -13,14 +13,14 @@
   --karma-info: #efefef;
   --karma-old: wheat;
 
-  --fg-good: mediumseagreen;
-  --fg-bad: rgb(206, 54, 54); /** Someone who picked the colors in the 90s chose really bad colors for red **/
-  --fg-warning: orange;
-  --fg-severe: rgb(191, 86, 86);
-  --fg-important: darkgoldenrod;
-  --fg-note: rgb(84, 144, 182);
-  --fg-info: darkgray;
-  --fg-old: darkolivegreen;
+  --karma-good-fg: mediumseagreen;
+  --karma-bad-fg: rgb(206, 54, 54); /** Someone who picked the colors in the 90s chose really bad colors for red **/
+  --karma-warning-fg: orange;
+  --karma-severe-fg: rgb(191, 86, 86);
+  --karma-important-fg: darkgoldenrod;
+  --karma-note-fg: rgb(84, 144, 182);
+  --karma-info-fg: darkgray;
+  --karma-old-fg: darkolivegreen;
 
   --border-color: #d7d7d7;
   --standout-bg-color: #f8f9fa;
@@ -315,46 +315,6 @@ header button:hover, header .button:hover {
 
 button:hover, .button:hover {
   background-color: #e9e9e9;
-}
-
-button[type="submit"], button.good, .button.good {
-  background-color: #488448;
-  color: white;
-  border: 0;
-}
-
-button[type="submit"]:hover, button.good:hover, .button.good:hover {
-  background-color: #3a6f3a;
-}
-
-button:disabled, .button:disabled {
-  background-color: #6e6e6e;
-  color: #999;
-  cursor: not-allowed;
-}
-
-button:disabled:hover, .button:disabled:hover {
-  background-color: #6e6e6e;
-}
-
-button[type="reset"], button.bad, .button.bad {
-  background-color: #d9534f;
-  color: white;
-  border: 0;
-}
-
-button[type="reset"]:hover, button.bad:hover, .button.bad:hover {
-  background-color: #c9302c;
-}
-
-button[type="cancel"], button.warning, .button.warning {
-  background-color: #c7872c;
-  color: white;
-  border: 0;
-}
-
-button[type="cancel"]:hover, button.warning:hover, .button.warning:hover {
-  background-color: #b77a2c;
 }
 
 .subtle {
@@ -967,41 +927,82 @@ a svg, button svg, h2 svg {
   }
 
   .fg-critical, .fg-bad {
-    color: var(--fg-bad);
+    color: var(--karma-bad-fg);
     font-weight: 500;;
   }
 
   .fg-warning {
-    color: var(--fg-warning);
+    color: var(--karma-warning-fg);
     font-weight: 500;;
   }
 
   .fg-severe {
-    color: var(--fg-severe);
+    color: var(--karma-severe-fg);
     font-weight: 500;;
   }
 
   .fg-important {
-    color: var(--fg-important);
+    color: var(--karma-important-fg);
     font-weight: 500;;
   }
 
   .fg-note {
-    color: var(--fg-note);
+    color: var(--karma-note-fg);
     font-weight: 500;;
   }
 
   .fg-info {
-    color: var(--fg-info);
+    color: var(--karma-info-fg);
     font-weight: 500;;
   }
 
   .fg-good, .fg-success {
-    color: var(--fg-good);
+    color: var(--karma-good-fg);
     font-weight: 500;;
   }
 
   .fg-old {
-    color: var(--fg-old);
+    color: var(--karma-old-fg);
   }
+
+  button[type="submit"], button.good, .button.good {
+    background-color: #488448;
+    color: white;
+    border: 0;
+  }
+
+  button[type="submit"]:hover, button.good:hover, .button.good:hover {
+    background-color: #3a6f3a;
+  }
+
+  button:disabled, .button:disabled {
+    background-color: #6e6e6e;
+    color: #999;
+    cursor: not-allowed;
+  }
+
+  button:disabled:hover, .button:disabled:hover {
+    background-color: #6e6e6e;
+  }
+
+  button[type="reset"], button.bad, .button.bad {
+    background-color: #d9534f;
+    color: white;
+    border: 0;
+  }
+
+  button[type="reset"]:hover, button.bad:hover, .button.bad:hover {
+    background-color: #c9302c;
+  }
+
+  button[type="cancel"], button.warning, .button.warning {
+    background-color: #c7872c;
+    color: white;
+    border: 0;
+  }
+
+  button[type="cancel"]:hover, button.warning:hover, .button.warning:hover {
+    background-color: #b77a2c;
+  }
+
 }
