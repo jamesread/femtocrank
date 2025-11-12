@@ -888,38 +888,38 @@ a svg, button svg, h2 svg {
 
 @layer karma {
   .critical, .error, .bad {
-    color: black !important;
+    color: black;
     background-color: var(--karma-bad);
   }
 
   .warning {
-    color: black !important;
+    color: black;
     background-color: var(--karma-warning);
   }
 
   .severe {
-    color: black !important;
+    color: black;
     background-color: var(--karma-severe);
   }
 
   .important {
-    color: black !important;
+    color: black;
     background-color: var(--karma-important);
   }
 
   .note {
-    color: black !important;
+    color: black;
     background-color: var(--karma-note);
   }
 
   .info {
-    color: black !important;
+    color: black;
     background-color: var(--karma-info);
   }
 
   .success, .good {
     background-color: var(--karma-good);
-    color: black !important;
+    color: black;
   }
 
   .old {
