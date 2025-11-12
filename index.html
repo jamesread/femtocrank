@@ -47,18 +47,20 @@
 				</div>
 				<div class = "section-content padding">
 					<p>This is a very simple theme of James Read's personal preferences, which tries to be bright and simple.</p>
-					<p>The examples below show the color choices in context.</p>
-				
-					<div class = "annotation">
-						<div class = "annotation-key">
-							fyi
-						</div>
-						<div class = "annotation-val">
-							This is an annotation.
-						</div>
-					</div>
+					<p>The examples below show the component and style choices in context.</p>
 				</div>
 
+					<div class = "section-subheader">
+						<h3>Why?</h3>
+
+						<ul>
+							<li>Simple, symantic modern CSS (<1k lines)</li>
+							<li>Avoid extranious styles</li>
+							<li>High accessibility</li>
+							<li>Zero dependencies</li>
+							<li>No JavaScript</li>
+						</ul>
+					</div>
 			</section>
 
 			<section class = "with-header-and-content">
@@ -112,40 +114,79 @@ function foo() {
 			</section>
 
 			<section>
-				<h2>Inline Notifications</h2>
-				<p class = "info show inline-notification">
-					<strong>INFO:</strong> This is an info message.
-				</p>
+				<h2>Annotations & Tags</h2>
 
-				<p class = "note show inline-notification">
+				<p>Annotations are inline blocks with a border and padding.</p>
+
+					<div class = "annotation">
+						<div class = "annotation-key">
+							fyi
+						</div>
+						<div class = "annotation-val">
+							This is an annotation.
+						</div>
+					</div>
+
+					<br /> <br />
+
+					<div class = "tag">
+						Neutral tag
+					</div>
+
+					<div class = "tag fg-info">
+						info
+					</div>
+
+					<div class = "tag fg-note">
+						note
+					</div>
+
+					<div class = "tag fg-good">
+						good/success
+					</div>
+
+					<div class = "tag fg-important">
+						important
+					</div>
+
+					<div class = "tag fg-warning">
+						warning
+					</div>
+
+					<div class = "tag fg-severe">
+						severe
+					</div>
+
+					<div class = "tag fg-bad">
+						bad/critical
+					</div>
+
+					</div>
+			</section>
+
+
+			<section>
+				<h2>Inline Notifications</h2>
+				<p>Notifications are blocks, often using karma classes (bg or fg).</p>
+
+				<p class = "fg-note show inline-notification">
 					<strong>NOTE:</strong>
 					This is a note.
 				</p>
 
-				<p class = "success show inline-notification">
+				<p class = "fg-success show inline-notification">
 					<strong>SUCCESS:</strong>
 					This is a success message.
 				</p>
 
-				<p class = "important show inline-notification">
-					<strong>IMPORTANT:</strong>
-					This is an important message.
-				</p>
-
-				<p class = "warning show inline-notification">
-					<strong>WARNING:</strong>
-					This is a warning message.
-				</p>
-
-				<p class = "severe show inline-notification">
+				<p class = "fg-severe show inline-notification">
 					<strong>SEVERE:</strong>
 					This is a severe message.
 				</p>
 
 				<p class = "critical show inline-notification">
-					<strong>CRITICAL: </strong> This is a critical message.
+					<strong>CRITICAL: </strong> This is a critical message (bg).
 				</p>
-
 			</section>
 
 			<section>
@@ -209,17 +250,17 @@ function foo() {
 				<div class = "grid-boxed">
 				<div class = "stat-display">
 					<span class = "subtle">Hits</span>
-					<span class = "stat">1,000</span>
+					<span class = "stat fg-good">1,000</span>
 				</div>
 
 				<div class = "stat-display">
 					<span class = "subtle">Unique visitors</span>
-					<span class = "stat">137</span>
+					<span class = "stat fg-good">137</span>
 				</div>
 
 				<div class = "stat-display">
 					<span class = "subtle">Conversions</span>
-					<span class = "stat">1.5%</span>
+					<span class = "stat fg-warning">1.5%</span>
 				</div>
 
 					</div>
@@ -274,6 +315,11 @@ function foo() {
 						</tr>
 					</tbody>
 				</table>
+			</section>
+
+			<section class = "transparent">
+				<h2>Transparent Section</h2>
+				<p>This is a transparent section.</p>
 			</section>
 		</main>
 		

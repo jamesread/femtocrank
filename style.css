@@ -1,7 +1,27 @@
 /** https://github.com/jamesread/femtocrank **/
 
+@layer components, karma; 
+
+@layer components {
 :root {
   --karma-good: lightgreen;
+  --karma-bad: salmon;
+  --karma-warning: moccasin;
+  --karma-severe: lightsalmon;
+  --karma-important: lightgoldenrodyellow;
+  --karma-note: lightblue;
+  --karma-info: #efefef;
+  --karma-old: wheat;
+
+  --fg-good: mediumseagreen;
+  --fg-bad: rgb(206, 54, 54); /** Someone who picked the colors in the 90s chose really bad colors for red **/
+  --fg-warning: orange;
+  --fg-severe: rgb(191, 86, 86);
+  --fg-important: darkgoldenrod;
+  --fg-note: rgb(84, 144, 182);
+  --fg-info: darkgray;
+  --fg-old: darkolivegreen;
+
   --border-color: #d7d7d7;
   --standout-bg-color: #f8f9fa;
 }
@@ -46,16 +66,16 @@ section {
   border-radius: .4em;
   margin-bottom: 1em;
   box-shadow: 0 0 .5em #9a9a9a;
-}
 
-section.transparent {
-	background-color: transparent;
-	box-shadow: none;
-}
+  &.transparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
 
-section.small {
-  max-width: 320px;
-  border-radius: .8em;
+  &.small {
+    max-width: 320px;
+    border-radius: .8em;
+  } 
 }
 
 section.small form {
@@ -137,26 +157,31 @@ header {
   gap: 1em;
   z-index: 3; /* So the header box-shadow shows over the top of the sidebar */
   min-height: 3em; /* .logo 2em + .5em padding */
-}
 
-header a, header a:visited {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
+  & a, & a:visited {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-header a.active {
-  text-decoration: underline;
-}
+  & a.active {
+    text-decoration: underline;
+  }
 
-header img.logo {
-  width: 2em;
-  height: 2em;
-  padding: .5em;
-}
+  & img.logo {
+    width: 2em;
+    height: 2em;
+    padding: .5em;
+  }
 
-header p {
-  margin: 0;
+  & p {
+    margin: 0;
+  }
+
+  &.fixed {
+    position: fixed;
+    width: 100%;
+  }
 }
 
 .icon {
@@ -222,69 +247,30 @@ pre {
   box-shadow: 0 0 .5em #9a9a9a;
 }
 
-.annotation {
+.annotation, .tag, .inline-notification {
   border-radius: .4em;
   border: 1px solid var(--border-color);
   padding: .4em;
-  margin: .4em;
-  margin-top: .2em;
-  margin-right: .2em;
+  margin: .1em;
+  margin-bottom: .4em;
   display: inline-block;
   background-color: #f8f9fa;
   color: black;
+  user-select: none;
 }
 
 .annotation-key {
 	border-radius: .4em 0 0 .4em;
-	padding: .4em;
+  border-right: 1px solid var(--border-color);
+  padding-right: .4em;
 	display: inline-block;
 	color: #666;
 }
 
 .annotation-val {
 	border-radius: 0 .4em .4em 0;
-	padding: .4em;
 	display: inline-block;
 	color: black;
-}
-
-.critical, .error, .bad {
-  color: white !important;
-  background-color: salmon;
-}
-
-.warning {
-  color: black;
-  background-color: moccasin;
-}
-
-.severe {
-  color: black;
-  background-color: lightsalmon;
-}
-
-.important {
-  color: black;
-  background-color: lightgoldenrodyellow;
-}
-
-.note {
-  color: black;
-  background-color: lightblue;
-}
-
-.info {
-  color: black;
-  background-color: #efefef;
-}
-
-.success, .good {
-  background-color: var(--karma-good);
-  color: black;
-}
-
-.old {
-  background-color: wheat !important;
 }
 
 .notification {
@@ -301,9 +287,7 @@ pre {
 }
 
 .inline-notification {
-  border-radius: .4em;
-  padding: .4em;
-  box-shadow: 0 0 .4em #e1e1e1;
+  display: block;
 }
 
 button, .button, .button:visited {
@@ -553,6 +537,7 @@ label:has(input:checked):hover {
   background-color: var(--standout-bg-color);
   padding: 1em;
   border-radius: .4em;
+  text-align: center;
 }
 
 .stat-display span.subtle {
@@ -938,8 +923,85 @@ a svg, button svg, h2 svg {
 	padding-left: 0;
 	margin-bottom: .8em;
   }
+}
+}
 
-  dt:after {
+@layer karma {
+  .critical, .error, .bad {
+    color: black !important;
+    background-color: var(--karma-bad);
   }
 
+  .warning {
+    color: black !important;
+    background-color: var(--karma-warning);
+  }
+
+  .severe {
+    color: black !important;
+    background-color: var(--karma-severe);
+  }
+
+  .important {
+    color: black !important;
+    background-color: var(--karma-important);
+  }
+
+  .note {
+    color: black !important;
+    background-color: var(--karma-note);
+  }
+
+  .info {
+    color: black !important;
+    background-color: var(--karma-info);
+  }
+
+  .success, .good {
+    background-color: var(--karma-good);
+    color: black !important;
+  }
+
+  .old {
+    background-color: var(--karma-old);
+  }
+
+  .fg-critical, .fg-bad {
+    color: var(--fg-bad);
+    font-weight: 500;;
+  }
+
+  .fg-warning {
+    color: var(--fg-warning);
+    font-weight: 500;;
+  }
+
+  .fg-severe {
+    color: var(--fg-severe);
+    font-weight: 500;;
+  }
+
+  .fg-important {
+    color: var(--fg-important);
+    font-weight: 500;;
+  }
+
+  .fg-note {
+    color: var(--fg-note);
+    font-weight: 500;;
+  }
+
+  .fg-info {
+    color: var(--fg-info);
+    font-weight: 500;;
+  }
+
+  .fg-good, .fg-success {
+    color: var(--fg-good);
+    font-weight: 500;;
+  }
+
+  .fg-old {
+    color: var(--fg-old);
+  }
 }
