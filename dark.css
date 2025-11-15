@@ -54,7 +54,7 @@ header ul[role="menubar"] a:hover {
   background-color: var(--hover-background-color);
 }
 
-div > ul > li > a {
+header div > ul > li > a {
   background-color: black;
   color: white;
 }
@@ -83,7 +83,7 @@ label:has(input:checked):hover {
   color: white;
 }
 
-a, a:hover, a:visited, aside a, aside a:visited {
+a, a:visited, aside a, aside a:visited {
   color: lightblue;
 }
 
