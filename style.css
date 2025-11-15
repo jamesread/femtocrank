@@ -24,9 +24,17 @@
 
   --border-color: #d7d7d7;
   --standout-bg-color: #f8f9fa;
+
   --hover-background-color: #e9e9e9;
+  --hover-text-color: #000;
+
+  --header-hover-background-color:#555;
+  --header-hover-text-color: #fff;
+
   --disabled-background-color: #e9e9e9;
   --disabled-text-color: #999;
+
+  --text-color: rgb(51, 65, 85);
 }
 
 html, body {
@@ -40,7 +48,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #dee3e7;
-  color: rgb(51, 65, 85);
+  color: var(--text-color);
 }
 
 a, a:visited { 
@@ -323,6 +331,7 @@ header button:hover, header .button:hover {
 
 button:hover, .button:hover {
   background-color: var(--hover-background-color);
+  color: var(--hover-text-color);
 }
 
 .subtle {
@@ -646,7 +655,7 @@ header ul[role=menubar] a, header ul[role=menubar] a:visited {
 }
 
 header ul[role=menubar] a:hover {
-  background-color: #555;
+  background-color: var(--header-hover-background-color);
 }
 
 aside {
@@ -736,13 +745,13 @@ footer span {
   width: 14em;
   cursor: pointer;
   border-right: 1px solid #333;
-  background-color: #444;
   display: flex;
   flex-direction: row;
 }
 
 #sidebar-button:hover {
-  background-color: #666;
+  background-color: var(--header-hover-background-color);
+  color: var(--header-hover-text-color);
 }
 
 #sidebar-button .menu-icon {

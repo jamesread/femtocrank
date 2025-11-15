@@ -3,6 +3,8 @@
 :root {
   --border-color: #595959;
   --hover-background-color: #1d345c;
+
+  --header-hover-background-color:#1d345c;
   --standout-bg-color: #1f1f1f;
   --disabled-background-color: #333;
   --disabled-text-color: #999;
@@ -161,10 +163,6 @@ aside ul li a:hover {
 
 dt {
   border-color: var(--border-color);
-}
-
-#sidebar-button {
-  background-color: black;
 }
 
 .annotation, .tag, .inline-notification {
