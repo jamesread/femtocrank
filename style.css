@@ -24,6 +24,9 @@
 
   --border-color: #d7d7d7;
   --standout-bg-color: #f8f9fa;
+  --hover-background-color: #e9e9e9;
+  --disabled-background-color: #e9e9e9;
+  --disabled-text-color: #999;
 }
 
 html, body {
@@ -319,7 +322,7 @@ header button:hover, header .button:hover {
 }
 
 button:hover, .button:hover {
-  background-color: #e9e9e9;
+  background-color: var(--hover-background-color);
 }
 
 .subtle {
@@ -364,8 +367,8 @@ textarea {
 }
 
 textarea[readonly] {
-  background-color: #f0f0f0;
-  color: #666;
+  background-color: var(--disabled-background-color);
+  color: var(--disabled-text-color);
   font-style: italic;
 }
 
@@ -394,10 +397,10 @@ input:invalid {
 }
 **/
 
-input:disabled {
+input:disabled, input:read-only, textarea:disabled {
   cursor: not-allowed !important;
-  background-color: #6e6e6e;
-  color: #999;
+  background-color: var(--disabled-background-color);
+  color: var(--disabled-text-color);
 }
 
 fieldset {
