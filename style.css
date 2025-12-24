@@ -406,7 +406,7 @@ input:invalid {
 }
 **/
 
-input:disabled, input:read-only, textarea:disabled {
+input:disabled, input[readonly], textarea:disabled {
   cursor: not-allowed !important;
   background-color: var(--disabled-background-color);
   color: var(--disabled-text-color);
