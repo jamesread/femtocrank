@@ -542,6 +542,13 @@ table {
   width: 100%;
 }
 
+table.bordered {
+  border: 1px solid var(--border-color);
+  border-radius: .4em;
+  border-collapse: collapse;
+  box-shadow: 0 .1em .1em #9a9a9a;
+}
+
 table, th, td {
   border: 0;
   border-bottom: 1px solid var(--border-color);
@@ -558,7 +565,6 @@ td,th  {
 }
 
 th {
-  background-color: #EFF1F3;
   text-align: left;
 }
 

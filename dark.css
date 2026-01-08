@@ -91,10 +91,6 @@ a, a:visited, aside a, aside a:visited {
   color: lightblue;
 }
 
-th {
-  background-color: #444;
-}
-
 table, th, td {
   border-color: var(--border-color) !important;
 }
