@@ -15,6 +15,7 @@
 
   --karma-good-fg: mediumseagreen;
   --karma-bad-fg: rgb(206, 54, 54); /** Someone who picked the colors in the 90s chose really bad colors for red **/
+  --karma-bad-border: #8b1a1a;
   --karma-warning-fg: orange;
   --karma-severe-fg: rgb(191, 86, 86);
   --karma-important-fg: darkgoldenrod;
@@ -324,14 +325,27 @@ button, .button, .button:visited {
   text-decoration: none;
 }
 
-header button:hover, header .button:hover {
+header button:hover, header .button:hover,
+header button:focus-visible, header .button:focus-visible {
   background-color: #6e6e6e;
   color: white;
 }
 
-button:hover, .button:hover {
+button:hover, .button:hover,
+button:focus-visible, .button:focus-visible {
   background-color: var(--hover-background-color);
   color: var(--hover-text-color);
+}
+
+button:focus-visible, .button:focus-visible, a:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+header a:focus-visible,
+header button:focus-visible,
+header .button:focus-visible {
+  outline-color: white;
 }
 
 .subtle {
@@ -400,11 +414,25 @@ form input[type="checkbox"] {
 }
 
 /**
-input:invalid {
-	border: 1px solid red;
-	box-shadow: 0 0 5px red;
+ * Use :user-invalid (not :invalid) so empty required fields are not
+ * marked until blur or submit. Pair border weight + fill so the state
+ * is not color-only (WCAG 1.4.1). Authors should still provide text
+ * errors via aria-describedby where possible.
+ */
+input:user-invalid, textarea:user-invalid, select:user-invalid {
+  border: 1px solid var(--karma-bad-border);
+  border-left-width: .35em;
+  background-color: var(--karma-bad);
+  color: black;
+  box-shadow: 0 0 .5em #9a9a9a;
 }
-**/
+
+input:user-invalid:focus-visible,
+textarea:user-invalid:focus-visible,
+select:user-invalid:focus-visible {
+  outline: 2px solid var(--karma-bad-border);
+  outline-offset: 2px;
+}
 
 input:disabled, input[readonly], textarea:disabled {
   cursor: not-allowed !important;
@@ -436,7 +464,8 @@ label:has(input[type="checkbox"]), label:has(input[type="radio"]) {
   user-select: none;
 }
 
-label:has(input[type="checkbox"]):hover, label:has(input[type="radio"]):hover {
+label:has(input[type="checkbox"]):hover, label:has(input[type="radio"]):hover,
+label:has(input[type="checkbox"]:focus-visible), label:has(input[type="radio"]:focus-visible) {
   background-color: #f0f0f0;
   color: black;
 }
@@ -446,7 +475,8 @@ label:has(input:checked) {
   color: white;
 }
 
-label:has(input:checked):hover {
+label:has(input:checked):hover,
+label:has(input:checked:focus-visible) {
   background-color: #3a6f3a;
   color: white;
 }
@@ -472,9 +502,10 @@ label:has(input:checked):hover {
   text-align: center;
 }
 
-.radio-group label:hover {
+.radio-group label:hover,
+.radio-group label:has(input:focus-visible) {
   background-color: #f0f0f0;
-  color: white;
+  color: black;
 }
 
 .radio-group label:first-child {
@@ -483,6 +514,70 @@ label:has(input:checked):hover {
 
 .radio-group label:last-child {
   border-radius: 0 .4em .4em 0;
+}
+
+.radio-group.radio-boolean {
+  justify-self: start;
+  width: max-content;
+}
+
+.radio-group.radio-boolean label {
+  flex-grow: 0;
+}
+
+.radio-group.radio-list {
+  flex-direction: column;
+  align-items: stretch;
+  justify-self: start;
+  width: max-content;
+}
+
+.radio-group.radio-list label {
+  text-align: left;
+  flex-grow: 0;
+}
+
+.radio-group.radio-list label:first-child {
+  border-radius: .4em .4em 0 0;
+}
+
+.radio-group.radio-list label:last-child {
+  border-radius: 0 0 .4em .4em;
+}
+
+.multiple-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-self: start;
+  width: max-content;
+  border: 1px solid var(--border-color);
+  border-radius: .4em;
+}
+
+.multiple-checklist label {
+  background-color: white;
+  text-align: left;
+}
+
+.multiple-checklist label:has(input[type="checkbox"]) {
+  margin: 0;
+  border-radius: 0;
+}
+
+.multiple-checklist input[type="checkbox"] {
+  margin-top: 3px;
+  margin-right: 3px;
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+.multiple-checklist label:has(input[type="checkbox"]):first-child {
+  border-radius: .4em .4em 0 0;
+}
+
+.multiple-checklist label:has(input[type="checkbox"]):last-child {
+  border-radius: 0 0 .4em .4em;
 }
 
 .grid {
@@ -555,7 +650,8 @@ table, th, td {
   border-collapse: collapse;
 }
 
-table.row-hover tr:hover td {
+table.row-hover tr:hover td,
+table.row-hover tr:focus-within td {
   background-color: beige;
   color: black;
 }
@@ -603,7 +699,8 @@ ul[role=menubar] li div {
   box-shadow: 0 0 6px 0 #444;
 }
 
-ul[role=menubar] li:hover {
+ul[role=menubar] li:hover,
+ul[role=menubar] li:focus-within {
   background-color: beige;
 }
 
@@ -611,7 +708,8 @@ ul[role=menubar] li span {
   cursor: pointer;
 }
 
-ul[role=menubar] li:hover div {
+ul[role=menubar] li:hover div,
+ul[role=menubar] li:focus-within div {
   display: block;
   background-color: #fff;
   min-width: 12em;
@@ -619,9 +717,11 @@ ul[role=menubar] li:hover div {
 
 ul[role=menubar] li {
   border-radius: .5em;
+  position: relative;
 }
 
-header ul[role=menubar] li:hover ul {
+header ul[role=menubar] li:hover ul,
+header ul[role=menubar] li:focus-within ul {
   margin: 0;
   padding: 0;
 }
@@ -647,11 +747,13 @@ header ul[role=menubar] div li a {
   border-radius: 0;
 }
 
-ul[role=menubar] div ul a:hover {
+ul[role=menubar] div ul a:hover,
+ul[role=menubar] div ul a:focus-visible {
   background-color: beige;
 }
 
-header ul[role=menubar] div ul a:hover {
+header ul[role=menubar] div ul a:hover,
+header ul[role=menubar] div ul a:focus-visible {
   background-color: #555;
 }
 
@@ -660,7 +762,8 @@ header ul[role=menubar] a, header ul[role=menubar] a:visited {
   background-color: #444;
 }
 
-header ul[role=menubar] a:hover {
+header ul[role=menubar] a:hover,
+header ul[role=menubar] a:focus-visible {
   background-color: var(--header-hover-background-color);
 }
 
@@ -704,7 +807,8 @@ aside ul li a {
   padding: .4em .6em;
 }
 
-aside a:hover {
+aside a:hover,
+aside a:focus-visible {
   background-color: #f2f2f2;
 }
 
@@ -735,16 +839,38 @@ footer span {
 
 .a11yhidden {
   position: absolute;
-  left: -500px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
-.a11yhidden:focus {
+.a11yhidden:focus,
+.a11yhidden:focus-visible {
+  position: fixed;
+  top: 1em;
   left: 1em;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
   background-color: black;
-  border: 2px solid #555;
+  border: 2px solid white;
   border-radius: .5em;
-  padding: .5em;
+  padding: .5em 1em;
   color: white;
+  text-decoration: none;
+  outline: 2px solid black;
+  outline-offset: 2px;
 }
 
 #sidebar-button {
@@ -755,9 +881,15 @@ footer span {
   flex-direction: row;
 }
 
-#sidebar-button:hover {
+#sidebar-button:hover,
+#sidebar-button:focus-visible {
   background-color: var(--header-hover-background-color);
   color: var(--header-hover-text-color);
+}
+
+#sidebar-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: -2px;
 }
 
 #sidebar-button .menu-icon {
@@ -994,7 +1126,8 @@ a svg, button svg, h2 svg {
     border: 0;
   }
 
-  button[type="submit"]:hover, button.good:hover, .button.good:hover {
+  button[type="submit"]:hover, button.good:hover, .button.good:hover,
+  button[type="submit"]:focus-visible, button.good:focus-visible, .button.good:focus-visible {
     background-color: #3a6f3a;
   }
 
@@ -1014,7 +1147,8 @@ a svg, button svg, h2 svg {
     border: 0;
   }
 
-  button[type="reset"]:hover, button.bad:hover, .button.bad:hover {
+  button[type="reset"]:hover, button.bad:hover, .button.bad:hover,
+  button[type="reset"]:focus-visible, button.bad:focus-visible, .button.bad:focus-visible {
     background-color: #c9302c;
   }
 
@@ -1024,7 +1158,8 @@ a svg, button svg, h2 svg {
     border: 0;
   }
 
-  button[type="cancel"]:hover, button.warning:hover, .button.warning:hover {
+  button[type="cancel"]:hover, button.warning:hover, .button.warning:hover,
+  button[type="cancel"]:focus-visible, button.warning:focus-visible, .button.warning:focus-visible {
     background-color: #b77a2c;
   }
 

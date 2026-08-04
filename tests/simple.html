@@ -24,7 +24,7 @@
 				<ul role = "menubar">
 					<li><a href = "../index.html" class = "active">Demo home</a></li>
 					<li>
-						<span>Dropdown</span>
+						<span><a href = "#">Dropdown</a></span>
 						<div>
 							<ul>
 								<li><a href = "#">foo</a></li>
@@ -92,6 +92,18 @@
 						</label>
 					</div>
 
+					<span class = "fake-label">Term</span>
+					<div class = "radio-group radio-boolean">
+						<label>
+							<input type = "radio" name = "term" value = "full-time" />
+							<span>Full Time</span>
+						</label>
+						<label>
+							<input type = "radio" name = "term" value = "part-time" />
+							<span>Part Time</span>
+						</label>
+					</div>
+
 					<label for = "salary">Salary</label>
 					<select id = "salary" name = "salary">
 						<option value = "0">Select a salary</option>
@@ -101,6 +113,42 @@
 						<option value = "40000">£40,000</option>
 						<option value = "50000">£50,000</option>
 					</select>
+
+					<span class = "fake-label">Compensation</span>
+					<div class = "radio-group radio-list">
+						<label>
+							<input type = "radio" name = "compensation" value = "performance-incentive" />
+							<span>Performance Incentive</span>
+						</label>
+						<label>
+							<input type = "radio" name = "compensation" value = "sales-target-incentive" />
+							<span>Sales Target Incentive</span>
+						</label>
+						<label>
+							<input type = "radio" name = "compensation" value = "objective-incentive" />
+							<span>Objective Incentive</span>
+						</label>
+					</div>
+
+					<span class = "fake-label">Accessibility requirements</span>
+					<div class = "multiple-checklist">
+						<label>
+							<input type = "checkbox" name = "accessibility" value = "screen-reader" />
+							<span>Screen reader support</span>
+						</label>
+						<label>
+							<input type = "checkbox" name = "accessibility" value = "keyboard-navigation" />
+							<span>Keyboard navigation</span>
+						</label>
+						<label>
+							<input type = "checkbox" name = "accessibility" value = "high-contrast" />
+							<span>High contrast</span>
+						</label>
+						<label>
+							<input type = "checkbox" name = "accessibility" value = "captions" />
+							<span>Captions / transcripts</span>
+						</label>
+					</div>
 
 					<label for = "email">Email</label>
 					<input type = "email" id = "email" name = "email" />

@@ -41,7 +41,8 @@ button, .button {
   border: 1px solid var(--border-color);
 }
 
-button:hover, .button:hover, .button:hover, .button:visited {
+button:hover, .button:hover, .button:hover, .button:visited,
+button:focus-visible, .button:focus-visible {
   background-color: var(--hover-background-color);
   color: white;
 }
@@ -54,7 +55,8 @@ header ul[role="menubar"] a, header ul[role="menubar"] a:visited {
   background-color: black;
 }
 
-header ul[role="menubar"] a:hover {
+header ul[role="menubar"] a:hover,
+header ul[role="menubar"] a:focus-visible {
   background-color: var(--hover-background-color);
 }
 
@@ -63,16 +65,19 @@ header div > ul > li > a {
   color: white;
 }
 
-ul[role="menubar"] div ul a:hover {
+ul[role="menubar"] div ul a:hover,
+ul[role="menubar"] div ul a:focus-visible {
   background-color: var(--hover-background-color);
   color: white;
 }
 
-ul[role="menubar"] li:hover {
+ul[role="menubar"] li:hover,
+ul[role="menubar"] li:focus-within {
   background-color: var(--hover-background-color);
 }
 
-label:has(input[type="checkbox"]):hover, label:has(input[type="radio"]):hover {
+label:has(input[type="checkbox"]):hover, label:has(input[type="radio"]):hover,
+label:has(input[type="checkbox"]:focus-visible), label:has(input[type="radio"]:focus-visible) {
   background-color: var(--hover-background-color);
   color: white;
 }
@@ -82,7 +87,8 @@ label:has(input:checked) {
   color: white;
 }
 
-label:has(input:checked):hover {
+label:has(input:checked):hover,
+label:has(input:checked:focus-visible) {
   background-color: #3a6f3a;
   color: white;
 }
@@ -95,7 +101,8 @@ table, th, td {
   border-color: var(--border-color) !important;
 }
 
-table.row-hover tr:hover td {
+table.row-hover tr:hover td,
+table.row-hover tr:focus-within td {
   background-color: var(--hover-background-color);
   color: white;
 }
@@ -129,6 +136,30 @@ textarea {
   border-color: var(--border-color);
 }
 
+/**
+ * Re-assert invalid styles: dark input[type] rules share specificity with
+ * :user-invalid from style.css and would otherwise win on color/background.
+ * Keep salmon + black (8.4:1, AAA) for parity with light mode and karma badges.
+ */
+input:user-invalid,
+textarea:user-invalid,
+select:user-invalid,
+input[type]:user-invalid {
+  background-color: var(--karma-bad);
+  color: black;
+  border: 1px solid var(--karma-bad-border);
+  border-left-width: .35em;
+  box-shadow: 0 0 .5em #121212;
+}
+
+input:user-invalid:focus-visible,
+textarea:user-invalid:focus-visible,
+select:user-invalid:focus-visible,
+input[type]:user-invalid:focus-visible {
+  outline: 2px solid var(--karma-bad-border);
+  outline-offset: 2px;
+}
+
 .grid-boxed .stat-display { 
   background-color: var(--standout-bg-color);
   border-color: var(--border-color) !important;
@@ -148,12 +179,27 @@ pre {
   background-color: #555;
 }
 
+.radio-group label:hover,
+.radio-group label:has(input:focus-visible) {
+  background-color: var(--hover-background-color);
+  color: white;
+}
+
+.multiple-checklist {
+  border-color: var(--border-color);
+}
+
+.multiple-checklist label {
+  background-color: #555;
+}
+
 aside {
   background-color: #000;
   box-shadow: 0 0 .5em #121212;
 }
 
-aside ul li a:hover {
+aside ul li a:hover,
+aside ul li a:focus-visible {
   background-color: var(--hover-background-color);
 }
 
