@@ -18,9 +18,7 @@
     "url": "https://github.com/jamesread/femtocrank/issues"
   },
   "homepage": "https://github.com/jamesread/femtocrank#readme",
-  "dependencies": {
-  },
   "devDependencies": {
-    "semantic-release": "^24.2.7"
+    "semantic-release": "^25.0.8"
   }
 }
