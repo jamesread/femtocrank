@@ -325,6 +325,12 @@ button, .button, .button:visited {
   text-decoration: none;
 }
 
+.inline-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}
+
 header button:hover, header .button:hover,
 header button:focus-visible, header .button:focus-visible {
   background-color: #6e6e6e;
