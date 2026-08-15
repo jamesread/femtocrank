@@ -27,6 +27,11 @@ section {
   box-shadow: 0 0 .5em #121212;
 }
 
+dialog {
+  background-color: #343434;
+  color: #ddd;
+}
+
 section .section-header {
   background-color: #343434;
   border-bottom-color: var(--border-color);
@@ -215,6 +220,22 @@ dt {
 
 .annotation-val {
   color: #ddd;
+}
+}
+}
+
+@layer karma {
+@media (prefers-color-scheme: dark) {
+button.neutral, .button.neutral,
+button[type="submit"].neutral, .button.neutral[type="submit"] {
+  color: #ddd;
+}
+
+button.neutral:hover, .button.neutral:hover,
+button.neutral:focus-visible, .button.neutral:focus-visible,
+button[type="submit"].neutral:hover, .button.neutral[type="submit"]:hover,
+button[type="submit"].neutral:focus-visible, .button.neutral[type="submit"]:focus-visible {
+  color: white;
 }
 }
 }

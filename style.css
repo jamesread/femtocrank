@@ -156,7 +156,7 @@ section .section-content *:first-child {
 	margin-top: 0;
 }
 
-section .section-content *:last-child {
+section .section-content *:last-child:not(dialog) {
 	margin-bottom: 0;
 }
 
@@ -907,6 +907,24 @@ dialog {
   margin: auto;
 }
 
+dialog:not(:modal)[open] {
+  position: fixed;
+  z-index: 4; /* above header (flex item, z-index 3) */
+}
+
+dialog form:not(:has(label, span.fake-label)) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+dialog form fieldset {
+  justify-content: flex-end;
+}
+
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -1124,6 +1142,21 @@ a svg, button svg, h2 svg {
     background-color: #488448;
     color: white;
     border: 0;
+  }
+
+  button.neutral, .button.neutral,
+  button[type="submit"].neutral, .button.neutral[type="submit"] {
+    background-color: transparent;
+    color: black;
+    border: 1px solid var(--border-color);
+  }
+
+  button.neutral:hover, .button.neutral:hover,
+  button.neutral:focus-visible, .button.neutral:focus-visible,
+  button[type="submit"].neutral:hover, .button.neutral[type="submit"]:hover,
+  button[type="submit"].neutral:focus-visible, .button.neutral[type="submit"]:focus-visible {
+    background-color: var(--hover-background-color);
+    color: var(--hover-text-color);
   }
 
   button[type="submit"]:hover, button.good:hover, .button.good:hover,

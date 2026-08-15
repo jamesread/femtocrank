@@ -12,6 +12,7 @@
 		<link rel = "stylesheet" type = "text/css" href="../dark.css" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Femtocrank simple app example — a straightforward layout demonstrating forms, navigation, and theme styles.">
 	</head>
 
 	<body>
@@ -73,7 +74,7 @@
 
 				<form>
 					<label for = "name">Name</label>
-					<input type = "text" id = "name" name = "name" />
+					<input type = "text" id = "name" name = "name" autocomplete = "yes" />
 
 					<span class = "fake-label">Role</span>
 					<div class = "radio-group">
@@ -189,10 +190,10 @@
 					<textarea id = "comments" name = "comments"></textarea>
 
 					<label for = "readonly">Readonly</label>
-					<textarea readonly>This is a readonly textarea.</textarea>
+					<textarea id = "readonly" readonly>This is a readonly textarea.</textarea>
 
 					<label for = "disabled">Disabled</label>
-					<textarea disabled>This is a disabled textarea.</textarea>
+					<textarea id = "disabled" disabled>This is a disabled textarea.</textarea>
 
 					<label>
 						Datetime
