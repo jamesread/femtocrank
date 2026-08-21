@@ -8,6 +8,21 @@
   --standout-bg-color: #1f1f1f;
   --disabled-background-color: #333;
   --disabled-text-color: #999;
+  --text-color: #ddd;
+  --focus-outline-color: #fff;
+
+  --menu-item-hover-background-color: var(--hover-background-color);
+  --menu-dropdown-background-color: #343434;
+  --menu-dropdown-shadow: 0 0 .5em #121212;
+  --menu-dropdown-link-hover-background-color: var(--hover-background-color);
+  --header-menu-dropdown-link-hover-background-color: var(--header-hover-background-color);
+
+  --table-sticky-bg: #343434;
+  --table-row-hover-bg: var(--hover-background-color);
+  --table-row-hover-fg: white;
+  --table-sticky-hover-bg: var(--table-row-hover-bg);
+  --table-uneditable-bg: #555;
+  --table-sticky-uneditable-bg: var(--table-uneditable-bg);
 }
 
 header {
@@ -52,6 +67,16 @@ button:focus-visible, .button:focus-visible {
   color: white;
 }
 
+button:focus-visible, .button:focus-visible,
+button[type="submit"]:focus-visible, button.good:focus-visible, .button.good:focus-visible,
+button[type="reset"]:focus-visible, button.bad:focus-visible, .button.bad:focus-visible,
+button[type="cancel"]:focus-visible, button.warning:focus-visible, .button.warning:focus-visible,
+button.neutral:focus-visible, .button.neutral:focus-visible,
+button[type="submit"].neutral:focus-visible, .button.neutral[type="submit"]:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px;
+}
+
 footer a, footer a:visited {
   color: lightblue;
 }
@@ -62,23 +87,12 @@ header ul[role="menubar"] a, header ul[role="menubar"] a:visited {
 
 header ul[role="menubar"] a:hover,
 header ul[role="menubar"] a:focus-visible {
-  background-color: var(--hover-background-color);
+  background-color: var(--header-hover-background-color);
 }
 
 header div > ul > li > a {
   background-color: black;
   color: white;
-}
-
-ul[role="menubar"] div ul a:hover,
-ul[role="menubar"] div ul a:focus-visible {
-  background-color: var(--hover-background-color);
-  color: white;
-}
-
-ul[role="menubar"] li:hover,
-ul[role="menubar"] li:focus-within {
-  background-color: var(--hover-background-color);
 }
 
 label:has(input[type="checkbox"]):hover, label:has(input[type="radio"]):hover,
@@ -102,16 +116,82 @@ a, a:visited, aside a, aside a:visited {
   color: lightblue;
 }
 
-table, th, td {
-  border-color: var(--border-color) !important;
-}
-
-table.row-hover tr:hover td,
-table.row-hover tr:focus-within td {
-  background-color: var(--hover-background-color);
+header ul[role="menubar"] div ul a,
+header ul[role="menubar"] div ul a:visited {
+  background-color: transparent;
   color: white;
 }
 
+header ul[role="menubar"] div ul a:hover,
+header ul[role="menubar"] div ul a:focus-visible {
+  background-color: var(--header-menu-dropdown-link-hover-background-color);
+  color: white;
+}
+
+header ul[role="menubar"] div ul button {
+  background-color: transparent;
+  color: white;
+}
+
+header ul[role="menubar"] div ul button:hover,
+header ul[role="menubar"] div ul button:focus-visible {
+  background-color: var(--header-menu-dropdown-link-hover-background-color);
+  color: white;
+}
+
+ul[role="menubar"] > li > a,
+ul[role="menubar"] > li > span > a,
+ul[role="menubar"] > li > span > a:visited {
+  color: var(--text-color);
+}
+
+ul[role="menubar"] div ul a,
+ul[role="menubar"] div ul a:visited {
+  color: var(--text-color);
+  background-color: transparent;
+}
+
+ul[role="menubar"] div ul a:hover,
+ul[role="menubar"] div ul a:focus-visible {
+  background-color: var(--menu-dropdown-link-hover-background-color);
+  color: white;
+}
+
+ul[role="menubar"] div ul button {
+  color: var(--text-color);
+  background-color: transparent;
+}
+
+ul[role="menubar"] div ul button:hover,
+ul[role="menubar"] div ul button:focus-visible {
+  background-color: var(--menu-dropdown-link-hover-background-color);
+  color: white;
+}
+
+ul[role="menubar"] li:hover,
+ul[role="menubar"] li:focus-within {
+  background-color: var(--menu-item-hover-background-color);
+  color: white;
+}
+
+ul[role="menubar"] li:hover > a,
+ul[role="menubar"] li:hover > span > a,
+ul[role="menubar"] li:hover > span > button,
+ul[role="menubar"] li:focus-within > a,
+ul[role="menubar"] li:focus-within > span > a,
+ul[role="menubar"] li:focus-within > span > button {
+  color: white;
+}
+
+header ul[role="menubar"] > li > a,
+header ul[role="menubar"] > li > span > a,
+header ul[role="menubar"] > li > span > a:visited {
+  color: white;
+}
+
+table, th, td {
+  border-color: var(--border-color) !important;
+}
 
 footer span {
   background-color: #444;  

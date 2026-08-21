@@ -36,6 +36,20 @@
   --disabled-text-color: #999;
 
   --text-color: rgb(51, 65, 85);
+  --focus-outline-color: var(--text-color);
+
+  --menu-item-hover-background-color: beige;
+  --menu-dropdown-background-color: #fff;
+  --menu-dropdown-shadow: 0 0 6px 0 #444;
+  --menu-dropdown-link-hover-background-color: beige;
+  --header-menu-dropdown-link-hover-background-color: #555;
+
+  --table-sticky-bg: white;
+  --table-row-hover-bg: beige;
+  --table-row-hover-fg: black;
+  --table-sticky-hover-bg: var(--table-row-hover-bg);
+  --table-uneditable-bg: #f0f0f0;
+  --table-sticky-uneditable-bg: var(--table-uneditable-bg);
 }
 
 html, body {
@@ -343,8 +357,9 @@ button:focus-visible, .button:focus-visible {
   color: var(--hover-text-color);
 }
 
-button:focus-visible, .button:focus-visible, a:focus-visible {
-  outline: 2px solid var(--text-color);
+button:focus-visible, .button:focus-visible, a:focus-visible,
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
   outline-offset: 2px;
 }
 
@@ -658,8 +673,64 @@ table, th, td {
 
 table.row-hover tr:hover td,
 table.row-hover tr:focus-within td {
-  background-color: beige;
-  color: black;
+  background-color: var(--table-row-hover-bg);
+  color: var(--table-row-hover-fg);
+}
+
+table.row-expand tbody.row-group .row-details {
+  display: none;
+}
+
+table.row-expand tbody.row-group:has(.row-expand-toggle input:checked) .row-details {
+  display: table-row;
+}
+
+table.row-expand tr.row-details td {
+  background-color: var(--standout-bg-color);
+  padding: 1em;
+  vertical-align: top;
+}
+
+table.row-expand.row-hover tbody.row-group:hover tr:first-child td,
+table.row-expand.row-hover tbody.row-group:focus-within tr:first-child td {
+  background-color: var(--table-row-hover-bg);
+  color: var(--table-row-hover-fg);
+}
+
+table.row-expand.row-hover tbody.row-group:hover tr.row-details td,
+table.row-expand.row-hover tbody.row-group:focus-within tr.row-details td {
+  background-color: var(--standout-bg-color);
+  color: inherit;
+}
+
+.row-expand-toggle {
+  cursor: pointer;
+  margin-right: 0.35em;
+  vertical-align: middle;
+}
+
+td.uneditable .row-expand-toggle {
+  margin-right: 0.25em;
+}
+
+.row-expand-toggle input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.row-expand-icon {
+  display: inline-block;
+}
+
+.row-expand-toggle input:not(:checked) + .row-expand-icon {
+  transform: rotate(-90deg);
 }
 
 td,th  {
@@ -675,8 +746,153 @@ th.small {
 }
 
 td.uneditable {
-  background-color: #f0f0f0;
+  background-color: var(--table-uneditable-bg);
   font-weight: bold;
+}
+
+th.actions,
+td.actions {
+  text-align: right;
+  white-space: nowrap;
+  width: 8rem;
+}
+
+td.actions ul[role="menubar"] {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+td.actions ul[role="menubar"] li div {
+  right: 0;
+  left: auto;
+  z-index: 1;
+}
+
+.responsive-cols {
+  container-type: inline-size;
+  container-name: responsive-cols;
+  display: block;
+  width: 100%;
+}
+
+@container responsive-cols (max-width: 38rem) {
+  :is(th, td).col-priority-1 { display: none; }
+}
+
+@container responsive-cols (max-width: 34rem) {
+  :is(th, td).col-priority-2 { display: none; }
+}
+
+@container responsive-cols (max-width: 30rem) {
+  :is(th, td).col-priority-3 { display: none; }
+}
+
+@container responsive-cols (max-width: 26rem) {
+  :is(th, td).col-priority-4 { display: none; }
+}
+
+@container responsive-cols (max-width: 22rem) {
+  :is(th, td).col-priority-5 { display: none; }
+}
+
+.table-scroll {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-scroll table {
+  width: max-content;
+  min-width: 100%;
+}
+
+.table-scroll :is(th, td) {
+  white-space: nowrap;
+}
+
+.table-scroll.sticky-cols-1 {
+  --sticky-col-1-width: 3rem;
+}
+
+.table-scroll.sticky-cols-2 {
+  --sticky-col-1-width: 3rem;
+  --sticky-col-2-width: 10rem;
+}
+
+.table-scroll.sticky-cols-3 {
+  --sticky-col-1-width: 3rem;
+  --sticky-col-2-width: 10rem;
+  --sticky-col-3-width: 12rem;
+}
+
+.table-scroll.sticky-cols-1 :is(th, td):nth-child(1),
+.table-scroll.sticky-cols-2 :is(th, td):nth-child(1),
+.table-scroll.sticky-cols-3 :is(th, td):nth-child(1) {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: var(--sticky-col-1-width);
+  min-width: var(--sticky-col-1-width);
+  max-width: var(--sticky-col-1-width);
+  background-color: var(--table-sticky-bg);
+}
+
+.table-scroll.sticky-cols-2 :is(th, td):nth-child(2),
+.table-scroll.sticky-cols-3 :is(th, td):nth-child(2) {
+  position: sticky;
+  left: var(--sticky-col-1-width);
+  z-index: 1;
+  width: var(--sticky-col-2-width);
+  min-width: var(--sticky-col-2-width);
+  max-width: var(--sticky-col-2-width);
+  background-color: var(--table-sticky-bg);
+}
+
+.table-scroll.sticky-cols-3 :is(th, td):nth-child(3) {
+  position: sticky;
+  left: calc(var(--sticky-col-1-width) + var(--sticky-col-2-width));
+  z-index: 1;
+  width: var(--sticky-col-3-width);
+  min-width: var(--sticky-col-3-width);
+  max-width: var(--sticky-col-3-width);
+  background-color: var(--table-sticky-bg);
+}
+
+.table-scroll.sticky-cols-1 :is(th, td):nth-child(1),
+.table-scroll.sticky-cols-2 :is(th, td):nth-child(2),
+.table-scroll.sticky-cols-3 :is(th, td):nth-child(3) {
+  box-shadow: 1px 0 0 var(--border-color);
+}
+
+.table-scroll.sticky-cols-1 thead th:nth-child(1) { z-index: 2; }
+
+.table-scroll.sticky-cols-2 thead th:nth-child(1) { z-index: 2; }
+.table-scroll.sticky-cols-2 thead th:nth-child(2),
+.table-scroll.sticky-cols-2 tbody td:nth-child(2) { z-index: 2; }
+.table-scroll.sticky-cols-2 thead th:nth-child(2) { z-index: 3; }
+
+.table-scroll.sticky-cols-3 thead th:nth-child(1) { z-index: 2; }
+.table-scroll.sticky-cols-3 thead th:nth-child(2),
+.table-scroll.sticky-cols-3 tbody td:nth-child(2) { z-index: 2; }
+.table-scroll.sticky-cols-3 thead th:nth-child(2) { z-index: 3; }
+.table-scroll.sticky-cols-3 thead th:nth-child(3),
+.table-scroll.sticky-cols-3 tbody td:nth-child(3) { z-index: 3; }
+.table-scroll.sticky-cols-3 thead th:nth-child(3) { z-index: 4; }
+
+.table-scroll.sticky-cols-1 tbody td.uneditable:nth-child(1),
+.table-scroll.sticky-cols-2 tbody td.uneditable:nth-child(1),
+.table-scroll.sticky-cols-3 tbody td.uneditable:nth-child(1) {
+  background-color: var(--table-sticky-uneditable-bg);
+}
+
+.table-scroll.sticky-cols-1 table.row-hover tbody tr:hover td:nth-child(1),
+.table-scroll.sticky-cols-1 table.row-hover tbody tr:focus-within td:nth-child(1),
+.table-scroll.sticky-cols-2 table.row-hover tbody tr:hover td:nth-child(-n+2),
+.table-scroll.sticky-cols-2 table.row-hover tbody tr:focus-within td:nth-child(-n+2),
+.table-scroll.sticky-cols-3 table.row-hover tbody tr:hover td:nth-child(-n+3),
+.table-scroll.sticky-cols-3 table.row-hover tbody tr:focus-within td:nth-child(-n+3) {
+  background-color: var(--table-sticky-hover-bg);
+  color: var(--table-row-hover-fg);
 }
 
 ul.noListStyle {
@@ -695,19 +911,37 @@ ul[role="menubar"] li {
   display: inline-block;
 }
 
-ul[role="menubar"] li span.submenu  {
+ul[role=menubar] li span.submenu  {
   text-decoration: dotted underline;
+}
+
+td.actions .actions-menu-trigger button {
+  font-weight: normal;
+  padding: 0.2em 0.5em;
+  line-height: 1;
+  vertical-align: middle;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+td.actions .actions-menu-trigger button:hover,
+td.actions .actions-menu-trigger button:focus-visible {
+  background-color: var(--menu-dropdown-link-hover-background-color);
+  color: var(--table-row-hover-fg, white);
 }
 
 ul[role=menubar] li div {
   position: absolute;
   display: none;
-  box-shadow: 0 0 6px 0 #444;
+  box-shadow: var(--menu-dropdown-shadow);
 }
 
 ul[role=menubar] li:hover,
 ul[role=menubar] li:focus-within {
-  background-color: beige;
+  background-color: var(--menu-item-hover-background-color);
 }
 
 ul[role=menubar] li span {
@@ -717,7 +951,7 @@ ul[role=menubar] li span {
 ul[role=menubar] li:hover div,
 ul[role=menubar] li:focus-within div {
   display: block;
-  background-color: #fff;
+  background-color: var(--menu-dropdown-background-color);
   min-width: 12em;
 }
 
@@ -749,18 +983,63 @@ ul[role=menubar] div ul a {
   padding: .2em;
 }
 
-header ul[role=menubar] div li a {
+ul[role=menubar] li span.submenu button {
+  background: transparent;
+  border: 0;
+  font: inherit;
+  font-weight: inherit;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+ul[role=menubar] li span.submenu button:hover,
+ul[role=menubar] li span.submenu button:focus-visible {
+  background-color: transparent;
+  color: inherit;
+}
+
+ul[role=menubar] div ul button {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: .2em;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul[role=menubar] div ul button:hover,
+ul[role=menubar] div ul button:focus-visible {
+  background-color: var(--menu-dropdown-link-hover-background-color);
+}
+
+header ul[role=menubar] div ul a {
   border-radius: 0;
 }
 
 ul[role=menubar] div ul a:hover,
 ul[role=menubar] div ul a:focus-visible {
-  background-color: beige;
+  background-color: var(--menu-dropdown-link-hover-background-color);
 }
 
 header ul[role=menubar] div ul a:hover,
 header ul[role=menubar] div ul a:focus-visible {
-  background-color: #555;
+  background-color: var(--header-menu-dropdown-link-hover-background-color);
+}
+
+header ul[role=menubar] div ul button {
+  border-radius: 0;
+}
+
+header ul[role=menubar] div ul button:hover,
+header ul[role=menubar] div ul button:focus-visible {
+  background-color: var(--header-menu-dropdown-link-hover-background-color);
 }
 
 header ul[role=menubar] a, header ul[role=menubar] a:visited {

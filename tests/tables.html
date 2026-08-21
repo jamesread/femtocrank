@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Tables example</title>
+
+		<meta charset = "UTF-8">
+
+		<link rel = "shortcut icon" href = "logo.png" type = "image/png" />
+
+		<link rel = "stylesheet" type = "text/css" href = "../style.css">
+		<link rel = "stylesheet" type = "text/css" href = "../dark.css" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Femtocrank tables example — bordered, row-hover, and section layouts for data tables.">
+	</head>
+
+	<body>
+		<header>
+			<div class = "logo-and-title">
+				<img src = "./logo.png" alt = "SimpleApp Logo" class = "logo">
+				<h1>FemtoCrank</h1>
+			</div>
+			<nav class = "fg1">
+				<ul role = "menubar">
+					<li><a href = "../index.html">Demo home</a></li>
+					<li><a href = "simple.html">Simple app</a></li>
+					<li><a href = "dialog.html">Dialogs</a></li>
+					<li><a href = "tables.html" class = "active">Tables</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Table examples</h2>
+				</div>
+				<div class = "section-content padding">
+					<p>
+						Femtocrank tables are plain HTML with optional <code>bordered</code>,
+						<code>row-hover</code>, and a <code>responsive-cols</code> wrapper around the
+						table. Use
+						<code>col-priority-1</code> through <code>col-priority-5</code> on matching
+						<code>th</code> and <code>td</code> cells to hide lower-priority columns as the
+						table narrows (1 is hidden first). Wrap wide tables in
+						<code>table-scroll</code> to scroll horizontally instead. Add
+						<code>sticky-cols-1</code>, <code>sticky-cols-2</code>, or
+						<code>sticky-cols-3</code> on the wrapper to pin the first columns while scrolling.
+						Rows highlight on hover and when focus moves
+						inside a row (for example, tabbing to a link or button in a cell).
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>Default table</h2>
+				<p>Full width with row dividers only. Role uses <code>col-priority-1</code> and hides first when narrow.</p>
+
+				<div class = "responsive-cols">
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Forename</th>
+							<th>Surname</th>
+							<th class = "col-priority-1">Role</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Bob</td>
+							<td>Smith</td>
+							<td class = "col-priority-1">Engineer</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Alice</td>
+							<td>Jones</td>
+							<td class = "col-priority-1">Designer</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Carol</td>
+							<td>Brown</td>
+							<td class = "col-priority-1">Manager</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			</section>
+
+			<section>
+				<h2>Bordered table</h2>
+				<p>Add <code>bordered</code> for an outer frame, rounded corners, and a light shadow.</p>
+
+				<table class = "bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Forename</th>
+							<th>Surname</th>
+							<th>Role</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Bob</td>
+							<td>Smith</td>
+							<td>Engineer</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Alice</td>
+							<td>Jones</td>
+							<td>Designer</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Carol</td>
+							<td>Brown</td>
+							<td>Manager</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section>
+				<h2>Row hover</h2>
+				<p>Add <code>row-hover</code> to highlight rows on hover and keyboard focus within the row.</p>
+
+				<table class = "row-hover">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Forename</th>
+							<th>Surname</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Bob</td>
+							<td>Smith</td>
+							<td><span class = "fg-good">Active</span></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Alice</td>
+							<td>Jones</td>
+							<td><span class = "fg-warning">Pending</span></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Carol</td>
+							<td>Brown</td>
+							<td><span class = "fg-bad">Suspended</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section>
+				<h2>Responsive columns</h2>
+				<p>
+					Add a <code>responsive-cols</code> wrapper around the table and the same
+					<code>col-priority-N</code> class to each header and body cell in a column.
+					Lower numbers hide first as the table width shrinks; leave essential columns
+					(such as name and actions) unclassified.
+				</p>
+
+				<div class = "responsive-cols">
+				<table class = "row-hover bordered">
+					<thead>
+						<tr>
+							<th class = "small">ID</th>
+							<th>Name</th>
+							<th class = "col-priority-2">Department</th>
+							<th class = "col-priority-1">Status</th>
+							<th class = "actions">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class = "uneditable">1</td>
+							<td>Bob Smith</td>
+							<td class = "col-priority-2">Engineering</td>
+							<td class = "col-priority-1"><span class = "fg-good">Active</span></td>
+							<td class = "actions"><a href = "#">Edit</a></td>
+						</tr>
+						<tr>
+							<td class = "uneditable">2</td>
+							<td>Alice Jones</td>
+							<td class = "col-priority-2">Design</td>
+							<td class = "col-priority-1"><span class = "fg-warning">Pending</span></td>
+							<td class = "actions"><a href = "#">Edit</a></td>
+						</tr>
+						<tr>
+							<td class = "uneditable">3</td>
+							<td>Carol Brown</td>
+							<td class = "col-priority-2">Operations</td>
+							<td class = "col-priority-1"><span class = "fg-bad">Suspended</span></td>
+							<td class = "actions"><a href = "#">Edit</a></td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			</section>
+
+			<section>
+				<h2>Horizontal scroll</h2>
+				<p>
+					Wrap the table in <code>table-scroll</code> when you need every column visible on
+					narrow viewports. Add <code>sticky-cols-2</code> to keep the first two columns fixed
+					while the rest scrolls horizontally.
+				</p>
+
+				<div class = "table-scroll sticky-cols-2">
+				<table class = "row-hover bordered">
+					<thead>
+						<tr>
+							<th class = "small">ID</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Department</th>
+							<th>Role</th>
+							<th>Location</th>
+							<th>Phone</th>
+							<th>Start date</th>
+							<th>Manager</th>
+							<th>Status</th>
+							<th>Last login</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class = "uneditable">1</td>
+							<td>Bob Smith</td>
+							<td>bob@example.com</td>
+							<td>Engineering</td>
+							<td>Platform engineer</td>
+							<td>London</td>
+							<td>+44 20 7946 0958</td>
+							<td>2021-03-15</td>
+							<td>Carol Brown</td>
+							<td><span class = "fg-good">Active</span></td>
+							<td>2026-08-21 09:14</td>
+						</tr>
+						<tr>
+							<td class = "uneditable">2</td>
+							<td>Alice Jones</td>
+							<td>alice@example.com</td>
+							<td>Design</td>
+							<td>Product designer</td>
+							<td>Manchester</td>
+							<td>+44 161 496 0987</td>
+							<td>2022-07-01</td>
+							<td>Carol Brown</td>
+							<td><span class = "fg-warning">Pending</span></td>
+							<td>2026-08-20 16:42</td>
+						</tr>
+						<tr>
+							<td class = "uneditable">3</td>
+							<td>Carol Brown</td>
+							<td>carol@example.com</td>
+							<td>Operations</td>
+							<td>Engineering manager</td>
+							<td>Edinburgh</td>
+							<td>+44 131 496 0123</td>
+							<td>2019-11-08</td>
+							<td>—</td>
+							<td><span class = "fg-good">Active</span></td>
+							<td>2026-08-21 08:03</td>
+						</tr>
+					</tbody>
+				</table>
+				</div>
+			</section>
+
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Table rows with context menu</h2>
+
+					<div role = "toolbar">
+						<a class = "button good" href = "#">Create user</a>
+					</div>
+				</div>
+
+				<div class = "section-content">
+					<div class = "responsive-cols">
+					<table class = "row-hover">
+						<thead>
+							<tr>
+								<th class = "small">ID</th>
+								<th>Name</th>
+								<th class = "col-priority-2">Department</th>
+								<th class = "col-priority-1">Status</th>
+								<th class = "actions">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class = "uneditable">1</td>
+								<td>Bob Smith</td>
+								<td class = "col-priority-2">Engineering</td>
+								<td class = "col-priority-1"><span class = "tag fg-good">Active</span></td>
+								<td class = "actions">
+									<ul role = "menubar" class = "noListStyle">
+										<li>
+											<span class = "actions-menu-trigger"><button type = "button" aria-label = "Row actions">&#x22EE;</button></span>
+											<div>
+												<ul>
+													<li><button type = "button">Edit</button></li>
+													<li><button type = "button">Reset password</button></li>
+													<li><button type = "button" class = "fg-bad">Delete</button></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td class = "uneditable">2</td>
+								<td>Alice Jones</td>
+								<td class = "col-priority-2">Design</td>
+								<td class = "col-priority-1"><span class = "tag fg-warning">Pending</span></td>
+								<td class = "actions">
+									<ul role = "menubar" class = "noListStyle">
+										<li>
+											<span class = "actions-menu-trigger"><button type = "button" aria-label = "Row actions">&#x22EE;</button></span>
+											<div>
+												<ul>
+													<li><button type = "button">Edit</button></li>
+													<li><button type = "button">Reset password</button></li>
+													<li><button type = "button" class = "fg-bad">Delete</button></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td class = "uneditable">3</td>
+								<td>Carol Brown</td>
+								<td class = "col-priority-2">Operations</td>
+								<td class = "col-priority-1"><span class = "tag fg-bad">Suspended</span></td>
+								<td class = "actions">
+									<ul role = "menubar" class = "noListStyle">
+										<li>
+											<span class = "actions-menu-trigger"><button type = "button" aria-label = "Row actions">&#x22EE;</button></span>
+											<div>
+												<ul>
+													<li><button type = "button">Edit</button></li>
+													<li><button type = "button">Reset password</button></li>
+													<li><button type = "button" class = "fg-bad">Delete</button></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+				</div>
+			</section>
+
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Users</h2>
+
+					<div role = "toolbar">
+						<a class = "button good" href = "#">Create user</a>
+					</div>
+				</div>
+
+				<div class = "section-content">
+					<div class = "responsive-cols">
+					<table class = "row-hover">
+						<thead>
+							<tr>
+								<th class = "small">ID</th>
+								<th>Name</th>
+								<th class = "col-priority-2">Department</th>
+								<th class = "col-priority-1">Status</th>
+								<th class = "actions">Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class = "uneditable">1</td>
+								<td>Bob Smith</td>
+								<td class = "col-priority-2">Engineering</td>
+								<td class = "col-priority-1"><span class = "tag fg-good">Active</span></td>
+								<td class = "actions">
+									<a class = "button neutral" href = "#">Edit</a>
+									<button type = "button" class = "bad">Delete</button>
+								</td>
+							</tr>
+							<tr>
+								<td class = "uneditable">2</td>
+								<td>Alice Jones</td>
+								<td class = "col-priority-2">Design</td>
+								<td class = "col-priority-1"><span class = "tag fg-warning">Pending</span></td>
+								<td class = "actions">
+									<a class = "button neutral" href = "#">Edit</a>
+									<button type = "button" class = "bad">Delete</button>
+								</td>
+							</tr>
+							<tr>
+								<td class = "uneditable">3</td>
+								<td>Carol Brown</td>
+								<td class = "col-priority-2">Operations</td>
+								<td class = "col-priority-1"><span class = "tag fg-bad">Suspended</span></td>
+								<td class = "actions">
+									<a class = "button neutral" href = "#">Edit</a>
+									<button type = "button" class = "bad">Delete</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+				</div>
+			</section>
+
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Expanded row</h2>
+				</div>
+
+				<div class = "section-content padding">
+					<p>
+						Use <code>table.row-expand</code> with a <code>tbody.row-group</code> per expandable
+						user. Toggle the control in the ID column to show or hide a detail row — no JavaScript.
+					</p>
+				</div>
+
+				<div class = "section-content">
+					<div class = "responsive-cols">
+					<table class = "row-hover row-expand">
+						<thead>
+							<tr>
+								<th class = "small">ID</th>
+								<th>Name</th>
+								<th class = "col-priority-2">Department</th>
+								<th class = "col-priority-1">Status</th>
+								<th class = "actions">Actions</th>
+							</tr>
+						</thead>
+						<tbody class = "row-group">
+							<tr>
+								<td class = "uneditable">
+									<label class = "row-expand-toggle">
+										<input type = "checkbox">
+										<span class = "row-expand-icon" aria-hidden = "true">▾</span>
+										<span class = "a11yhidden">Show details for Bob Smith</span>
+									</label>
+									1
+								</td>
+								<td>Bob Smith</td>
+								<td class = "col-priority-2">Engineering</td>
+								<td class = "col-priority-1"><span class = "tag fg-good">Active</span></td>
+								<td class = "actions">
+									<ul role = "menubar" class = "noListStyle">
+										<li>
+											<span class = "actions-menu-trigger"><button type = "button" aria-label = "Row actions">&#x22EE;</button></span>
+											<div>
+												<ul>
+													<li><button type = "button">Edit</button></li>
+													<li><button type = "button">Reset password</button></li>
+													<li><button type = "button" class = "fg-bad">Delete</button></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr class = "row-details">
+								<td colspan = "5">
+									<dl>
+										<dt>Email</dt>
+										<dd>bob@example.com</dd>
+										<dt>Phone</dt>
+										<dd>+44 20 7946 0958</dd>
+										<dt>Location</dt>
+										<dd>London</dd>
+										<dt>Start date</dt>
+										<dd>2021-03-15</dd>
+										<dt>Manager</dt>
+										<dd>Carol Brown</dd>
+										<dt>Notes</dt>
+										<dd>Primary on-call contact for the platform team.</dd>
+									</dl>
+								</td>
+							</tr>
+						</tbody>
+						<tbody class = "row-group">
+							<tr>
+								<td class = "uneditable">
+									<label class = "row-expand-toggle">
+										<input type = "checkbox" checked>
+										<span class = "row-expand-icon" aria-hidden = "true">▾</span>
+										<span class = "a11yhidden">Show details for Alice Jones</span>
+									</label>
+									2
+								</td>
+								<td>Alice Jones</td>
+								<td class = "col-priority-2">Design</td>
+								<td class = "col-priority-1"><span class = "tag fg-warning">Pending</span></td>
+								<td class = "actions">
+									<ul role = "menubar" class = "noListStyle">
+										<li>
+											<span class = "actions-menu-trigger"><button type = "button" aria-label = "Row actions">&#x22EE;</button></span>
+											<div>
+												<ul>
+													<li><button type = "button">Edit</button></li>
+													<li><button type = "button">Reset password</button></li>
+													<li><button type = "button" class = "fg-bad">Delete</button></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr class = "row-details">
+								<td colspan = "5">
+									<dl>
+										<dt>Email</dt>
+										<dd>alice@example.com</dd>
+										<dt>Phone</dt>
+										<dd>+44 161 496 0987</dd>
+										<dt>Location</dt>
+										<dd>Manchester</dd>
+										<dt>Start date</dt>
+										<dd>2022-07-01</dd>
+										<dt>Manager</dt>
+										<dd>Carol Brown</dd>
+										<dt>Notes</dt>
+										<dd>Awaiting security clearance before full account activation.</dd>
+									</dl>
+								</td>
+							</tr>
+						</tbody>
+						<tbody class = "row-group">
+							<tr>
+								<td class = "uneditable">
+									<label class = "row-expand-toggle">
+										<input type = "checkbox">
+										<span class = "row-expand-icon" aria-hidden = "true">▾</span>
+										<span class = "a11yhidden">Show details for Carol Brown</span>
+									</label>
+									3
+								</td>
+								<td>Carol Brown</td>
+								<td class = "col-priority-2">Operations</td>
+								<td class = "col-priority-1"><span class = "tag fg-bad">Suspended</span></td>
+								<td class = "actions">
+									<ul role = "menubar" class = "noListStyle">
+										<li>
+											<span class = "actions-menu-trigger"><button type = "button" aria-label = "Row actions">&#x22EE;</button></span>
+											<div>
+												<ul>
+													<li><button type = "button">Edit</button></li>
+													<li><button type = "button">Reset password</button></li>
+													<li><button type = "button" class = "fg-bad">Delete</button></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr class = "row-details">
+								<td colspan = "5">
+									<dl>
+										<dt>Email</dt>
+										<dd>carol@example.com</dd>
+										<dt>Phone</dt>
+										<dd>+44 131 496 0123</dd>
+										<dt>Location</dt>
+										<dd>Edinburgh</dd>
+										<dt>Start date</dt>
+										<dd>2019-11-08</dd>
+										<dt>Manager</dt>
+										<dd>—</dd>
+										<dt>Notes</dt>
+										<dd>Account suspended pending review of access policy violations.</dd>
+									</dl>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Read-only cells</h2>
+				<p>Use <code>td.uneditable</code> for identifier columns that should read as fixed values.</p>
+
+				<table class = "bordered">
+					<thead>
+						<tr>
+							<th class = "small">ID</th>
+							<th>Setting</th>
+							<th>Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class = "uneditable">enable_signup</td>
+							<td>Allow new sign-ups</td>
+							<td>true</td>
+						</tr>
+						<tr>
+							<td class = "uneditable">session_timeout</td>
+							<td>Session timeout (minutes)</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td class = "uneditable">max_upload_mb</td>
+							<td>Maximum upload size</td>
+							<td>10</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+
+		<footer>
+			<p>
+				<span><a href = "https://github.com/jamesread">jamesread on GitHub</a></span>
+			</p>
+		</footer>
+	</body>
+</html>

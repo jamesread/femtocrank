@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Dialog example</title>
+
+		<meta charset = "UTF-8">
+
+		<link rel = "shortcut icon" href = "logo.png" type = "image/png" />
+
+		<link rel = "stylesheet" type = "text/css" href = "../style.css">
+		<link rel = "stylesheet" type = "text/css" href = "../dark.css" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Femtocrank dialog example — native HTML dialog elements with page-local JavaScript.">
+	</head>
+
+	<body>
+		<header>
+			<div class = "logo-and-title">
+				<img src = "./logo.png" alt = "SimpleApp Logo" class = "logo">
+				<h1>FemtoCrank</h1>
+			</div>
+			<nav class = "fg1">
+				<ul role = "menubar">
+					<li><a href = "../index.html">Demo home</a></li>
+					<li><a href = "simple.html">Simple app</a></li>
+					<li><a href = "dialog.html" class = "active">Dialogs</a></li>
+					<li><a href = "tables.html">Tables</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Dialog examples</h2>
+				</div>
+				<div class = "section-content padding">
+					<p>
+						This page uses the native <code>&lt;dialog&gt;</code> element and a small script
+						local to this file. No shared JavaScript is required.
+					</p>
+					<p id = "dialog-result" class = "subtle">No dialog action yet.</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>Modal dialog</h2>
+				<p>Opens with <code>showModal()</code>. Includes a simple form to test field rendering inside a dialog.</p>
+				<button type = "button" id = "open-modal">Open modal dialog</button>
+			</section>
+
+			<section>
+				<h2>Non-modal dialog</h2>
+				<p>Opens with <code>show()</code>. You can still interact with the page underneath.</p>
+				<button type = "button" id = "open-non-modal">Open non-modal dialog</button>
+			</section>
+
+			<section>
+				<h2>Confirm dialog</h2>
+				<p>A simple confirmation pattern using a form inside the dialog.</p>
+				<button type = "button" id = "open-confirm">Delete item</button>
+			</section>
+		</main>
+
+		<footer>
+			<p>
+				<span><a href = "https://github.com/jamesread">jamesread on GitHub</a></span>
+			</p>
+		</footer>
+
+		<dialog id = "modal-dialog" aria-labelledby = "modal-dialog-title">
+			<h2 id = "modal-dialog-title">Edit profile</h2>
+			<p>Example form inside a modal dialog.</p>
+			<form method = "dialog" id = "modal-form">
+				<label for = "modal-name">Name</label>
+				<input type = "text" id = "modal-name" name = "name" autocomplete = "name" />
+
+				<label for = "modal-email">Email</label>
+				<input type = "email" id = "modal-email" name = "email" autocomplete = "email" />
+
+				<label for = "modal-role">Role</label>
+				<select id = "modal-role" name = "role">
+					<option value = "">Select a role</option>
+					<option value = "admin">Admin</option>
+					<option value = "editor">Editor</option>
+					<option value = "viewer">Viewer</option>
+				</select>
+
+				<fieldset>
+					<button type = "submit" value = "cancel" class = "neutral">Cancel</button>
+					<button type = "submit" value = "save" class = "good">Save</button>
+				</fieldset>
+			</form>
+		</dialog>
+
+		<dialog id = "non-modal-dialog" aria-labelledby = "non-modal-dialog-title">
+			<h2 id = "non-modal-dialog-title">Non-modal dialog</h2>
+			<p>This dialog stays open while you use the rest of the page.</p>
+			<form method = "dialog">
+				<button type = "submit" value = "close">Close</button>
+			</form>
+		</dialog>
+
+		<dialog id = "confirm-dialog" aria-labelledby = "confirm-dialog-title">
+			<h2 id = "confirm-dialog-title">Delete item?</h2>
+			<p>This action cannot be undone.</p>
+			<form method = "dialog">
+				<button type = "submit" value = "cancel" class = "neutral">Cancel</button>
+				<button type = "submit" value = "delete" class = "bad">Delete</button>
+			</form>
+		</dialog>
+
+		<script>
+			const result = document.getElementById("dialog-result");
+
+			function setResult(message) {
+				result.textContent = message;
+			}
+
+			function wireDialog(dialog, onClose) {
+				dialog.addEventListener("close", () => {
+					onClose(dialog.returnValue || "closed");
+				});
+
+				dialog.addEventListener("click", (event) => {
+					if (event.target === dialog) {
+						dialog.close("dismiss");
+					}
+				});
+			}
+
+			const modalDialog = document.getElementById("modal-dialog");
+			const nonModalDialog = document.getElementById("non-modal-dialog");
+			const confirmDialog = document.getElementById("confirm-dialog");
+
+			document.getElementById("open-modal").addEventListener("click", () => {
+				modalDialog.showModal();
+			});
+
+			document.getElementById("open-non-modal").addEventListener("click", () => {
+				if (nonModalDialog.open) {
+					setResult("Non-modal dialog is already open.");
+					return;
+				}
+				nonModalDialog.show();
+			});
+
+			document.getElementById("open-confirm").addEventListener("click", () => {
+				confirmDialog.showModal();
+			});
+
+			wireDialog(modalDialog, (value) => {
+				if (value === "save") {
+					const form = document.getElementById("modal-form");
+					const name = form.elements.name.value.trim() || "(empty)";
+					const email = form.elements.email.value.trim() || "(empty)";
+					const role = form.elements.role.value || "(none)";
+					setResult(`Saved profile: ${name}, ${email}, role ${role}`);
+					return;
+				}
+				setResult(`Modal dialog closed with: ${value}`);
+			});
+
+			wireDialog(nonModalDialog, (value) => {
+				setResult(`Non-modal dialog closed with: ${value}`);
+			});
+
+			wireDialog(confirmDialog, (value) => {
+				if (value === "delete") {
+					setResult("Item deleted.");
+					return;
+				}
+				setResult(`Delete cancelled (${value}).`);
+			});
+		</script>
+	</body>
+</html>
