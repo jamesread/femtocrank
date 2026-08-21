@@ -1,321 +1,55 @@
 @layer components {
 @media (prefers-color-scheme: dark) {
 :root {
-  --border-color: #595959;
-  --hover-background-color: #1d345c;
-
-  --header-hover-background-color:#1d345c;
+  --body-bg-color: #262626;
+  --surface-bg-color: #343434;
   --standout-bg-color: #1f1f1f;
-  --disabled-background-color: #333;
-  --disabled-text-color: #999;
+  --section-header-bg-color: var(--surface-bg-color);
+
+  --header-bg-color: #000;
+  --header-border-color: #222;
+  --header-shadow: 0px 0px 1em #1c1c1c;
+  --header-hover-background-color: #1d345c;
+
+  --sidebar-bg-color: #000;
+  --sidebar-link-color: var(--link-color);
+  --sidebar-hover-bg-color: var(--hover-background-color);
+
+  --footer-chip-bg-color: #444;
+
   --text-color: #ddd;
+  --link-color: lightblue;
+  --annotation-key-color: #aaa;
   --focus-outline-color: #fff;
 
+  --border-color: #595959;
+  --shadow-color: #121212;
+
+  --hover-background-color: #1d345c;
+  --hover-text-color: var(--on-accent-fg);
+
+  --disabled-background-color: #333;
+  --disabled-text-color: #999;
+
+  --input-bg-color: #4e4e4e;
+  --input-fg-color: var(--text-color);
+  --control-option-bg-color: #555;
+  --control-hover-bg-color: var(--hover-background-color);
+
   --menu-item-hover-background-color: var(--hover-background-color);
-  --menu-dropdown-background-color: #343434;
-  --menu-dropdown-shadow: 0 0 .5em #121212;
+  --menu-dropdown-background-color: var(--surface-bg-color);
+  --menu-dropdown-shadow: 0 0 .5em var(--shadow-color);
   --menu-dropdown-link-hover-background-color: var(--hover-background-color);
   --header-menu-dropdown-link-hover-background-color: var(--header-hover-background-color);
 
-  --table-sticky-bg: #343434;
+  --table-sticky-bg: var(--surface-bg-color);
   --table-row-hover-bg: var(--hover-background-color);
-  --table-row-hover-fg: white;
+  --table-row-hover-fg: var(--on-accent-fg);
   --table-sticky-hover-bg: var(--table-row-hover-bg);
   --table-uneditable-bg: #555;
   --table-sticky-uneditable-bg: var(--table-uneditable-bg);
-}
 
-header {
-  background-color: black;
-  box-shadow: 0px 0px 1em #1c1c1c;
-  border-bottom: 1px solid #222;
-}
-
-body {
-  background-color: #262626;
-  color: #ddd;
-}
-
-section {
-  background-color: #343434;
-  color: #ddd;
-  box-shadow: 0 0 .5em #121212;
-}
-
-dialog {
-  background-color: #343434;
-  color: #ddd;
-}
-
-section .section-header {
-  background-color: #343434;
-  border-bottom-color: var(--border-color);
-}
-
-section .section-subheader {
-  border-bottom-color: var(--border-color);
-}
-
-button, .button {
-  color: #ddd;
-  border: 1px solid var(--border-color);
-}
-
-button:hover, .button:hover, .button:hover, .button:visited,
-button:focus-visible, .button:focus-visible {
-  background-color: var(--hover-background-color);
-  color: white;
-}
-
-button:focus-visible, .button:focus-visible,
-button[type="submit"]:focus-visible, button.good:focus-visible, .button.good:focus-visible,
-button[type="reset"]:focus-visible, button.bad:focus-visible, .button.bad:focus-visible,
-button[type="cancel"]:focus-visible, button.warning:focus-visible, .button.warning:focus-visible,
-button.neutral:focus-visible, .button.neutral:focus-visible,
-button[type="submit"].neutral:focus-visible, .button.neutral[type="submit"]:focus-visible {
-  outline: 2px solid var(--focus-outline-color);
-  outline-offset: 2px;
-}
-
-footer a, footer a:visited {
-  color: lightblue;
-}
-
-header ul[role="menubar"] a, header ul[role="menubar"] a:visited {
-  background-color: black;
-}
-
-header ul[role="menubar"] a:hover,
-header ul[role="menubar"] a:focus-visible {
-  background-color: var(--header-hover-background-color);
-}
-
-header div > ul > li > a {
-  background-color: black;
-  color: white;
-}
-
-label:has(input[type="checkbox"]):hover, label:has(input[type="radio"]):hover,
-label:has(input[type="checkbox"]:focus-visible), label:has(input[type="radio"]:focus-visible) {
-  background-color: var(--hover-background-color);
-  color: white;
-}
-
-label:has(input:checked) {
-  background-color: #488448;
-  color: white;
-}
-
-label:has(input:checked):hover,
-label:has(input:checked:focus-visible) {
-  background-color: #3a6f3a;
-  color: white;
-}
-
-a, a:visited, aside a, aside a:visited {
-  color: lightblue;
-}
-
-header ul[role="menubar"] div ul a,
-header ul[role="menubar"] div ul a:visited {
-  background-color: transparent;
-  color: white;
-}
-
-header ul[role="menubar"] div ul a:hover,
-header ul[role="menubar"] div ul a:focus-visible {
-  background-color: var(--header-menu-dropdown-link-hover-background-color);
-  color: white;
-}
-
-header ul[role="menubar"] div ul button {
-  background-color: transparent;
-  color: white;
-}
-
-header ul[role="menubar"] div ul button:hover,
-header ul[role="menubar"] div ul button:focus-visible {
-  background-color: var(--header-menu-dropdown-link-hover-background-color);
-  color: white;
-}
-
-ul[role="menubar"] > li > a,
-ul[role="menubar"] > li > span > a,
-ul[role="menubar"] > li > span > a:visited {
-  color: var(--text-color);
-}
-
-ul[role="menubar"] div ul a,
-ul[role="menubar"] div ul a:visited {
-  color: var(--text-color);
-  background-color: transparent;
-}
-
-ul[role="menubar"] div ul a:hover,
-ul[role="menubar"] div ul a:focus-visible {
-  background-color: var(--menu-dropdown-link-hover-background-color);
-  color: white;
-}
-
-ul[role="menubar"] div ul button {
-  color: var(--text-color);
-  background-color: transparent;
-}
-
-ul[role="menubar"] div ul button:hover,
-ul[role="menubar"] div ul button:focus-visible {
-  background-color: var(--menu-dropdown-link-hover-background-color);
-  color: white;
-}
-
-ul[role="menubar"] li:hover,
-ul[role="menubar"] li:focus-within {
-  background-color: var(--menu-item-hover-background-color);
-  color: white;
-}
-
-ul[role="menubar"] li:hover > a,
-ul[role="menubar"] li:hover > span > a,
-ul[role="menubar"] li:hover > span > button,
-ul[role="menubar"] li:focus-within > a,
-ul[role="menubar"] li:focus-within > span > a,
-ul[role="menubar"] li:focus-within > span > button {
-  color: white;
-}
-
-header ul[role="menubar"] > li > a,
-header ul[role="menubar"] > li > span > a,
-header ul[role="menubar"] > li > span > a:visited {
-  color: white;
-}
-
-table, th, td {
-  border-color: var(--border-color) !important;
-}
-
-footer span {
-  background-color: #444;  
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="url"],
-input[type="number"],
-input[type="color"],
-input[type="datetime-local"] {
-  background-color: #4e4e4e;
-  color: #ddd;
-  border-color: var(--border-color);
-}
-
-select {
-  background-color: #4e4e4e;
-  color: #ddd;
-  border-color: var(--border-color);
-}
-
-textarea {
-  background-color: #4e4e4e;
-  color: #ddd;
-  border-color: var(--border-color);
-}
-
-/**
- * Re-assert invalid styles: dark input[type] rules share specificity with
- * :user-invalid from style.css and would otherwise win on color/background.
- * Keep salmon + black (8.4:1, AAA) for parity with light mode and karma badges.
- */
-input:user-invalid,
-textarea:user-invalid,
-select:user-invalid,
-input[type]:user-invalid {
-  background-color: var(--karma-bad);
-  color: black;
-  border: 1px solid var(--karma-bad-border);
-  border-left-width: .35em;
-  box-shadow: 0 0 .5em #121212;
-}
-
-input:user-invalid:focus-visible,
-textarea:user-invalid:focus-visible,
-select:user-invalid:focus-visible,
-input[type]:user-invalid:focus-visible {
-  outline: 2px solid var(--karma-bad-border);
-  outline-offset: 2px;
-}
-
-.grid-boxed .stat-display { 
-  background-color: var(--standout-bg-color);
-  border-color: var(--border-color) !important;
-}
-
-pre {
-  background-color: var(--standout-bg-color);
-  color: #ddd;
-  border: 1px solid var(--border-color);
-}
-
-.radio-group {
-  border-color: var(--border-color);
-}
-
-.radio-group label {
-  background-color: #555;
-}
-
-.radio-group label:hover,
-.radio-group label:has(input:focus-visible) {
-  background-color: var(--hover-background-color);
-  color: white;
-}
-
-.multiple-checklist {
-  border-color: var(--border-color);
-}
-
-.multiple-checklist label {
-  background-color: #555;
-}
-
-aside {
-  background-color: #000;
-  box-shadow: 0 0 .5em #121212;
-}
-
-aside ul li a:hover,
-aside ul li a:focus-visible {
-  background-color: var(--hover-background-color);
-}
-
-dt {
-  border-color: var(--border-color);
-}
-
-.annotation, .tag, .inline-notification {
-  background-color: var(--standout-bg-color);
-  color: #ddd;
-  border-color: var(--border-color);
-}
-
-.annotation-val {
-  color: #ddd;
-}
-}
-}
-
-@layer karma {
-@media (prefers-color-scheme: dark) {
-button.neutral, .button.neutral,
-button[type="submit"].neutral, .button.neutral[type="submit"] {
-  color: #ddd;
-}
-
-button.neutral:hover, .button.neutral:hover,
-button.neutral:focus-visible, .button.neutral:focus-visible,
-button[type="submit"].neutral:hover, .button.neutral[type="submit"]:hover,
-button[type="submit"].neutral:focus-visible, .button.neutral[type="submit"]:focus-visible {
-  color: white;
+  --progress-track-bg-color: var(--table-uneditable-bg);
 }
 }
 }

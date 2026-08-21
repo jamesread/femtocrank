@@ -74,7 +74,7 @@
 
 				<form>
 					<label for = "name">Name</label>
-					<input type = "text" id = "name" name = "name" autocomplete = "yes" />
+					<input type = "text" id = "name" name = "name" autocomplete = "name" />
 
 					<span class = "fake-label">Role</span>
 					<div class = "radio-group">
@@ -154,7 +154,7 @@
 					<label for = "email">Email</label>
 					<input type = "email" id = "email" name = "email" />
 
-					<label>Is Administrator?</label>
+					<label for = "is-admin">Is Administrator?</label>
 					<input type = "checkbox" id = "is-admin" name = "is-admin" />
 
 					<label>Website</label>
@@ -164,10 +164,10 @@
 					<input type = "text" id = "favourite-food" name = "favourite-food" placeholder = "e.g. Pizza" disabled />
 
 
-					<label>Favourite Colour</label>
+					<label for = "favourite-colour">Favourite Colour</label>
 					<input type = "color" id = "favourite-colour" name = "favourite-colour" value = "#dee3e7" />
 
-					<label>Favourite Number</label>
+					<label for = "favourite-number">Favourite Number</label>
 					<input type = "number" id = "favourite-number" name = "favourite-number" min = "0" max = "100" step = "1" value = "50" />
 
 					<span class = "fake-label">
@@ -195,9 +195,7 @@
 					<label for = "disabled">Disabled</label>
 					<textarea id = "disabled" disabled>This is a disabled textarea.</textarea>
 
-					<label>
-						Datetime
-					</label>
+					<label for = "datetime">Datetime</label>
 
 					<input type = "datetime-local" id = "datetime" name = "datetime" />
 
