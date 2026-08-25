@@ -8,34 +8,42 @@
   --karma-bad: salmon;
   --karma-warning: moccasin;
   --karma-severe: lightsalmon;
-  --karma-important: lightgoldenrodyellow;
   --karma-note: lightblue;
   --karma-info: #efefef;
   --karma-old: wheat;
 
-  --karma-good-fg: mediumseagreen;
-  --karma-bad-fg: rgb(206, 54, 54); /** Someone who picked the colors in the 90s chose really bad colors for red **/
   --karma-bad-border: #8b1a1a;
-  --karma-warning-fg: orange;
-  --karma-severe-fg: rgb(191, 86, 86);
-  --karma-important-fg: darkgoldenrod;
-  --karma-note-fg: rgb(84, 144, 182);
-  --karma-info-fg: darkgray;
-  --karma-old-fg: darkolivegreen;
   --karma-on-bg-fg: #000;
 
-  --button-good-bg: #407240;
-  --button-good-hover-bg: #3a6f3a;
-  --button-bad-bg: #d9534f;
-  --button-bad-hover-bg: #c9302c;
-  --button-warning-bg: #c7872c;
-  --button-warning-hover-bg: #b77a2c;
+  --karma-good-wash: color-mix(in srgb, var(--karma-good) 12%, var(--standout-bg-color));
+  --karma-bad-wash: color-mix(in srgb, var(--karma-bad) 15%, var(--standout-bg-color));
+  --karma-warning-wash: color-mix(in srgb, var(--karma-warning) 18%, var(--standout-bg-color));
+  --karma-severe-wash: color-mix(in srgb, var(--karma-severe) 15%, var(--standout-bg-color));
+  --karma-note-wash: color-mix(in srgb, var(--karma-note) 15%, var(--standout-bg-color));
+  --karma-info-wash: color-mix(in srgb, var(--karma-info) 40%, var(--standout-bg-color));
+  --karma-old-wash: color-mix(in srgb, var(--karma-old) 18%, var(--standout-bg-color));
+
+  --karma-good-tint: color-mix(in srgb, var(--karma-good) 45%, var(--standout-bg-color));
+  --karma-bad-tint: color-mix(in srgb, var(--karma-bad) 65%, var(--standout-bg-color));
+  --karma-warning-tint: color-mix(in srgb, var(--karma-warning) 50%, var(--standout-bg-color));
+  --karma-severe-tint: color-mix(in srgb, var(--karma-severe) 45%, var(--standout-bg-color));
+  --karma-note-tint: color-mix(in srgb, var(--karma-note) 40%, var(--standout-bg-color));
+  --karma-info-tint: color-mix(in srgb, var(--karma-info) 65%, var(--standout-bg-color));
+  --karma-old-tint: color-mix(in srgb, var(--karma-old) 50%, var(--standout-bg-color));
+
+  --button-good-bg: #0f7a52;
+  --button-good-hover-bg: #0b5c3e;
+  --button-bad-bg: #b52a27;
+  --button-bad-hover-bg: #9e1f1c;
+  --button-warning-bg: #b45309;
+  --button-warning-hover-bg: #92400e;
   --button-disabled-bg: #6e6e6e;
+  --button-disabled-fg: #f5f5f5;
   --on-accent-fg: #fff;
   --button-on-accent-fg: var(--on-accent-fg);
 
   --body-bg-color: #dee3e7;
-  --surface-bg-color: #fff;
+  --section-bg-color: #fff;
   --standout-bg-color: #f8f9fa;
   --section-header-bg-color: var(--standout-bg-color);
 
@@ -48,49 +56,54 @@
   --header-button-hover-bg-color: #6e6e6e;
   --header-focus-outline-color: var(--on-accent-fg);
 
-  --sidebar-bg-color: var(--surface-bg-color);
+  --sidebar-bg-color: var(--section-bg-color);
   --sidebar-link-color: #000;
-  --sidebar-hover-bg-color: #f2f2f2;
+  --sidebar-hover-bg-color: var(--hover-background-color);
   --sidebar-border-color: #333;
 
   --footer-chip-bg-color: #c6d0d7;
+  --footer-link-color: #004578;
 
   --text-color: rgb(51, 65, 85);
-  --muted-text-color: #999;
+  --icon-color: var(--text-color);
+  --muted-text-color: color-mix(in srgb, var(--text-color) 96%, white);
   --annotation-key-color: #666;
-  --link-color: blue;
+  --link-color: #0066b3;
   --focus-outline-color: var(--text-color);
 
   --border-color: #d7d7d7;
   --shadow-color: #9a9a9a;
   --backdrop-color: rgba(0, 0, 0, 0.5);
 
-  --hover-background-color: #e9e9e9;
+  --hover-background-color: color-mix(in srgb, var(--body-bg-color) 45%, var(--section-bg-color));
   --hover-text-color: #000;
 
   --disabled-background-color: #e9e9e9;
   --disabled-text-color: var(--muted-text-color);
 
-  --input-bg-color: var(--surface-bg-color);
+  --input-bg-color: var(--section-bg-color);
   --input-fg-color: var(--text-color);
   --control-option-bg-color: var(--input-bg-color);
-  --control-hover-bg-color: var(--table-uneditable-bg);
-  --control-checked-bg: var(--button-good-bg);
-  --control-checked-hover-bg: var(--button-good-hover-bg);
-  --control-checked-fg: var(--button-on-accent-fg);
+  --control-hover-bg-color: var(--hover-background-color);
+  --control-checked-bg: color-mix(in srgb, #5f8f72 14%, var(--standout-bg-color));
+  --control-checked-hover-bg: color-mix(in srgb, #5f8f72 22%, var(--standout-bg-color));
+  --control-checked-fg: var(--karma-on-bg-fg);
 
-  --menu-hover-bg-color: beige;
+  --menu-hover-bg-color: var(--hover-background-color);
   --menu-item-hover-background-color: var(--menu-hover-bg-color);
-  --menu-dropdown-background-color: var(--surface-bg-color);
-  --menu-dropdown-shadow: 0 0 6px 0 var(--header-bg-color);
+  --menu-dropdown-background-color: var(--section-bg-color);
+  --menu-dropdown-radius: .4em;
+  --menu-dropdown-padding: .25em;
+  --menu-dropdown-border-color: var(--border-color);
+  --menu-dropdown-shadow: 0 .35em 1em color-mix(in srgb, var(--shadow-color) 65%, transparent), 0 0 0 1px var(--menu-dropdown-border-color);
   --menu-dropdown-link-hover-background-color: var(--menu-hover-bg-color);
   --header-menu-dropdown-link-hover-background-color: var(--header-hover-background-color);
 
-  --table-sticky-bg: var(--surface-bg-color);
+  --table-sticky-bg: var(--section-bg-color);
   --table-row-hover-bg: var(--menu-hover-bg-color);
   --table-row-hover-fg: #000;
   --table-sticky-hover-bg: var(--table-row-hover-bg);
-  --table-uneditable-bg: #f0f0f0;
+  --table-uneditable-bg: color-mix(in srgb, var(--body-bg-color) 30%, var(--section-bg-color));
   --table-sticky-uneditable-bg: var(--table-uneditable-bg);
 
   --skip-link-bg: #000;
@@ -98,7 +111,51 @@
   --skip-link-outline: #000;
 
   --progress-track-bg-color: var(--table-uneditable-bg);
-  --progress-fill-bg-color: var(--button-good-bg);
+  --progress-fill-bg-color: #5f8f72;
+
+  --nav-grid-accent-fg: var(--icon-color);
+  --nav-grid-accent-bg: color-mix(in srgb, var(--body-bg-color) 25%, var(--text-color));
+  --nav-grid-active-fg: var(--button-on-accent-fg);
+  --nav-grid-muted-fg: var(--muted-text-color);
+  --nav-grid-border: var(--border-color);
+  --nav-grid-hover-bg: var(--hover-background-color);
+  --nav-grid-indicator-bg: var(--karma-bad-tint);
+  --nav-grid-indicator-fg: var(--text-color);
+  --nav-grid-disabled-fg: var(--disabled-text-color);
+  --nav-grid-shadow: var(--shadow-color);
+  --nav-grid-hover-shadow: color-mix(in srgb, var(--nav-grid-shadow) 50%, transparent);
+
+  --scrollbar-track-bg: var(--body-bg-color);
+  --scrollbar-thumb-bg: color-mix(in srgb, var(--muted-text-color) 55%, var(--border-color));
+  --scrollbar-thumb-hover-bg: color-mix(in srgb, var(--text-color) 35%, var(--border-color));
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+*::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg);
+  border: 3px solid var(--scrollbar-track-bg);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover-bg);
+}
+
+*::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track-bg);
 }
 
 html, body {
@@ -117,11 +174,12 @@ body {
 
 a, a:visited { 
   color: var(--link-color);
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 a.active {
@@ -141,7 +199,7 @@ main {
 }
 
 section {
-  background-color: var(--surface-bg-color);
+  background-color: var(--section-bg-color);
   padding: 1em;
   border-radius: .4em;
   margin-bottom: 1em;
@@ -199,6 +257,18 @@ section .section-header div[role="toolbar"] {
 
 section .section-header .button {
   margin-bottom: 0;
+}
+
+section .section-header [role="toolbar"] button,
+section .section-header [role="toolbar"] .button {
+  padding: .35em .55em;
+  min-width: 2.25em;
+  line-height: 1;
+}
+
+section .section-header [role="toolbar"] button svg,
+section .section-header [role="toolbar"] .button svg {
+  display: block;
 }
 
 section .section-subheader {
@@ -263,7 +333,7 @@ header {
     width: 100%;
   }
 
-  --progress-track-bg-color: var(--header-hover-background-color);
+  --progress-track-bg-color: var(--input-bg-color);
 }
 
 .icon {
@@ -329,47 +399,98 @@ pre {
   box-shadow: 0 0 .5em var(--shadow-color);
 }
 
-.annotation, .tag, .inline-notification {
-  border-radius: .4em;
-  border: 1px solid var(--border-color);
-  padding: .4em;
+.annotation, .tag {
   margin: .1em;
   margin-bottom: .4em;
-  display: inline-block;
+  display: inline-flex;
+  align-items: stretch;
+  font-size: 0.8125em;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  user-select: none;
+  vertical-align: baseline;
+}
+
+.annotation {
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  padding: 0;
+  overflow: hidden;
   background-color: var(--standout-bg-color);
   color: var(--text-color);
-  user-select: none;
+}
+
+.tag {
+  border-radius: 999px;
+  padding: .15em .55em;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid var(--border-color);
+  background-color: var(--standout-bg-color);
+  color: var(--text-color);
 }
 
 .annotation-key {
-	border-radius: .4em 0 0 .4em;
+  border-radius: 0;
   border-right: 1px solid var(--border-color);
-  padding-right: .4em;
-	display: inline-block;
-	color: var(--annotation-key-color);
+  padding: .15em .45em .15em .55em;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--annotation-key-color);
+  background-color: color-mix(in srgb, var(--border-color) 35%, var(--standout-bg-color));
 }
 
 .annotation-val {
-	border-radius: 0 .4em .4em 0;
-	display: inline-block;
-	color: var(--text-color);
+  border-radius: 0;
+  padding: .15em .55em .15em .45em;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  color: var(--text-color);
 }
 
 .notification {
-  padding: 0.5em;
+  display: flex;
+  align-items: stretch;
   border-radius: .4em;
-  margin-bottom: 1em;
+  border: 1px solid var(--border-color);
+  padding: 0;
+  margin: 0 0 .4em;
+  background-color: var(--standout-bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.notification-key {
+  border-radius: 0;
+  border-right: 1px solid var(--border-color);
+  padding: .4em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: bold;
+  flex: 0 0 6em;
+  width: 6em;
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.notification-body {
+  padding: .4em;
+  flex: 1;
+  min-width: 0;
+}
+
+.clickable {
   cursor: pointer;
 }
 
-.notification a {
+.clickable a {
   color: var(--text-color);
   font-weight: bold;
   text-decoration: none;
-}
-
-.inline-notification {
-  display: block;
 }
 
 button, .button, .button:visited {
@@ -380,7 +501,6 @@ button, .button, .button:visited {
   border-radius: .4em;
   background-color: transparent;
   font-weight: bold;
-  font-family: sans-serif;
   color: var(--text-color);
   border: 1px solid var(--border-color);
   cursor: pointer;
@@ -428,6 +548,7 @@ header .button:focus-visible {
 .stat {
   font-size: 1.4em;
   font-weight: bold;
+  color: var(--text-color);
 }
 
 form {
@@ -493,6 +614,60 @@ input[type="datetime-local"] {
   color-scheme: light dark;
 }
 
+input[type="range"] {
+  width: 100%;
+  max-width: 600px;
+  height: .8em;
+  appearance: none;
+  background: transparent;
+  accent-color: var(--control-checked-bg);
+  color: var(--control-checked-bg);
+  color-scheme: light dark;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: .8em;
+  border: 1px solid var(--border-color);
+  border-radius: .4em;
+  background-color: var(--control-option-bg-color);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  margin-top: -.15em;
+  border: 1px solid var(--border-color);
+  border-radius: .4em;
+  background-color: var(--control-checked-hover-bg);
+}
+
+input[type="range"]::-moz-range-track {
+  height: .8em;
+  border: 1px solid var(--border-color);
+  border-radius: .4em;
+  background-color: var(--control-option-bg-color);
+}
+
+input[type="range"]::-moz-range-progress {
+  height: .8em;
+  border-radius: .4em;
+  background-color: var(--control-checked-bg);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--border-color);
+  border-radius: .4em;
+  background-color: var(--control-checked-hover-bg);
+}
+
+input[type="range"]:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px;
+}
+
 input[type="datetime-local"]::-webkit-datetime-edit,
 input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper,
 input[type="datetime-local"]::-webkit-datetime-edit-text,
@@ -548,6 +723,7 @@ progress {
   appearance: none;
   background-color: var(--progress-track-bg-color);
   accent-color: var(--progress-fill-bg-color);
+  color: var(--progress-fill-bg-color);
 }
 
 progress::-webkit-progress-bar {
@@ -734,6 +910,12 @@ label:has(input:checked:focus-visible) {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.grid-boxed-2 {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .grid section {
   margin-bottom: 0;
 }
@@ -874,12 +1056,12 @@ td.actions {
   width: 8rem;
 }
 
-td.actions ul[role="menubar"] {
+td.actions nav.menu {
   display: inline-block;
   vertical-align: middle;
 }
 
-td.actions ul[role="menubar"] li div {
+td.actions nav.menu li div {
   right: 0;
   left: auto;
   z-index: 1;
@@ -984,14 +1166,17 @@ td.actions ul[role="menubar"] li div {
 .table-scroll.sticky-cols-1 thead th:nth-child(1) { z-index: 2; }
 
 .table-scroll.sticky-cols-2 thead th:nth-child(1) { z-index: 2; }
+
 .table-scroll.sticky-cols-2 thead th:nth-child(2),
 .table-scroll.sticky-cols-2 tbody td:nth-child(2) { z-index: 2; }
 .table-scroll.sticky-cols-2 thead th:nth-child(2) { z-index: 3; }
 
 .table-scroll.sticky-cols-3 thead th:nth-child(1) { z-index: 2; }
+
 .table-scroll.sticky-cols-3 thead th:nth-child(2),
 .table-scroll.sticky-cols-3 tbody td:nth-child(2) { z-index: 2; }
 .table-scroll.sticky-cols-3 thead th:nth-child(2) { z-index: 3; }
+
 .table-scroll.sticky-cols-3 thead th:nth-child(3),
 .table-scroll.sticky-cols-3 tbody td:nth-child(3) { z-index: 3; }
 .table-scroll.sticky-cols-3 thead th:nth-child(3) { z-index: 4; }
@@ -1018,17 +1203,19 @@ ul.noListStyle {
   margin: 0;
 }
 
-ul[role="menubar"] {
+nav.menu > ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-ul[role="menubar"] li {
+nav.menu > ul li {
   display: inline-block;
+  border-radius: .5em;
+  position: relative;
 }
 
-ul[role=menubar] li span.submenu  {
+nav.menu > ul li span.submenu  {
   text-decoration: dotted underline;
 }
 
@@ -1050,67 +1237,127 @@ td.actions .actions-menu-trigger button:focus-visible {
   color: var(--table-row-hover-fg);
 }
 
-ul[role=menubar] li div {
+nav.menu > ul li div {
   position: absolute;
+  top: 100%;
+  left: 0;
   display: none;
   box-shadow: var(--menu-dropdown-shadow);
+  border-radius: var(--menu-dropdown-radius);
+  z-index: 5;
 }
 
-ul[role=menubar] li:hover,
-ul[role=menubar] li:focus-within {
+nav.menu > ul li div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: .5em;
+}
+
+nav.menu > ul li:hover div,
+nav.menu > ul li:focus-within div {
+  display: block;
+  background-color: var(--menu-dropdown-background-color);
+  min-width: 12em;
+  padding: var(--menu-dropdown-padding);
+}
+
+header nav.menu > ul li div {
+  --menu-dropdown-border-color: var(--header-border-color);
+}
+
+nav.menu > ul li:hover,
+nav.menu > ul li:focus-within {
   background-color: var(--menu-item-hover-background-color);
   color: var(--hover-text-color);
 }
 
-ul[role=menubar] li:hover > a,
-ul[role=menubar] li:hover > span > a,
-ul[role=menubar] li:hover > span > button,
-ul[role=menubar] li:focus-within > a,
-ul[role=menubar] li:focus-within > span > a,
-ul[role=menubar] li:focus-within > span > button {
+nav.menu > ul li:hover > a,
+nav.menu > ul li:hover > span > a,
+nav.menu > ul li:hover > span > button,
+nav.menu > ul li:focus-within > a,
+nav.menu > ul li:focus-within > span > a,
+nav.menu > ul li:focus-within > span > button {
   color: var(--hover-text-color);
 }
 
-ul[role=menubar] li span {
+nav.menu > ul li span {
   cursor: pointer;
 }
 
-ul[role=menubar] li:hover div,
-ul[role=menubar] li:focus-within div {
-  display: block;
-  background-color: var(--menu-dropdown-background-color);
-  min-width: 12em;
+header nav.menu > ul li:hover,
+header nav.menu > ul li:focus-within {
+  background-color: var(--header-hover-background-color);
+  color: var(--header-hover-text-color);
 }
 
-ul[role=menubar] li {
-  border-radius: .5em;
-  position: relative;
+header nav.menu > ul li:hover > a,
+header nav.menu > ul li:hover > span > a,
+header nav.menu > ul li:hover > span > button,
+header nav.menu > ul li:focus-within > a,
+header nav.menu > ul li:focus-within > span > a,
+header nav.menu > ul li:focus-within > span > button {
+  color: var(--header-hover-text-color);
+  background-color: var(--header-hover-background-color);
 }
 
-header ul[role=menubar] li:hover ul,
-header ul[role=menubar] li:focus-within ul {
+header nav.menu > ul li:hover div,
+header nav.menu > ul li:focus-within div {
+  background-color: var(--header-bg-color);
+  color: var(--header-fg-color);
+}
+
+header nav.menu > ul div ul li {
+  color: var(--header-fg-color);
+}
+
+header nav.menu > ul div ul li:hover,
+header nav.menu > ul div ul li:focus-within {
+  background-color: var(--header-hover-background-color);
+  color: var(--header-hover-text-color);
+}
+
+header nav.menu > ul div ul li:hover > a,
+header nav.menu > ul div ul li:focus-within > a,
+header nav.menu > ul div ul li:hover > button,
+header nav.menu > ul div ul li:focus-within > button {
+  color: var(--header-hover-text-color);
+  background-color: var(--header-hover-background-color);
+}
+
+header nav.menu > ul li:hover ul,
+header nav.menu > ul li:focus-within ul {
   margin: 0;
   padding: 0;
 }
 
-ul[role=menubar] div ul {
+nav.menu > ul div ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-ul[role=menubar] div ul li {
+nav.menu > ul div ul li {
   display: block;
   margin-right: 0;
+  border-radius: calc(var(--menu-dropdown-radius) - .05em);
 }
 
-ul[role=menubar] div ul a {
+nav.menu > ul div ul a {
   text-decoration: none;
   display: block;
-  padding: .2em;
+  padding: .35em .6em;
+  border-radius: inherit;
 }
 
-ul[role=menubar] li span.submenu button {
+nav.menu > ul li span.submenu a:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px;
+}
+
+nav.menu > ul li span.submenu button {
   background: transparent;
   border: 0;
   font: inherit;
@@ -1121,70 +1368,87 @@ ul[role=menubar] li span.submenu button {
   text-decoration: none;
 }
 
-ul[role=menubar] li span.submenu button:hover,
-ul[role=menubar] li span.submenu button:focus-visible {
+nav.menu > ul li span.submenu button:hover,
+nav.menu > ul li span.submenu button:focus-visible {
   background-color: transparent;
   color: inherit;
 }
 
-ul[role=menubar] div ul button {
+nav.menu > ul div ul button {
   text-decoration: none;
   display: block;
   width: 100%;
   text-align: left;
-  padding: .2em;
+  padding: .35em .6em;
   border: 0;
   background: transparent;
   font: inherit;
   font-weight: inherit;
   color: inherit;
   cursor: pointer;
+  border-radius: inherit;
 }
 
-ul[role=menubar] div ul button:hover,
-ul[role=menubar] div ul button:focus-visible {
+nav.menu > ul div ul button:hover,
+nav.menu > ul div ul button:focus-visible {
   background-color: var(--menu-dropdown-link-hover-background-color);
   color: var(--hover-text-color);
 }
 
-header ul[role=menubar] div ul a {
-  border-radius: 0;
-  background-color: transparent;
+header nav.menu > ul div ul a {
+  background-color: var(--header-bg-color);
   color: var(--header-fg-color);
+  border-radius: inherit;
 }
 
-ul[role=menubar] div ul a:hover,
-ul[role=menubar] div ul a:focus-visible {
+nav.menu > ul div ul a:hover,
+nav.menu > ul div ul a:focus-visible {
   background-color: var(--menu-dropdown-link-hover-background-color);
   color: var(--hover-text-color);
 }
 
-header ul[role=menubar] div ul a:hover,
-header ul[role=menubar] div ul a:focus-visible {
+nav.menu > ul div ul a:focus-visible,
+nav.menu > ul div ul button:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: -2px;
+}
+
+header nav.menu > ul li span.submenu a:focus-visible {
+  outline-color: var(--header-focus-outline-color);
+}
+
+header nav.menu > ul div ul a:hover,
+header nav.menu > ul div ul a:focus-visible {
   background-color: var(--header-menu-dropdown-link-hover-background-color);
-  color: var(--header-fg-color);
+  color: var(--header-hover-text-color);
 }
 
-header ul[role=menubar] div ul button {
-  border-radius: 0;
-  background-color: transparent;
-  color: var(--header-fg-color);
+header nav.menu > ul div ul a:focus-visible,
+header nav.menu > ul div ul button:focus-visible {
+  outline-color: var(--header-focus-outline-color);
 }
 
-header ul[role=menubar] div ul button:hover,
-header ul[role=menubar] div ul button:focus-visible {
+header nav.menu > ul div ul button {
+  background-color: var(--header-bg-color);
+  color: var(--header-fg-color);
+  border-radius: inherit;
+}
+
+header nav.menu > ul div ul button:hover,
+header nav.menu > ul div ul button:focus-visible {
   background-color: var(--header-menu-dropdown-link-hover-background-color);
-  color: var(--header-fg-color);
+  color: var(--header-hover-text-color);
 }
 
-header ul[role=menubar] a, header ul[role=menubar] a:visited {
+header nav.menu > ul a, header nav.menu > ul a:visited {
   color: var(--header-fg-color);
   background-color: var(--header-bg-color);
 }
 
-header ul[role=menubar] a:hover,
-header ul[role=menubar] a:focus-visible {
+header nav.menu > ul a:hover,
+header nav.menu > ul a:focus-visible {
   background-color: var(--header-hover-background-color);
+  color: var(--header-hover-text-color);
 }
 
 aside {
@@ -1250,11 +1514,16 @@ footer {
 }
 
 footer span {
-  padding: .5em 1em .5em 1em;
+  padding: .5em 1em;
   border-radius: .5em;
   background-color: var(--footer-chip-bg-color);
   display: inline-block;
   margin-right: 1em;
+  color: var(--text-color);
+}
+
+footer span a, footer span a:visited {
+  color: var(--footer-link-color);
 }
 
 .a11yhidden {
@@ -1325,7 +1594,7 @@ dialog {
   padding: 1em;
   max-width: 600px;
   margin: auto;
-  background-color: var(--surface-bg-color);
+  background-color: var(--section-bg-color);
   color: var(--text-color);
 }
 
@@ -1497,11 +1766,6 @@ a svg, button svg, h2 svg {
     background-color: var(--karma-severe);
   }
 
-  .important {
-    color: var(--karma-on-bg-fg);
-    background-color: var(--karma-important);
-  }
-
   .note {
     color: var(--karma-on-bg-fg);
     background-color: var(--karma-note);
@@ -1522,43 +1786,155 @@ a svg, button svg, h2 svg {
     color: var(--karma-on-bg-fg);
   }
 
-  .fg-critical, .fg-bad {
-    color: var(--karma-bad-fg);
-    font-weight: 500;;
+  .tag:is(.note, .success, .good, .severe, .critical, .error, .bad, .warning, .info, .old) {
+    border-color: transparent;
   }
 
-  .fg-warning {
-    color: var(--karma-warning-fg);
-    font-weight: 500;;
+  .tag.note {
+    background-color: var(--karma-note-tint);
+    color: var(--text-color);
   }
 
-  .fg-severe {
-    color: var(--karma-severe-fg);
-    font-weight: 500;;
+  .tag.success, .tag.good {
+    background-color: var(--karma-good-tint);
+    color: var(--text-color);
   }
 
-  .fg-important {
-    color: var(--karma-important-fg);
-    font-weight: 500;;
+  .tag.severe {
+    background-color: var(--karma-severe-tint);
+    color: var(--text-color);
   }
 
-  .fg-note {
-    color: var(--karma-note-fg);
-    font-weight: 500;;
+  .tag.critical, .tag.error, .tag.bad {
+    background-color: var(--karma-bad-tint);
+    color: var(--text-color);
   }
 
-  .fg-info {
-    color: var(--karma-info-fg);
-    font-weight: 500;;
+  .tag.warning {
+    background-color: var(--karma-warning-tint);
+    color: var(--text-color);
   }
 
-  .fg-good, .fg-success {
-    color: var(--karma-good-fg);
-    font-weight: 500;;
+  .tag.info {
+    background-color: var(--karma-info-tint);
+    color: var(--text-color);
   }
 
-  .fg-old {
-    color: var(--karma-old-fg);
+  .tag.old {
+    background-color: var(--karma-old-tint);
+    color: var(--text-color);
+  }
+
+  .stat-display:is(.note, .success, .good, .severe, .critical, .error, .bad, .warning, .info, .old) {
+    background-color: var(--standout-bg-color);
+    color: var(--text-color);
+  }
+
+  .stat-display.note {
+    background-color: var(--karma-note-wash);
+  }
+
+  .stat-display.good, .stat-display.success {
+    background-color: var(--karma-good-wash);
+  }
+
+  .stat-display.warning {
+    background-color: var(--karma-warning-wash);
+  }
+
+  .stat-display.severe {
+    background-color: var(--karma-severe-wash);
+  }
+
+  .stat-display.bad, .stat-display.critical, .stat-display.error {
+    background-color: var(--karma-bad-wash);
+  }
+
+  .stat-display.info {
+    background-color: var(--karma-info-wash);
+  }
+
+  .stat-display.old {
+    background-color: var(--karma-old-wash);
+  }
+
+  .annotation:is(.note, .success, .good, .severe, .critical, .error, .bad, .warning, .info, .old),
+  .notification:is(.note, .success, .good, .severe, .critical, .error, .bad, .warning, .info, .old) {
+    background-color: var(--standout-bg-color);
+    color: var(--text-color);
+  }
+
+  .annotation.note .annotation-val {
+    background-color: var(--karma-note-tint);
+    color: var(--text-color);
+  }
+
+  .annotation.success .annotation-val, .annotation.good .annotation-val {
+    background-color: var(--karma-good-tint);
+    color: var(--text-color);
+  }
+
+  .annotation.severe .annotation-val {
+    background-color: var(--karma-severe-tint);
+    color: var(--text-color);
+  }
+
+  .annotation.critical .annotation-val, .annotation.error .annotation-val, .annotation.bad .annotation-val {
+    background-color: var(--karma-bad-tint);
+    color: var(--text-color);
+  }
+
+  .annotation.warning .annotation-val {
+    background-color: var(--karma-warning-tint);
+    color: var(--text-color);
+  }
+
+  .annotation.info .annotation-val {
+    background-color: var(--karma-info-tint);
+    color: var(--text-color);
+  }
+
+  .annotation.old .annotation-val {
+    background-color: var(--karma-old-tint);
+    color: var(--text-color);
+  }
+
+  .notification.note .notification-key {
+    background-color: var(--karma-note-tint);
+    color: var(--text-color);
+  }
+
+  .notification.success .notification-key,
+  .notification.good .notification-key {
+    background-color: var(--karma-good-tint);
+    color: var(--text-color);
+  }
+
+  .notification.severe .notification-key {
+    background-color: var(--karma-severe-tint);
+    color: var(--text-color);
+  }
+
+  .notification.critical .notification-key,
+  .notification.error .notification-key,
+  .notification.bad .notification-key {
+    background-color: var(--karma-bad-tint);
+    color: var(--text-color);
+  }
+
+  .notification.warning .notification-key {
+    background-color: var(--karma-warning-tint);
+    color: var(--text-color);
+  }
+
+  .notification.info .notification-key {
+    background-color: var(--karma-info-tint);
+    color: var(--text-color);
+  }
+
+  .notification.old .notification-key {
+    background-color: var(--karma-old-tint);
+    color: var(--text-color);
   }
 
   button[type="submit"], button.good, .button.good {
@@ -1589,7 +1965,7 @@ a svg, button svg, h2 svg {
 
   button:disabled, .button:disabled {
     background-color: var(--button-disabled-bg);
-    color: var(--disabled-text-color);
+    color: var(--button-disabled-fg);
     cursor: not-allowed;
   }
 
@@ -1608,15 +1984,199 @@ a svg, button svg, h2 svg {
     background-color: var(--button-bad-hover-bg);
   }
 
-  button[type="cancel"], button.warning, .button.warning {
+  button.warning, .button.warning {
     background-color: var(--button-warning-bg);
     color: var(--button-on-accent-fg);
     border: 0;
   }
 
-  button[type="cancel"]:hover, button.warning:hover, .button.warning:hover,
-  button[type="cancel"]:focus-visible, button.warning:focus-visible, .button.warning:focus-visible {
+  button.warning:hover, .button.warning:hover,
+  button.warning:focus-visible, .button.warning:focus-visible {
     background-color: var(--button-warning-hover-bg);
+  }
+
+  .navigation-grid-container {
+    width: 100%;
+  }
+
+  .navigation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .navigation-grid.compact {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+  }
+
+  button.nav-button,
+  a.nav-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    padding: 1.25rem 0.75rem;
+    background: transparent;
+    border: 1px solid var(--nav-grid-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    position: relative;
+    font-weight: normal;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .navigation-grid.compact button.nav-button,
+  .navigation-grid.compact a.nav-button {
+    padding: 0.75rem 0.5rem;
+    gap: 0.5rem;
+  }
+
+  button.nav-button:hover,
+  a.nav-button:hover {
+    border-color: var(--nav-grid-accent-fg);
+    background: var(--nav-grid-hover-bg);
+    color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--nav-grid-hover-shadow);
+  }
+
+  button.nav-button:active,
+  a.nav-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px var(--nav-grid-shadow);
+  }
+
+  button.nav-button.active,
+  a.nav-button.active {
+    background: var(--nav-grid-accent-bg);
+    border-color: var(--nav-grid-accent-bg);
+    color: var(--nav-grid-active-fg);
+  }
+
+  button.nav-button.active .nav-button-icon,
+  a.nav-button.active .nav-button-icon {
+    color: var(--nav-grid-active-fg);
+  }
+
+  .nav-button-icon {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    background: transparent;
+
+    /* Icons use --icon-color only; status is shown with indicators and count badges. */
+    color: var(--icon-color);
+    transition: color 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  button.nav-button:disabled,
+  button.nav-button.disabled {
+    background: transparent;
+    color: inherit;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  button.nav-button:disabled:hover,
+  button.nav-button.disabled:hover {
+    border-color: var(--nav-grid-border);
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    color: inherit;
+  }
+
+  button.nav-button:disabled .nav-button-icon,
+  button.nav-button.disabled .nav-button-icon {
+    color: var(--nav-grid-disabled-fg);
+  }
+
+  .nav-button-indicator {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+    background: var(--nav-grid-indicator-bg);
+    flex-shrink: 0;
+  }
+
+  .nav-button-count {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    min-width: 1.25rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    background: var(--nav-grid-indicator-bg);
+    color: var(--nav-grid-indicator-fg);
+    font-size: 0.75em;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .navigation-grid.compact .nav-button-indicator {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .navigation-grid.compact .nav-button-count {
+    top: 0.35rem;
+    right: 0.35rem;
+  }
+
+  .nav-button-label {
+    font-weight: bold;
+    font-size: 1.125rem;
+    word-break: break-word;
+    text-align: left;
+    line-height: 1.2;
+  }
+
+  button.nav-button.active .nav-button-label,
+  a.nav-button.active .nav-button-label {
+    color: var(--nav-grid-active-fg);
+  }
+
+  .nav-button-description {
+    font-weight: normal;
+    color: var(--nav-grid-muted-fg);
+    word-break: break-word;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  button.nav-button.active .nav-button-description,
+  a.nav-button.active .nav-button-description {
+    color: var(--nav-grid-active-fg);
+  }
+
+  .navigation-grid-empty {
+    padding: 2rem;
+    text-align: center;
+    color: var(--nav-grid-muted-fg);
+  }
+
+  @media (max-width: 768px) {
+    .navigation-grid {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    button.nav-button,
+    a.nav-button {
+      padding: 1rem 0.5rem;
+    }
   }
 
 }

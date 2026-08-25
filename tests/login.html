@@ -13,32 +13,39 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Femtocrank login example — a sign-in layout demonstrating form controls and theme styles.">
-		<style type = "text/css">
-main {
-	gap: 1em;
-}
-		</style>
-
-		<script src = "../sidebar.js" defer></script>
 	</head>
 
 	<body>
+		<a class = "a11yhidden" href = "#main-content">Skip to main content</a>
+
 		<header>
-			<div id = "sidebar-button"  class = "flex-row" onclick = "clickSidebarToggle()">
-				<div class = "logo-and-title">
-					<img src = "./logo.png" alt = "SimpleApp Logo" class = "logo">
-					<h1>FemtoCrank</h1>
-				</div>
-			</div>
-			<nav class = "fg1">
-				<ul role = "menubar">
-					<li><a href = "../index.html" class = "active">Demo home</a></li>
+			<a class = "logo-and-title" href = "../index.html">
+				<img src = "./logo.png" alt = "FemtoCrank home" class = "logo">
+				<h1>FemtoCrank</h1>
+			</a>
+			<nav class = "fg1 menu">
+				<ul>
+					<li><a href = "forms.html">Forms</a></li>
+					<li><a href = "login.html" class = "active">Login</a></li>
+					<li><a href = "dialog.html">Dialogs</a></li>
+					<li><a href = "tables.html">Tables</a></li>
+					<li><a href = "cards.html">Cards</a></li>
+					<li>
+						<span><a href="#">Universal tests</a></span>
+						<div>
+							<ul>
+								<li><a href = "color-scheme.html">Color scheme</a></li>
+								<li><a href = "contrast.html">Contrast</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href = "sidebar-app.html">Sidebar app</a></li>
 				</ul>
 			</nav>
 
 			<div>
 				<p class = "subtle">Next page refresh:</p>
-				<p><progress id = "next-update" value = "0" max = "30" title = "Time until next update"></progress></p>
+				<p><progress id = "next-update" value = "50" max = "100" title = "Time until next update"></progress></p>
 			</div>
 
 			<div id = "last-updated-container">
@@ -56,27 +63,23 @@ main {
 			<aside id = "sidebar">
 				<div class = "flex-row">
 					<span class = "fg1"></span>
-					<div id = "stick-icon" onclick = "clickSidebarStick()" class = "script-button">
+					<div id = "stick-icon" class = "script-button">
 						&#128052;
 					</div>
 				</div>
 
 				<ul>
 					<li>
-						<a href = "../index.html">Demo home</a>
-					</li>
-
-					<li>
-						<a href = "about.html">About</a>
+						<a href = "../index.html">About</a>
 					</li>
 					<li>
-						<a href = "simple.html">SimpleApp</a>
+						<a href = "forms.html">Forms</a>
 					</li>
 				</ul>
 			</aside>
 
 			<div id = "content">
-				<main class = "grid">
+				<main id = "main-content" class = "grid">
 					<div class = "flex-row g2">
 
 						<section class = "small">
@@ -91,7 +94,7 @@ main {
 								<button type = "submit">Login</button>
 
 								<div class = "flex-row g1">
-									<a class = "button" href = "#">Forgot password?</button>
+									<a class = "button" href = "#">Forgot password?</a>
 									<a class = "button" href = "#">Create account</a>
 								</div>
 							</form>
@@ -102,10 +105,7 @@ main {
 				<div class = "flex-spacer"></div>
 
 				<footer>
-					<p>
-					<span><a href = "https://github.com/jamesread">jamesread on GitHub</a></span>
-					<span id = "current-version">v2</span>
-					</p>
+					<span><a href = "https://github.com/jamesread/femtocrank">FemtoCrank on GitHub</a></span>
 				</footer>
 			</div>
 		</div>

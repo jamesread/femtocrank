@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Contrast</title>
+
+		<meta charset = "UTF-8">
+
+		<link rel = "shortcut icon" href = "logo.png" type = "image/png" />
+
+		<link rel = "stylesheet" type = "text/css" href = "../style.css">
+		<link rel = "stylesheet" type = "text/css" href = "../dark.css" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Femtocrank contrast reference — foreground and background color pairings in context.">
+
+		<style>
+			.contrast-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+				gap: 1em;
+			}
+
+			.contrast-pair {
+				border: 1px solid var(--border-color);
+				border-radius: .4em;
+				overflow: hidden;
+				background-color: var(--section-bg-color);
+			}
+
+			.contrast-sample {
+				padding: 1em;
+				min-height: 5rem;
+			}
+
+			.contrast-sample p {
+				margin: 0 0 .5em 0;
+			}
+
+			.contrast-sample p:last-child {
+				margin-bottom: 0;
+			}
+
+			.contrast-pair code {
+				display: block;
+				padding: .5em;
+				font-size: .72em;
+				word-break: break-all;
+				border-top: 1px solid var(--border-color);
+			}
+
+			.contrast-header-demo {
+				background-color: var(--header-bg-color);
+				color: var(--header-fg-color);
+				padding: 1em;
+				border-radius: .4em;
+			}
+
+			.contrast-header-demo a {
+				color: var(--header-fg-color);
+			}
+
+			.contrast-header-demo .hover-demo {
+				display: inline-block;
+				padding: .4em .6em;
+				border-radius: .4em;
+				background-color: var(--header-hover-background-color);
+				color: var(--header-hover-text-color);
+			}
+		</style>
+	</head>
+
+	<body>
+		<a class = "a11yhidden" href = "#main-content">Skip to main content</a>
+
+		<header>
+			<a class = "logo-and-title" href = "../index.html">
+				<img src = "./logo.png" alt = "FemtoCrank home" class = "logo">
+				<h1>FemtoCrank</h1>
+			</a>
+			<nav class = "fg1 menu">
+				<ul>
+					<li><a href = "forms.html">Forms</a></li>
+					<li><a href = "login.html">Login</a></li>
+					<li><a href = "dialog.html">Dialogs</a></li>
+					<li><a href = "tables.html">Tables</a></li>
+					<li><a href = "cards.html">Cards</a></li>
+					<li>
+						<span><a href="#">Universal tests</a></span>
+						<div>
+							<ul>
+								<li><a href = "color-scheme.html">Color scheme</a></li>
+								<li><a href = "contrast.html" class = "active">Contrast</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href = "sidebar-app.html">Sidebar app</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id = "main-content" class = "grid gc-xl">
+			<section class = "with-header-and-content" id = "control-surfaces">
+				<div class = "section-header">
+					<h2>Control surfaces</h2>
+				</div>
+				<div class = "section-content padding">
+					<div class = "contrast-grid">
+						<div class = "contrast-pair" id = "control-unselected">
+							<div class = "contrast-sample" style = "background-color: var(--control-option-bg-color); color: var(--text-color);">
+								<p><strong>Unselected option</strong></p>
+								<p>Radio or checkbox label.</p>
+							</div>
+							<code>--control-option-bg-color / --text-color</code>
+						</div>
+						<div class = "contrast-pair" id = "control-hover">
+							<div class = "contrast-sample" style = "background-color: var(--control-hover-bg-color); color: var(--hover-text-color);">
+								<p><strong>Hover option</strong></p>
+								<p>Radio or checkbox label.</p>
+							</div>
+							<code>--control-hover-bg-color / --hover-text-color</code>
+						</div>
+						<div class = "contrast-pair" id = "control-checked">
+							<div class = "contrast-sample" style = "background-color: var(--control-checked-bg); color: var(--control-checked-fg);">
+								<p><strong>Selected option</strong></p>
+								<p>Radio or checkbox label.</p>
+							</div>
+							<code>--control-checked-bg / --control-checked-fg</code>
+						</div>
+						<div class = "contrast-pair" id = "control-disabled">
+							<div class = "contrast-sample" style = "background-color: var(--disabled-background-color); color: var(--disabled-text-color);">
+								<p><strong>Disabled input</strong></p>
+								<p>Unavailable field value.</p>
+							</div>
+							<code>--disabled-background-color / --disabled-text-color</code>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class = "with-header-and-content" id = "layout-surfaces">
+				<div class = "section-header">
+					<h2>Layout surfaces</h2>
+				</div>
+
+				<div class = "section-subheader" id = "layout-body">
+					<h3>Body</h3>
+				</div>
+				<div class = "section-content padding">
+					<div class = "contrast-grid">
+						<div class = "contrast-pair">
+							<div class = "contrast-sample" style = "background-color: var(--body-bg-color); color: var(--text-color);">
+								<p><strong>Body text</strong></p>
+								<p>The quick brown fox jumps over the lazy dog.</p>
+							</div>
+							<code>--body-bg-color / --text-color</code>
+						</div>
+					</div>
+				</div>
+
+				<div class = "section-subheader" id = "layout-section">
+					<h3>Section</h3>
+				</div>
+				<div class = "section-content padding">
+					<div class = "contrast-grid">
+						<div class = "contrast-pair">
+							<div class = "contrast-sample" style = "background-color: var(--section-bg-color); color: var(--text-color);">
+								<p><strong>Section text</strong></p>
+								<p>The quick brown fox jumps over the lazy dog.</p>
+							</div>
+							<code>--section-bg-color / --text-color</code>
+						</div>
+					</div>
+				</div>
+
+				<div class = "section-subheader" id = "layout-standout">
+					<h3>Standout</h3>
+				</div>
+				<div class = "section-content padding">
+					<div class = "contrast-grid">
+						<div class = "contrast-pair">
+							<div class = "contrast-sample" style = "background-color: var(--standout-bg-color); color: var(--text-color);">
+								<p><strong>Standout text</strong></p>
+								<p>The quick brown fox jumps over the lazy dog.</p>
+							</div>
+							<code>--standout-bg-color / --text-color</code>
+						</div>
+						<div class = "contrast-pair">
+							<div class = "contrast-sample" style = "background-color: var(--standout-bg-color); color: var(--muted-text-color);">
+								<p><strong>Muted text</strong></p>
+								<p>Secondary detail and metadata.</p>
+							</div>
+							<code>--standout-bg-color / --muted-text-color</code>
+						</div>
+						<div class = "contrast-pair">
+							<div class = "contrast-sample" style = "background-color: var(--standout-bg-color); color: var(--text-color);">
+								<p><strong>Link text</strong></p>
+								<p>This is body text with an <a href = "#">example link</a> inline, and another <a href = "#">link in a sentence</a>.</p>
+							</div>
+							<code>--standout-bg-color / --text-color + --link-color</code>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Karma - baseline</h2>
+				</div>
+				<div class = "section-content padding">
+					<div class = "contrast-grid">
+						<div class = "contrast-pair">
+							<p class = "note show">Note on filled background.</p>
+							<code>.note / --karma-on-bg-fg</code>
+						</div>
+						<div class = "contrast-pair">
+							<p class = "success show">Success on filled background.</p>
+							<code>.success / --karma-on-bg-fg</code>
+						</div>
+						<div class = "contrast-pair">
+							<p class = "warning show">Warning on filled background.</p>
+							<code>.warning / --karma-on-bg-fg</code>
+						</div>
+						<div class = "contrast-pair">
+							<p class = "severe show">Severe on filled background.</p>
+							<code>.severe / --karma-on-bg-fg</code>
+						</div>
+						<div class = "contrast-pair">
+							<p class = "critical show">Critical on filled background.</p>
+							<code>.critical / --karma-on-bg-fg</code>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Karma - tint</h2>
+				</div>
+				<div class = "section-content padding">
+					<div class = "contrast-grid">
+						<div class = "contrast-pair">
+							<span class = "tag note">note</span>
+							<code>.tag.note / --karma-note-tint</code>
+						</div>
+						<div class = "contrast-pair">
+							<span class = "tag success">success</span>
+							<code>.tag.success / --karma-good-tint</code>
+						</div>
+						<div class = "contrast-pair">
+							<span class = "tag warning">warning</span>
+							<code>.tag.warning / --karma-warning-tint</code>
+						</div>
+						<div class = "contrast-pair">
+							<span class = "tag severe">severe</span>
+							<code>.tag.severe / --karma-severe-tint</code>
+						</div>
+						<div class = "contrast-pair">
+							<span class = "tag bad">critical</span>
+							<code>.tag.bad / --karma-bad-tint</code>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Header & buttons</h2>
+				</div>
+				<div class = "section-content padding">
+					<div class = "contrast-header-demo">
+						<p><strong>Header foreground</strong> with <a href = "#">link</a> and <span class = "hover-demo">hover item</span>.</p>
+					</div>
+					<p><code>--header-bg-color / --header-fg-color</code></p>
+
+					<p style = "margin-top: 1em;">
+						<button type = "submit">Submit</button>
+						<button type = "button" class = "neutral">Neutral</button>
+						<button type = "button" class = "bad">Bad</button>
+						<button type = "button" disabled>Disabled</button>
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<span><a href = "https://github.com/jamesread/femtocrank">FemtoCrank on GitHub</a></span>
+		</footer>
+	</body>
+</html>

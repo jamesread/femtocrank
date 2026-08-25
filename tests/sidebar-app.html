@@ -19,24 +19,37 @@ main {
 	gap: 1em;
 }
 		</style>
-
-		<script src = "../sidebar.js" defer></script>
 	</head>
 
 	<body>
+		<a class = "a11yhidden" href = "#main-content">Skip to main content</a>
+
 		<header>
-			<div id = "sidebar-button"  class = "flex-row" onclick = "clickSidebarToggle()">
-				<div class = "logo-and-title">
-					<img src = "./logo.png" alt = "SimpleApp Logo" class = "logo">
+			<div id = "sidebar-button" class = "flex-row">
+				<a class = "logo-and-title" href = "../index.html">
+					<img src = "./logo.png" alt = "FemtoCrank home" class = "logo">
 					<h1>FemtoCrank</h1>
-				</div>
+				</a>
 				<span class = "menu-icon">&#9776;</span>
 			</div>
 
-			<nav>
-				<ul role = "menubar">
-					<li><a href = "../index.html">Demo home</a></li>
-					<li><a href = "#">Null link</a></li>
+			<nav class = "fg1 menu">
+				<ul>
+					<li><a href = "forms.html">Forms</a></li>
+					<li><a href = "login.html">Login</a></li>
+					<li><a href = "dialog.html">Dialogs</a></li>
+					<li><a href = "tables.html">Tables</a></li>
+					<li><a href = "cards.html">Cards</a></li>
+					<li>
+						<span><a href="#">Universal tests</a></span>
+						<div>
+							<ul>
+								<li><a href = "color-scheme.html">Color scheme</a></li>
+								<li><a href = "contrast.html">Contrast</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href = "sidebar-app.html" class = "active">Sidebar app</a></li>
 				</ul>
 			</nav>
 
@@ -44,7 +57,7 @@ main {
 
 			<div>
 				<p class = "subtle">Next page refresh:</p>
-				<p><progress id = "next-update" value = "0" max = "30" title = "Time until next update"></progress></p>
+				<p><progress id = "next-update" value = "50" max = "100" title = "Time until next update"></progress></p>
 			</div>
 
 			<div id = "last-updated-container">
@@ -62,29 +75,25 @@ main {
 			<aside id = "sidebar" class = "shown stuck">
 				<div class = "flex-row">
 					<span class = "fg1"></span>
-					<div id = "stick-icon" onclick = "clickSidebarStick()" class = "script-button">
+					<button type = "button" id = "stick-icon" class = "script-button" aria-label = "Pin sidebar">
 						&#128052;
-					</div>
+					</button>
 				</div>
 
 				<nav>
 					<ul>
 						<li>
-							<a href = "../index.html">Demo home</a>
-						</li>
-
-						<li>
-							<a href = "about.html">About</a>
+							<a href = "../index.html">About</a>
 						</li>
 						<li>
-							<a href = "simple.html">SimpleApp</a>
+							<a href = "forms.html">Forms</a>
 						</li>
 					</ul>
 				</nav>
 			</aside>
 
 			<div id = "content">
-				<main class = "grid">
+				<main id = "main-content" class = "grid">
 					<div class = "flex-row g2">
 
 						<section id = "alert-container">
@@ -109,11 +118,12 @@ main {
 							Here you can see the latest alerts collected by SimpleApp.
 							This data is updated every 30 seconds.
 							</p>
+						</section>
 
 					</div>
 
 					<section>
-						<h2>Lorum Ipsum</h2>
+						<h2>Lorem Ipsum</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a sapien semper, accumsan leo nec, sollicitudin dui. Vivamus ultrices at felis et efficitur. Phasellus scelerisque imperdiet mollis. Maecenas interdum ante eget diam consectetur, vitae fermentum orci placerat. Praesent vulputate iaculis vestibulum. Morbi rutrum nec lacus in pellentesque. Pellentesque a lacus vitae augue tempor dictum. Vivamus dictum convallis lorem, congue imperdiet erat consectetur a. Nam aliquam orci ut massa sodales porttitor. Cras viverra malesuada metus, a ultrices dolor luctus quis. Praesent rutrum nulla sagittis massa lobortis, non facilisis purus consequat.</p>
 
 						<p>Nulla eget aliquet tellus. Donec sit amet metus tincidunt, posuere purus vitae, scelerisque lectus. Ut at sagittis leo, a blandit lorem. Morbi lacus odio, convallis non mauris at, auctor condimentum metus. Pellentesque et metus gravida leo congue imperdiet. Integer fringilla, nunc nec vestibulum dapibus, ipsum nulla elementum augue, vel rutrum magna magna vitae dolor. Morbi nec ligula posuere, elementum elit quis, feugiat lacus. Sed aliquet sagittis urna, sollicitudin scelerisque ligula malesuada in. Sed ultricies tellus nec diam rhoncus, quis facilisis risus tincidunt. Pellentesque convallis odio massa, non commodo odio elementum consequat. Suspendisse hendrerit metus non dolor ultricies vestibulum. Vivamus dapibus lectus sit amet semper semper. Quisque tempus feugiat mollis. Donec id felis consequat, tristique leo et, placerat libero.</p>
@@ -122,18 +132,33 @@ main {
 
 						<p>Nunc elementum nunc ac risus lacinia, ac venenatis massa eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget lobortis nulla. Phasellus molestie mauris sit amet massa vestibulum, a maximus mi porttitor. Nunc sagittis, augue nec malesuada viverra, eros dolor pharetra nisl, ut luctus nulla elit a ligula. Donec tincidunt erat non enim viverra vestibulum. Vivamus fringilla orci orci, ut ultricies nisl porttitor volutpat. Vivamus euismod nisl ex, nec tempor tortor ornare vel. Pellentesque velit tellus, maximus nec massa sit amet, consectetur pellentesque lectus. Integer semper tincidunt suscipit. Ut egestas libero sapien, at aliquam sem faucibus id.</p>
 
-						</p>Duis sodales orci eu hendrerit congue. Donec pretium leo sit amet augue consequat, nec mollis lectus dignissim. Phasellus egestas consequat dolor in maximus. Proin et commodo tortor. Morbi ac quam ex. Suspendisse placerat mollis commodo. Phasellus in nisi risus. Phasellus imperdiet urna arcu, eu varius dui faucibus vitae. Aenean sem ante, sodales at finibus at, ultrices vitae dui. Integer dignissim varius metus, a sollicitudin massa maximus eu.</p>
+						<p>Duis sodales orci eu hendrerit congue. Donec pretium leo sit amet augue consequat, nec mollis lectus dignissim. Phasellus egestas consequat dolor in maximus. Proin et commodo tortor. Morbi ac quam ex. Suspendisse placerat mollis commodo. Phasellus in nisi risus. Phasellus imperdiet urna arcu, eu varius dui faucibus vitae. Aenean sem ante, sodales at finibus at, ultrices vitae dui. Integer dignissim varius metus, a sollicitudin massa maximus eu.</p>
+					</section>
 				</main>
 
 				<div class = "flex-spacer"></div>
 
 				<footer>
-					<p>
-					<span><a href = "https://github.com/jamesread">jamesread on GitHub</a></span>
-					<span id = "current-version">v2</span>
-					</p>
+					<span><a href = "https://github.com/jamesread/femtocrank">FemtoCrank on GitHub</a></span>
 				</footer>
 			</div>
 		</div>
+
+		<script>
+			const sidebar = document.getElementById("sidebar");
+			const sidebarButton = document.getElementById("sidebar-button");
+			const stickIcon = document.getElementById("stick-icon");
+
+			sidebarButton.addEventListener("click", (event) => {
+				if (event.target.closest(".logo-and-title")) {
+					return;
+				}
+				sidebar.classList.toggle("shown");
+			});
+
+			stickIcon.addEventListener("click", () => {
+				sidebar.classList.toggle("stuck");
+			});
+		</script>
 	</body>
 </html>

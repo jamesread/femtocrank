@@ -1,12 +1,15 @@
 {
   "name": "femtocrank",
   "description": "A simple CSS theme with high accessibility and zero dependencies.",
-  "main": "annotate.js",
+  "main": "style.css",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test test/*.test.mjs",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:html": "html-validate --config html-validate.config.mjs \"index.html\" \"tests/**/*.html\"",
+    "lint": "npm run lint:css && npm run lint:html && npm test"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,9 @@
   },
   "homepage": "https://github.com/jamesread/femtocrank#readme",
   "devDependencies": {
-    "semantic-release": "^25.0.8"
+    "html-validate": "^9.7.1",
+    "semantic-release": "^25.0.8",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard": "^40.0.0"
   }
 }

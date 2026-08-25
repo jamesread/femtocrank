@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title>Cards</title>
+
+		<meta charset = "UTF-8">
+
+		<link rel = "shortcut icon" href = "logo.png" type = "image/png" />
+
+		<link rel = "stylesheet" type = "text/css" href = "../style.css">
+		<link rel = "stylesheet" type = "text/css" href = "../dark.css" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Femtocrank cards example — static NavigationGrid markup and styles without JavaScript.">
+	</head>
+
+	<body>
+		<a class = "a11yhidden" href = "#main-content">Skip to main content</a>
+
+		<header>
+			<a class = "logo-and-title" href = "../index.html">
+				<img src = "./logo.png" alt = "FemtoCrank home" class = "logo">
+				<h1>FemtoCrank</h1>
+			</a>
+			<nav class = "fg1 menu">
+				<ul>
+					<li><a href = "forms.html">Forms</a></li>
+					<li><a href = "login.html">Login</a></li>
+					<li><a href = "dialog.html">Dialogs</a></li>
+					<li><a href = "tables.html">Tables</a></li>
+					<li><a href = "cards.html" class = "active">Cards</a></li>
+					<li>
+						<span><a href="#">Universal tests</a></span>
+						<div>
+							<ul>
+								<li><a href = "color-scheme.html">Color scheme</a></li>
+								<li><a href = "contrast.html">Contrast</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href = "sidebar-app.html">Sidebar app</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id = "main-content">
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Navigation grid</h2>
+				</div>
+				<div class = "section-content padding">
+					<p>
+						Static HTML/CSS port of PicoCrank&apos;s <code>NavigationGrid</code> component.
+						Icon grid navigation for routes and actions — inline Hugeicons SVGs from
+						<a href = "https://icon-sets.iconify.design/hugeicons/">Iconify</a>, no Vue or shared JavaScript.
+					</p>
+					<p class = "subtle">
+						Icons always use <code>--icon-color</code>. Use indicator dots and count badges for status — not icon color.
+					</p>
+				</div>
+			</section>
+
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Standard grid</h2>
+				</div>
+				<div class = "section-content padding">
+					<div class = "navigation-grid-container">
+						<div class = "navigation-grid">
+							<a href = "forms.html" class = "nav-button" title = "Page structure">
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="M20.109 3.891C21.5 5.282 21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391"/><path d="M21.5 12h-19M12 2.5v19"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Page structure</span>
+								<span class = "nav-button-description">Configure the example app shell</span>
+							</a>
+
+							<button type = "button" class = "nav-button" title = "Profile">
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.544 11.045c.304.426.456.64.456.955c0 .316-.152.529-.456.955C20.178 14.871 16.689 19 12 19c-4.69 0-8.178-4.13-9.544-6.045C2.152 12.529 2 12.315 2 12c0-.316.152-.529.456-.955C3.822 9.129 7.311 5 12 5c4.69 0 8.178 4.13 9.544 6.045Z"/><path d="M15 12a3 3 0 1 0-6 0a3 3 0 0 0 6 0Z"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Profile</span>
+								<span class = "nav-button-description">Example callback with icon and description</span>
+							</button>
+
+							<button type = "button" class = "nav-button" title = "Editor">
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"><path d="M16.946 3.173c.587-.587.88-.88 1.206-1.021c.469-.203 1-.203 1.469 0c.325.14.619.434 1.206 1.021s.88.881 1.021 1.206c.203.469.203 1 0 1.469c-.14.325-.434.619-1.021 1.206l-5.022 5.022c-1.237 1.237-1.855 1.855-2.63 2.222s-1.646.452-3.387.624L9 15l.078-.788c.172-1.741.257-2.612.624-3.387s.985-1.393 2.222-2.63z"/><path stroke-linecap="round" d="M6 15H3.75a1.75 1.75 0 1 0 0 3.5h9.5a1.75 1.75 0 1 1 0 3.5H11"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Editor</span>
+								<span class = "nav-button-description">Opens an example editor workflow</span>
+							</button>
+
+							<button type = "button" class = "nav-button" title = "Security">
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="M10 12s.5 0 1 1c0 0 1.588-2.5 3-3"/><path d="M17 11.5a5 5 0 1 1-10 0a5 5 0 0 1 10 0Z"/><path d="M21 11.183V8.28c0-1.64 0-2.46-.404-2.995s-1.318-.794-3.145-1.314a25 25 0 0 1-3.229-1.173C13.023 2.266 12.424 2 12 2s-1.023.266-2.222.798c-.88.39-1.98.818-3.229 1.173c-1.827.52-2.74.78-3.145 1.314C3 5.82 3 6.64 3 8.28v2.903c0 5.625 5.063 9 7.594 10.336c.607.32.91.481 1.406.481s.799-.16 1.406-.48C15.937 20.182 21 16.807 21 11.182Z"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Security</span>
+								<span class = "nav-button-description">Demonstrates a standard grid item</span>
+							</button>
+
+							<button type = "button" class = "nav-button" title = "Preferences">
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 11.99v2.51c0 3.3 0 4.95 1.025 5.975S6.7 21.5 10 21.5h4c3.3 0 4.95 0 5.975-1.025S21 17.8 21 14.5v-2.51c0-1.682 0-2.522-.356-3.25s-1.02-1.244-2.346-2.276l-2-1.555C14.233 3.303 13.2 2.5 12 2.5s-2.233.803-4.298 2.409l-2 1.555C4.375 7.496 3.712 8.012 3.356 8.74S3 10.308 3 11.99"/></svg>
+								</span>
+								<span class = "nav-button-label">Preferences</span>
+								<span class = "nav-button-description">Another callback entry in the grid</span>
+							</button>
+
+							<button type = "button" class = "nav-button" title = "Alerts" aria-label = "Alerts, requires attention">
+								<span class = "nav-button-indicator"></span>
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.544 11.045c.304.426.456.64.456.955c0 .316-.152.529-.456.955C20.178 14.871 16.689 19 12 19c-4.69 0-8.178-4.13-9.544-6.045C2.152 12.529 2 12.315 2 12c0-.316.152-.529.456-.955C3.822 9.129 7.311 5 12 5c4.69 0 8.178 4.13 9.544 6.045Z"/><path d="M15 12a3 3 0 1 0-6 0a3 3 0 0 0 6 0Z"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Alerts</span>
+								<span class = "nav-button-description">Shows an indicator badge on the tile</span>
+							</button>
+
+							<button type = "button" class = "nav-button" title = "Inbox" aria-label = "Inbox, 12 notifications">
+								<span class = "nav-button-count">12</span>
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.544 11.045c.304.426.456.64.456.955c0 .316-.152.529-.456.955C20.178 14.871 16.689 19 12 19c-4.69 0-8.178-4.13-9.544-6.045C2.152 12.529 2 12.315 2 12c0-.316.152-.529.456-.955C3.822 9.129 7.311 5 12 5c4.69 0 8.178 4.13 9.544 6.045Z"/><path d="M15 12a3 3 0 1 0-6 0a3 3 0 0 0 6 0Z"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Inbox</span>
+								<span class = "nav-button-description">Shows a notification count on the tile</span>
+							</button>
+
+							<button type = "button" class = "nav-button disabled" title = "Billing" disabled>
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"><path d="M16.946 3.173c.587-.587.88-.88 1.206-1.021c.469-.203 1-.203 1.469 0c.325.14.619.434 1.206 1.021s.88.881 1.021 1.206c.203.469.203 1 0 1.469c-.14.325-.434.619-1.021 1.206l-5.022 5.022c-1.237 1.237-1.855 1.855-2.63 2.222s-1.646.452-3.387.624L9 15l.078-.788c.172-1.741.257-2.612.624-3.387s.985-1.393 2.222-2.63z"/><path stroke-linecap="round" d="M6 15H3.75a1.75 1.75 0 1 0 0 3.5h9.5a1.75 1.75 0 1 1 0 3.5H11"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Billing</span>
+								<span class = "nav-button-description">Demonstrates a disabled grid item</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Compact grid</h2>
+				</div>
+				<div class = "section-content padding">
+					<div class = "navigation-grid-container">
+						<div class = "navigation-grid compact">
+							<button type = "button" class = "nav-button" title = "Profile">
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.544 11.045c.304.426.456.64.456.955c0 .316-.152.529-.456.955C20.178 14.871 16.689 19 12 19c-4.69 0-8.178-4.13-9.544-6.045C2.152 12.529 2 12.315 2 12c0-.316.152-.529.456-.955C3.822 9.129 7.311 5 12 5c4.69 0 8.178 4.13 9.544 6.045Z"/><path d="M15 12a3 3 0 1 0-6 0a3 3 0 0 0 6 0Z"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Profile</span>
+								<span class = "nav-button-description">Compact tile layout</span>
+							</button>
+
+							<button type = "button" class = "nav-button" title = "Security">
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="M10 12s.5 0 1 1c0 0 1.588-2.5 3-3"/><path d="M17 11.5a5 5 0 1 1-10 0a5 5 0 0 1 10 0Z"/><path d="M21 11.183V8.28c0-1.64 0-2.46-.404-2.995s-1.318-.794-3.145-1.314a25 25 0 0 1-3.229-1.173C13.023 2.266 12.424 2 12 2s-1.023.266-2.222.798c-.88.39-1.98.818-3.229 1.173c-1.827.52-2.74.78-3.145 1.314C3 5.82 3 6.64 3 8.28v2.903c0 5.625 5.063 9 7.594 10.336c.607.32.91.481 1.406.481s.799-.16 1.406-.48C15.937 20.182 21 16.807 21 11.182Z"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Security</span>
+								<span class = "nav-button-description">Smaller minimum column width</span>
+							</button>
+
+							<button type = "button" class = "nav-button" title = "Inbox" aria-label = "Inbox, 12 notifications">
+								<span class = "nav-button-count">12</span>
+								<span class = "nav-button-icon" aria-hidden = "true">
+									<svg xmlns = "http://www.w3.org/2000/svg" width = "32" height = "32" viewBox = "0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.544 11.045c.304.426.456.64.456.955c0 .316-.152.529-.456.955C20.178 14.871 16.689 19 12 19c-4.69 0-8.178-4.13-9.544-6.045C2.152 12.529 2 12.315 2 12c0-.316.152-.529.456-.955C3.822 9.129 7.311 5 12 5c4.69 0 8.178 4.13 9.544 6.045Z"/><path d="M15 12a3 3 0 1 0-6 0a3 3 0 0 0 6 0Z"/></g></svg>
+								</span>
+								<span class = "nav-button-label">Inbox</span>
+								<span class = "nav-button-description">Count badge in compact mode</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

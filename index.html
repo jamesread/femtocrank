@@ -16,34 +16,36 @@
 	</head>
 
 	<body>
-		<header class = "show">
-			<div class = "logo-and-title">
-				<img src = "tests/logo.png" alt = "SimpleApp Logo" class = "logo">
-				<h1 class = "show">FemtoCrank</h1>
-			</div>
+		<a class = "a11yhidden" href = "#main-content">Skip to main content</a>
 
-			<nav class = "fg1">
-				<ul role = "menubar">
-					<li><a href = "index.html" class = "active">Demo page</a></li>
-					<li><a href = "tests/simple.html">Simple app</a></li>
-					<li><a href = "tests/sidebar-app.html">Sidebar app</a></li>
+		<header class = "show">
+			<a class = "logo-and-title" href = "index.html">
+				<img src = "tests/logo.png" alt = "FemtoCrank home" class = "logo">
+				<h1 class = "show">FemtoCrank</h1>
+			</a>
+
+			<nav class = "fg1 menu">
+				<ul>
+					<li><a href = "tests/forms.html">Forms</a></li>
 					<li><a href = "tests/login.html">Login</a></li>
 					<li><a href = "tests/dialog.html">Dialogs</a></li>
 					<li><a href = "tests/tables.html">Tables</a></li>
+					<li><a href = "tests/cards.html">Cards</a></li>
 					<li>
-						<span><a href="#">Dropdown</a></span>
+						<span><a href="#">Universal tests</a></span>
 						<div>
 							<ul>
-								<li><a href = "#">foo</a></li>
-								<li><a href = "#">bar</a></li>
+								<li><a href = "tests/color-scheme.html">Color scheme</a></li>
+								<li><a href = "tests/contrast.html">Contrast</a></li>
 							</ul>
 						</div>
 					</li>
+					<li><a href = "tests/sidebar-app.html">Sidebar app</a></li>
 				</ul>
 			</nav>
 		</header>
 
-		<main class = "grid gc-xl">
+		<main id = "main-content" class = "grid gc-xl">
 			<section class = "with-header-and-content">
 				<div class = "section-header">
 					<h2>Introduction</h2>
@@ -55,12 +57,14 @@
 
 					<div class = "section-subheader">
 						<h3>Why?</h3>
+					</div>
 
+					<div class = "section-content padding">
 						<ul>
-							<li>Simple, symantic modern CSS (&lt;1k lines)</li>
-							<li>Avoid extranious styles</li>
+							<li>Simple, semantic modern CSS in a small footprint</li>
+							<li>Avoid extraneous styles</li>
 							<li>High accessibility</li>
-							<li>Zero dependencies</li>
+							<li>Zero build or runtime dependencies</li>
 							<li>No JavaScript</li>
 						</ul>
 					</div>
@@ -73,26 +77,43 @@
 
 				<div class = "section-content padding">
 					<p>
-					This is content. <a href = "foo.html">This is an internal link</a>. <a href = "https://google.com">This is an external link</a>.
+					This is content. <a href = "tests/forms.html">This is an internal link</a>. <a href = "https://google.com">This is an external link</a>.
 					</p>
 				</div>
 
 				<div class = "section-subheader">
-					<h3>Subsection</h3>
+					<h3>Surfaces</h3>
 				</div>
 
 				<div class = "section-content padding">
-					<p>This is a subsection.</p>
-					<ul>
-						<li><a href = "#">Item 1</a></li>
-						<li><a href = "#">Item 2</a></li>
-						<li><a href = "#">Item 3</a></li>
-					</ul>
+					<div class = "grid-boxed-2">
+						<div>
+							<p><strong><a href = "tests/contrast.html#layout-surfaces">Layout surfaces</a></strong></p>
+							<ul>
+								<li><a href = "tests/contrast.html#layout-body">Body</a> — <code>--body-bg-color</code></li>
+								<li><a href = "tests/contrast.html#layout-section">Section</a> — <code>--section-bg-color</code></li>
+								<li><a href = "tests/contrast.html#layout-standout">Standout</a> — <code>--standout-bg-color</code></li>
+							</ul>
+						</div>
+						<div>
+							<p><strong><a href = "tests/contrast.html#control-surfaces">Control surfaces</a></strong></p>
+							<ul>
+								<li><a href = "tests/contrast.html#control-unselected">Unselected option</a> — <code>--control-option-bg-color</code></li>
+								<li><a href = "tests/contrast.html#control-hover">Hover option</a> — <code>--control-hover-bg-color</code></li>
+								<li><a href = "tests/contrast.html#control-checked">Selected option</a> — <code>--control-checked-bg</code></li>
+								<li><a href = "tests/contrast.html#control-disabled">Disabled input</a> — <code>--disabled-background-color</code></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</section>
 
-			<section>
-				<h2>Properties</h2>
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Properties</h2>
+				</div>
 
+				<div class = "section-content padding">
 				<dl>
 					<dt>Name</dt>
 					<dd>Alice</dd>
@@ -106,10 +127,15 @@
 					<dt>Occupation</dt>
 					<dd>Software Engineer</dd>
 				</dl>
+				</div>
 			</section>
 
-			<section>
-				<h2>Code</h2>
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Code</h2>
+				</div>
+
+				<div class = "section-content padding">
 				<pre class = "show">
 This is code.
 
@@ -118,87 +144,121 @@ function foo() {
 	console.log("bar");
 }
 </pre>
+				</div>
 			</section>
 
-			<section>
-				<h2>Annotations & Tags</h2>
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Karma elements - inline</h2>
+				</div>
 
-				<p>Annotations are inline blocks with a border and padding.</p>
+				<div class = "section-content padding">
+				<p>
+						Annotations and tags share chip sizing and borders. Annotations are key/value
+						pairs; add a karma type class (<code>.annotation.note</code>, …) for a
+						<code>--karma-*-tint</code> value. Tags use the same tint fills
+						(<code>.tag.note</code>, …).
+					</p>
 
-					<div class = "annotation">
-						<div class = "annotation-key">
-							fyi
-						</div>
-						<div class = "annotation-val">
-							This is an annotation.
-						</div>
-					</div>
+					<span class = "annotation">
+						<span class = "annotation-key">fyi</span>
+						<span class = "annotation-val">This is an annotation.</span>
+					</span>
+
+					<span class = "annotation note">
+						<span class = "annotation-key">scheduled</span>
+						<span class = "annotation-val">next release</span>
+					</span>
+
+					<span class = "annotation good">
+						<span class = "annotation-key">status</span>
+						<span class = "annotation-val">active</span>
+					</span>
 
 					<br /> <br />
 
-					<div class = "tag">
+					<span class = "tag">
 						Neutral tag
-					</div>
+					</span>
 
-					<div class = "tag fg-info">
+					<span class = "tag info">
 						info
-					</div>
+					</span>
 
-					<div class = "tag fg-note">
+					<span class = "tag note">
 						note
-					</div>
+					</span>
 
-					<div class = "tag fg-good">
+					<span class = "tag good">
 						good/success
-					</div>
+					</span>
 
-					<div class = "tag fg-important">
-						important
-					</div>
-
-					<div class = "tag fg-warning">
+					<span class = "tag warning">
 						warning
-					</div>
+					</span>
 
-					<div class = "tag fg-severe">
+					<span class = "tag severe">
 						severe
-					</div>
+					</span>
 
-					<div class = "tag fg-bad">
+					<span class = "tag bad">
 						bad/critical
-					</div>
-
-					</div>
+					</span>
+				</div>
 			</section>
 
 
-			<section>
-				<h2>Inline Notifications</h2>
-				<p>Notifications are blocks, often using karma classes (bg or fg).</p>
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Karma elements - Block (Notifications)</h2>
+				</div>
 
-				<p class = "fg-note show inline-notification">
-					<strong>NOTE:</strong>
-					This is a note.
-				</p>
+				<div class = "section-content padding">
+					<p>
+						Notifications use a <code>.notification-key</code> filled with
+						<code>--karma-*-tint</code> and body text in the normal text color. Inline links
+						use the standard link style; add <code>clickable</code> when the whole
+						notification is interactive.
+					</p>
 
-				<p class = "fg-success show inline-notification">
-					<strong>SUCCESS:</strong>
-					This is a success message.
-				</p>
+					<div class = "notification info">
+						<span class = "notification-key">INFO:</span>
+						<span class = "notification-body"><a href = "#">New version available</a> — click to view release notes.</span>
+					</div>
 
-				<p class = "fg-severe show inline-notification">
-					<strong>SEVERE:</strong>
-					This is a severe message.
-				</p>
+					<div class = "notification note">
+						<span class = "notification-key">NOTE:</span>
+						<span class = "notification-body">See the <a href = "#">release notes</a> for what changed.</span>
+					</div>
 
-				<p class = "critical show inline-notification">
-					<strong>CRITICAL: </strong> This is a critical message (bg).
-				</p>
+					<div class = "notification success">
+						<span class = "notification-key">SUCCESS:</span>
+						<span class = "notification-body">This is a success message.</span>
+					</div>
+
+					<div class = "notification warning">
+						<span class = "notification-key">WARNING:</span>
+						<span class = "notification-body">Disk usage is high — <a href = "#">manage storage</a> before continuing.</span>
+					</div>
+
+					<div class = "notification severe">
+						<span class = "notification-key">SEVERE:</span>
+						<span class = "notification-body">Service is degraded. Check the <a href = "#">status page</a> for updates.</span>
+					</div>
+
+					<div class = "notification clickable critical">
+						<span class = "notification-key">CRITICAL:</span>
+						<span class = "notification-body"><a href = "#">Database unreachable</a> — follow the recovery runbook immediately.</span>
+					</div>
+				</div>
 			</section>
 
-			<section>
-				<h2>Forms</h2>
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Forms</h2>
+				</div>
 
+				<div class = "section-content padding">
 				<p>This is a form.</p>
 
 				<form>
@@ -212,7 +272,7 @@ function foo() {
 							<span>Sales</span>
 						</label>
 						<label>
-							<input type = "radio" name = "role" value = "engineerig" />
+							<input type = "radio" name = "role" value = "engineering" />
 							<span>Engineering</span>
 						</label>
 
@@ -234,53 +294,81 @@ function foo() {
 
 					<fieldset>
 						<button type = "submit">Submit</button>
-						<button type = "cancel">Cancel</button>
+						<button type = "button" class = "warning">Cancel</button>
 						<button type = "reset">Reset</button>
 					</fieldset>
 					<fieldset>
-						<button>Default</button>
-						<button class = "neutral">Neutral</button>
+						<button type = "button">Default</button>
+						<button type = "button" class = "neutral">Neutral</button>
 						<button type = "submit" disabled>Disabled</button>
 					</fieldset>
 
 				</form>
 
 				<p>
-				<strong>Note:</strong> A more complete example can be found in the <a href = "tests/simple.html">SimpleApp</a> demo.
+				<strong>Note:</strong> A more complete example can be found in the <a href = "tests/forms.html">Forms</a> demo.
 				</p>
-
+				</div>
 			</section>
 
-			<section>
-				<h2>Stats</h2>
-				
-				<p>Stats updated in the last decade.</p>
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Stats</h2>
+				</div>
+
+				<div class = "section-content padding">
+				<p>Karma type classes on <code>.stat-display</code> use the same <code>--karma-*-wash</code> tokens; values stay in the normal text color.</p>
 
 				<div class = "grid-boxed">
-				<div class = "stat-display">
+				<div class = "stat-display good">
 					<span class = "subtle">Hits</span>
-					<span class = "stat fg-good">1,000</span>
+					<span class = "stat">1,000</span>
 				</div>
 
-				<div class = "stat-display">
-					<span class = "subtle">Unique visitors</span>
-					<span class = "stat fg-good">137</span>
+				<div class = "stat-display note">
+					<span class = "subtle">Notes</span>
+					<span class = "stat">12</span>
 				</div>
 
-				<div class = "stat-display">
+				<div class = "stat-display warning">
 					<span class = "subtle">Conversions</span>
-					<span class = "stat fg-warning">1.5%</span>
+					<span class = "stat">1.5%</span>
 				</div>
 
-					</div>
+				<div class = "stat-display severe">
+					<span class = "subtle">Severe alerts</span>
+					<span class = "stat">3</span>
+				</div>
+
+				<div class = "stat-display bad">
+					<span class = "subtle">Errors</span>
+					<span class = "stat">7</span>
+				</div>
+
+				<div class = "stat-display info">
+					<span class = "subtle">Info items</span>
+					<span class = "stat">24</span>
+				</div>
+
+				<div class = "stat-display old">
+					<span class = "subtle">Archived</span>
+					<span class = "stat">89</span>
+				</div>
+
+				</div>
+				</div>
 			</section>
 
-			<section>
-				<h2>Menus</h2>
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Menus</h2>
+				</div>
 
+				<div class = "section-content padding">
 				<p>This section shows menus.</p>
 
-				<ul role = "menubar">
+				<nav class = "menu">
+				<ul>
 					<li>
 						<span class = "submenu"><a href="#">Menu 1</a></span>
 						<div>
@@ -303,46 +391,84 @@ function foo() {
 
 					</li>
 				</ul>
+				</nav>
+				</div>
 			</section>
 
-			<section>
-				<h2>Table</h2>
-				
+			<section class = "with-header-and-content">
+				<div class = "section-header">
+					<h2>Table - boxed</h2>
+				</div>
+
+				<div class = "section-content padding">
 				<p>This section shows tables.</p>
 
 				<table class = "row-hover bordered">
 					<thead>
-						<th>ID</th>
-						<th>Forename</th>
-						<th>Surname</th>
+						<tr>
+							<th>ID</th>
+							<th>Forename</th>
+							<th>Surname</th>
+							<th>Status</th>
+						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>1</td>
 							<td>Bob</td>
 							<td>Smith</td>
+							<td><span class = "tag good">Active</span></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Alice</td>
+							<td>Jones</td>
+							<td><span class = "tag warning">Pending</span></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Carol</td>
+							<td>Brown</td>
+							<td><span class = "tag bad">Suspended</span></td>
 						</tr>
 					</tbody>
 				</table>
+				</div>
 			</section>
 			
 			<section class = "with-header-and-content">
 				<div class = "section-header">
-					<h2>Table with section header</h2>
+					<h2>Section - no padding, only table</h2>
 				</div>
 
 				<div class = "section-content">
 					<table class = "row-hover">
 						<thead>
-							<th>ID</th>
-							<th>Forename</th>
-							<th>Surname</th>
+							<tr>
+								<th>ID</th>
+								<th>Forename</th>
+								<th>Surname</th>
+								<th>Status</th>
+							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>1</td>
 								<td>Bob</td>
 								<td>Smith</td>
+								<td><span class = "tag good">Active</span></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Alice</td>
+								<td>Jones</td>
+								<td><span class = "tag warning">Pending</span></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Carol</td>
+								<td>Brown</td>
+								<td><span class = "tag bad">Suspended</span></td>
 							</tr>
 						</tbody>
 					</table>
@@ -350,15 +476,13 @@ function foo() {
 			</section>
 
 			<section class = "transparent">
-				<h2>Transparent Section</h2>
 				<p>This is a transparent section.</p>
 			</section>
 		</main>
 		
 		<footer>
-			<span>This is the footer.</span>
+			<span><a href = "https://github.com/jamesread/femtocrank">FemtoCrank on GitHub</a></span>
 		</footer>
-	<script src = "annotate.js"></script>
 	</body>
 </html>
 

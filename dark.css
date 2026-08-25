@@ -1,10 +1,10 @@
 @layer components {
 @media (prefers-color-scheme: dark) {
 :root {
-  --body-bg-color: #262626;
-  --surface-bg-color: #343434;
+  --body-bg-color: color-mix(in srgb, #dee3e7 14%, #121619);
+  --section-bg-color: #343434;
   --standout-bg-color: #1f1f1f;
-  --section-header-bg-color: var(--surface-bg-color);
+  --section-header-bg-color: var(--section-bg-color);
 
   --header-bg-color: #000;
   --header-border-color: #222;
@@ -16,16 +16,18 @@
   --sidebar-hover-bg-color: var(--hover-background-color);
 
   --footer-chip-bg-color: #444;
+  --footer-link-color: lightblue;
 
   --text-color: #ddd;
+  --muted-text-color: color-mix(in srgb, var(--text-color) 87%, #121619);
   --link-color: lightblue;
   --annotation-key-color: #aaa;
   --focus-outline-color: #fff;
 
   --border-color: #595959;
-  --shadow-color: #121212;
+  --shadow-color: color-mix(in srgb, var(--body-bg-color) 48%, #121619);
 
-  --hover-background-color: #1d345c;
+  --hover-background-color: color-mix(in srgb, var(--header-hover-background-color) 45%, var(--section-bg-color));
   --hover-text-color: var(--on-accent-fg);
 
   --disabled-background-color: #333;
@@ -33,23 +35,33 @@
 
   --input-bg-color: #4e4e4e;
   --input-fg-color: var(--text-color);
-  --control-option-bg-color: #555;
+  --control-option-bg-color: var(--section-bg-color);
   --control-hover-bg-color: var(--hover-background-color);
+  --control-checked-bg: color-mix(in srgb, #8fb59a 45%, var(--section-bg-color));
+  --control-checked-hover-bg: color-mix(in srgb, #8fb59a 55%, var(--section-bg-color));
+  --control-checked-fg: var(--text-color);
 
   --menu-item-hover-background-color: var(--hover-background-color);
-  --menu-dropdown-background-color: var(--surface-bg-color);
-  --menu-dropdown-shadow: 0 0 .5em var(--shadow-color);
+  --menu-dropdown-background-color: var(--section-bg-color);
+  --menu-dropdown-shadow: 0 .4em 1.1em color-mix(in srgb, black 55%, transparent), 0 0 0 1px var(--menu-dropdown-border-color);
   --menu-dropdown-link-hover-background-color: var(--hover-background-color);
   --header-menu-dropdown-link-hover-background-color: var(--header-hover-background-color);
 
-  --table-sticky-bg: var(--surface-bg-color);
+  --table-sticky-bg: var(--section-bg-color);
   --table-row-hover-bg: var(--hover-background-color);
   --table-row-hover-fg: var(--on-accent-fg);
   --table-sticky-hover-bg: var(--table-row-hover-bg);
-  --table-uneditable-bg: #555;
+  --table-uneditable-bg: color-mix(in srgb, var(--header-hover-background-color) 18%, var(--section-bg-color));
   --table-sticky-uneditable-bg: var(--table-uneditable-bg);
 
   --progress-track-bg-color: var(--table-uneditable-bg);
+  --progress-fill-bg-color: #8fb59a;
+
+  --karma-info-tint: color-mix(in srgb, var(--karma-info) 30%, var(--standout-bg-color));
+  --karma-info-wash: color-mix(in srgb, var(--karma-info) 22%, var(--standout-bg-color));
+
+  --karma-warning: #ffeb3b;
+  --karma-warning-tint: color-mix(in srgb, var(--karma-warning) 30%, var(--standout-bg-color));
 }
 }
 }
