@@ -688,16 +688,15 @@ form input[type="checkbox"] {
 
 /**
  * Use :user-invalid (not :invalid) so empty required fields are not
- * marked until blur or submit. Pair border weight + fill so the state
- * is not color-only (WCAG 1.4.1). Authors should still provide text
- * errors via aria-describedby where possible.
+ * marked until blur or submit. Wash background and border color mark
+ * the state (WCAG 1.4.1). Authors should still provide text errors
+ * via aria-describedby where possible.
  */
 input:user-invalid, textarea:user-invalid, select:user-invalid {
-  border: 1px solid var(--karma-bad-border);
-  border-left-width: .35em;
-  background-color: var(--karma-bad);
-  color: var(--karma-on-bg-fg);
-  box-shadow: 0 0 .5em var(--shadow-color);
+  border-color: var(--karma-bad-border);
+  background-color: var(--karma-bad-wash);
+  color: var(--text-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--karma-bad) 35%, transparent);
 }
 
 input:user-invalid:focus-visible,
