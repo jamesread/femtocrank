@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/jamesread/femtocrank#readme",
   "devDependencies": {
-    "html-validate": "^9.7.1",
+    "html-validate": "^11.0.0",
     "semantic-release": "^25.0.8",
     "stylelint": "^17.14.1",
     "stylelint-config-standard": "^40.0.0"
